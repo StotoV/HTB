@@ -1,0 +1,21 @@
+
+ CHECKING CONNECTIVITY TO SERVER(S)
+ ----------------------------------
+
+   10.10.11.195:443          => 10.10.11.195 
+
+
+ SCAN RESULTS FOR 10.10.11.195:443 - 10.10.11.195
+ ------------------------------------------------
+
+ * OpenSSL Heartbleed:
+                                          OK - Not vulnerable to Heartbleed
+
+ SCANS COMPLETED IN 0.298111 S
+ -----------------------------
+
+ COMPLIANCE AGAINST MOZILLA TLS CONFIGURATION
+ --------------------------------------------
+
+    Disabled; use --mozilla_config={old, intermediate, modern}.
+

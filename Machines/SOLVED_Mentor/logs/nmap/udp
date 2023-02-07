@@ -1,0 +1,11 @@
+# Nmap 7.92 scan initiated Sun Dec 11 11:37:31 2022 as: nmap -sU -sV -oN logs/nmap/udp 10.129.109.43
+Nmap scan report for 10.129.109.43
+Host is up (0.015s latency).
+Not shown: 998 closed udp ports (port-unreach)
+PORT    STATE         SERVICE VERSION
+68/udp  open|filtered dhcpc
+161/udp open          snmp    SNMPv1 server; net-snmp SNMPv3 server (public)
+Service Info: Host: mentor
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Dec 11 11:56:01 2022 -- 1 IP address (1 host up) scanned in 1110.09 seconds

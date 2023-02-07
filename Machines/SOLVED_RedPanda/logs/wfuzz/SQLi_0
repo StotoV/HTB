@@ -1,0 +1,10 @@
+Target: http://10.10.11.170:8080/stats?author=FUZZ
+Total requests: 267
+==================================================================
+ID    Response   Lines      Word         Chars          Request    
+==================================================================
+
+Total time: 0
+Processed Requests: 256
+Filtered Requests: 256
+Requests/sec.: 0

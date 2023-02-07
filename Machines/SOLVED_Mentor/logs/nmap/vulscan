@@ -1,0 +1,10 @@
+# Nmap 7.92 scan initiated Sun Dec 11 11:38:56 2022 as: nmap -sV --script=vulscan.nse -oN logs/nmap/vulscan 10.129.109.43
+NSE: failed to initialize the script engine:
+/usr/bin/../share/nmap/nse_main.lua:822: 'vulscan.nse' did not match a category, filename, or directory
+stack traceback:
+	[C]: in function 'error'
+	/usr/bin/../share/nmap/nse_main.lua:822: in local 'get_chosen_scripts'
+	/usr/bin/../share/nmap/nse_main.lua:1322: in main chunk
+	[C]: in ?
+
+QUITTING!

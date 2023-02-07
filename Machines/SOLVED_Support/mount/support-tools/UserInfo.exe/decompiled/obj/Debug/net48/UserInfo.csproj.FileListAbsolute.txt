@@ -1,0 +1,4 @@
+/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/obj/Debug/net48/UserInfo.csproj.AssemblyReference.cache
+/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/obj/Debug/net48/UserInfo.csproj.SuggestedBindingRedirects.cache
+/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/obj/Debug/net48/UserInfo.GeneratedMSBuildEditorConfig.editorconfig
+/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/obj/Debug/net48/UserInfo.csproj.CoreCompileInputs.cache

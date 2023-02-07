@@ -1,0 +1,23 @@
+# Nmap 7.92 scan initiated Thu Jan 26 06:15:03 2023 as: nmap -sU -sV -oN logs/nmap/udp 10.10.11.164
+Nmap scan report for opensource.htb (10.10.11.164)
+Host is up (0.062s latency).
+Not shown: 985 closed udp ports (port-unreach)
+PORT      STATE         SERVICE        VERSION
+68/udp    open|filtered dhcpc
+139/udp   open|filtered netbios-ssn
+16498/udp open|filtered unknown
+20791/udp open|filtered unknown
+20884/udp open|filtered unknown
+31891/udp open|filtered unknown
+35794/udp open|filtered unknown
+37144/udp open|filtered unknown
+41896/udp open|filtered unknown
+44101/udp open|filtered unknown
+47624/udp open|filtered directplaysrvr
+49155/udp open|filtered unknown
+49199/udp open|filtered unknown
+59765/udp open|filtered unknown
+61142/udp open|filtered unknown
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jan 26 06:52:51 2023 -- 1 IP address (1 host up) scanned in 2268.06 seconds

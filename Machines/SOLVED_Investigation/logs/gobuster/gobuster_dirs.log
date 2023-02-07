@@ -1,0 +1,20 @@
+===============================================================
+Gobuster v3.4
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://eforenzics.htb/
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.4
+[+] Timeout:                 10s
+===============================================================
+2023/02/03 08:51:13 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/assets               (Status: 301) [Size: 317] [--> http://eforenzics.htb/assets/]
+[2K/server-status        (Status: 403) [Size: 279]
+
+===============================================================
+2023/02/03 08:52:34 Finished
+===============================================================

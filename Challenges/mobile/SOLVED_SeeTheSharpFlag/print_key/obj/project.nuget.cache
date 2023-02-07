@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2uEu+eBuYmJ4+dmYZqw6q/pmD3c1Z3Me3l/gf4KyqwIfKf/IykTYnrh/dg6NKr6EEtSvs9ZtvuIhwR2NiU5VBg==",
+  "success": true,
+  "projectFilePath": "/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/print_key.csproj",
+  "expectedPackageFiles": [
+    "/home/tom/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,42 @@
+Users
+krbtgt
+Domain Computers
+Domain Controllers
+Schema Admins
+Enterprise Admins
+Cert Publishers
+Domain Admins
+Domain Users
+Domain Guests
+Group Policy Creator Owners
+RAS and IAS Servers
+Allowed RODC Password Replication Group
+Denied RODC Password Replication Group
+Read-only Domain Controllers
+Enterprise Read-only Domain Controllers
+Cloneable Domain Controllers
+Protected Users
+Key Admins
+Enterprise Key Admins
+DnsAdmins
+DnsUpdateProxy
+Shared Support Accounts
+ldap
+support
+smith.rosario
+hernandez.stanley
+wilson.shelby
+anderson.damian
+thomas.raphael
+levine.leopoldo
+raven.clifton
+bardot.mary
+cromwell.gerard
+monroe.david
+west.laura
+langley.lucy
+daughtler.mabel
+stoll.rachelle
+ford.victoria
+Administrator
+Guest

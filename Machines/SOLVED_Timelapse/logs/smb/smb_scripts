@@ -1,0 +1,8 @@
+# Nmap 7.92 scan initiated Thu Dec 22 11:41:57 2022 as: nmap -Pn --script "safe or smb-enum-*" -p 445 -oN logs/smb/smb_scripts
+Pre-scan script results:
+|_hostmap-robtex: *TEMPORARILY DISABLED* due to changes in Robtex's API. See https://www.robtex.com/api/
+|_http-robtex-shared-ns: *TEMPORARILY DISABLED* due to changes in Robtex's API. See https://www.robtex.com/api/
+| targets-asn: 
+|_  targets-asn.asn is a mandatory parameter
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Thu Dec 22 11:42:37 2022 -- 0 IP addresses (0 hosts up) scanned in 40.36 seconds

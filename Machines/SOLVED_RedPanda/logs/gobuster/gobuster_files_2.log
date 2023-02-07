@@ -1,0 +1,68 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.11.170:8080
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Extensions:              txt,csv,json,py,php,md,js,html,sh
+[+] Timeout:                 10s
+===============================================================
+2022/12/15 02:59:37 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/search               (Status: 405) [Size: 117]
+[2K/stats                (Status: 200) [Size: 987]
+[2K/error                (Status: 500) [Size: 86]
+[2K/http%3A%2F%2Fwww.md  (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.js  (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.php (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.py  (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.txt (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.html (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww     (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.csv (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.sh  (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fwww.json (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.html (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.md (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.php (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.js (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.sh (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.py (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.txt (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.json (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube.csv (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.sh (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.js (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs   (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.md (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.php (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.html (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.json (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.txt (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.py (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs.csv (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.js (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.html (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.md (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog    (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.json (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.php (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.csv (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.txt (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.sh (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog.py (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.py (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.txt (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.json (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww   (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.csv (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.html (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.md (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.sh (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.php (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww.js (Status: 400) [Size: 435]

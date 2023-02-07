@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Errno::ENOSPC at &#x2F;printer</title>
+
+  <script type="text/javascript">
+  //<!--
+  function toggle(id) {
+    var pre  = document.getElementById("pre-" + id);
+    var post = document.getElementById("post-" + id);
+    var context = document.getElementById("context-" + id);
+
+    if (pre.style.display == 'block') {
+      pre.style.display = 'none';
+      post.style.display = 'none';
+      context.style.background = "none";
+    } else {
+      pre.style.display = 'block';
+      post.style.display = 'block';
+      context.style.background = "#fffed9";
+    }
+  }
+
+  function toggleBacktrace(){
+    var bt = document.getElementById("backtrace");
+    var toggler = document.getElementById("expando");
+
+    if (bt.className == 'condensed') {
+      bt.className = 'expanded';
+      toggler.innerHTML = "(condense)";
+    } else {
+      bt.className = 'condensed';
+      toggler.innerHTML = "(expand)";
+    }
+  }
+  //-->
+  </script>
+
+<style type="text/css" media="screen">
+  *                   {margin: 0; padding: 0; border: 0; outline: 0;}
+  div.clear           {clear: both;}
+  body                {background: #EEEEEE; margin: 0; padding: 0;
+                       font-family: 'Lucida Grande', 'Lucida Sans Unicode',
+                       'Garuda';}
+  code                {font-family: 'Lucida Console', monospace;
+                       font-size: 12px;}
+  li                  {height: 18px;}
+  ul                  {list-style: none; margin: 0; padding: 0;}
+  ol:hover            {cursor: pointer;}
+  ol li               {white-space: pre;}
+  #explanation        {font-size: 12px; color: #666666;
+                       margin: 20px 0 0 100px;}
+/* WRAP */
+  #wrap               {width: 1000px; background: #FFFFFF; margin: 0 auto;
+                       padding: 30px 50px 20px 50px;
+                       border-left: 1px solid #DDDDDD;
+                       border-right: 1px solid #DDDDDD;}
+/* HEADER */
+  #header             {margin: 0 auto 25px auto;}
+  #header img         {float: left;}
+  #header #summary    {float: left; margin: 12px 0 0 20px; width:660px;
+                       font-family: 'Lucida Grande', 'Lucida Sans Unicode';}
+  h1                  {margin: 0; font-size: 36px; color: #981919;}
+  h2                  {margin: 0; font-size: 22px; color: #333333;}
+  #header ul          {margin: 0; font-size: 12px; color: #666666;}
+  #header ul li strong{color: #444444;}
+  #header ul li       {display: inline; padding: 0 10px;}
+  #header ul li.first {padding-left: 0;}
+  #header ul li.last  {border: 0; padding-right: 0;}
+/* BODY */
+  #backtrace,
+  #get,
+  #post,
+  #cookies,
+  #rack               {width: 980px; margin: 0 auto 10px auto;}
+  p#nav               {float: right; font-size: 14px;}
+/* BACKTRACE */
+  a#expando           {float: left; padding-left: 5px; color: #666666;
+                      font-size: 14px; text-decoration: none; cursor: pointer;}
+  a#expando:hover     {text-decoration: underline;}
+  h3                  {float: left; width: 100px; margin-bottom: 10px;
+                       color: #981919; font-size: 14px; font-weight: bold;}
+  #nav a              {color: #666666; text-decoration: none; padding: 0 5px;}
+  #backtrace li.frame-info {background: #f7f7f7; padding-left: 10px;
+                           font-size: 12px; color: #333333;}
+  #backtrace ul       {list-style-position: outside; border: 1px solid #E9E9E9;
+                       border-bottom: 0;}
+  #backtrace ol       {width: 920px; margin-left: 50px;
+                       font: 10px 'Lucida Console', monospace; color: #666666;}
+  #backtrace ol li    {border: 0; border-left: 1px solid #E9E9E9;
+                       padding: 2px 0;}
+  #backtrace ol code  {font-size: 10px; color: #555555; padding-left: 5px;}
+  #backtrace-ul li    {border-bottom: 1px solid #E9E9E9; height: auto;
+                       padding: 3px 0;}
+  #backtrace-ul .code {padding: 6px 0 4px 0;}
+  #backtrace.condensed .system,
+  #backtrace.condensed .framework {display:none;}
+/* REQUEST DATA */
+  p.no-data           {padding-top: 2px; font-size: 12px; color: #666666;}
+  table.req           {width: 980px; text-align: left; font-size: 12px;
+                       color: #666666; padding: 0; border-spacing: 0;
+                       border: 1px solid #EEEEEE; border-bottom: 0;
+                       border-left: 0;
+                       clear:both}
+  table.req tr th     {padding: 2px 10px; font-weight: bold;
+                       background: #F7F7F7; border-bottom: 1px solid #EEEEEE;
+                       border-left: 1px solid #EEEEEE;}
+  table.req tr td     {padding: 2px 20px 2px 10px;
+                       border-bottom: 1px solid #EEEEEE;
+                       border-left: 1px solid #EEEEEE;}
+/* HIDE PRE/POST CODE AT START */
+  .pre-context,
+  .post-context       {display: none;}
+
+  table td.code       {width:750px}
+  table td.code div   {width:750px;overflow:hidden}
+</style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <img src="/__sinatra__/500.png" alt="application error" height="161" width="313" />
+      <div id="summary">
+        <h1><strong>Errno::ENOSPC</strong> at <strong>&#x2F;printer
+          </strong></h1>
+        <h2>No space left on device @ io_writev - &lt;STDERR&gt;</h2>
+        <ul>
+          <li class="first"><strong>file:</strong> <code>
+            base.rb</code></li>
+          <li><strong>location:</strong> <code>write
+            </code></li>
+          <li class="last"><strong>line:
+            </strong> 1162</li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div id="backtrace" class='condensed'>
+      <h3>BACKTRACE</h3>
+      <p><a href="#" id="expando"
+            onclick="toggleBacktrace(); return false">(expand)</a></p>
+      <p id="nav"><strong>JUMP TO:</strong>
+         
+            <a href="#get-info">GET</a>
+            <a href="#post-info">POST</a>
+         
+         <a href="#cookie-info">COOKIES</a>
+         <a href="#env-info">ENV</a>
+      </p>
+      <div class="clear"></div>
+
+      <ul id="backtrace-ul">
+
+      
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>write</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1155"
+                  class="pre-context" id="pre-1"
+                  onclick="toggle(1);">
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+                <li class="pre-context-line"><code>      return false unless key.respond_to? :superclass and key.superclass &lt; Exception
+</code></li>
+                
+                <li class="pre-context-line"><code>      error_block!(key.superclass, *block_params)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    def dump_errors!(boom)
+</code></li>
+                
+                <li class="pre-context-line"><code>      msg = [&quot;#{Time.now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)} - #{boom.class} - #{boom.message}:&quot;, *boom.backtrace].join(&quot;\n\t&quot;)
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1162" class="context" id="1"
+                  onclick="toggle(1);">
+                <li class="context-line" id="context-1"><code>      @env[&#x27;rack.errors&#x27;].puts(msg)</code></li>
+              </ol>
+
+              
+              <ol start="1163" class="post-context"
+                  id="post-1" onclick="toggle(1);">
+                
+                <li class="post-context-line"><code>    end
+</code></li>
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>    class &lt;&lt; self
+</code></li>
+                
+                <li class="post-context-line"><code>      CALLERS_TO_IGNORE = [ # :nodoc:
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;\&#x2F;sinatra(\&#x2F;(base|main|show_exceptions))?\.rb$&#x2F;,   # all sinatra code
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;lib\&#x2F;tilt.*\.rb$&#x2F;,                                 # all tilt code
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;^\(.*\)$&#x2F;,                                         # generated code
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>puts</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1155"
+                  class="pre-context" id="pre-2"
+                  onclick="toggle(2);">
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+                <li class="pre-context-line"><code>      return false unless key.respond_to? :superclass and key.superclass &lt; Exception
+</code></li>
+                
+                <li class="pre-context-line"><code>      error_block!(key.superclass, *block_params)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    def dump_errors!(boom)
+</code></li>
+                
+                <li class="pre-context-line"><code>      msg = [&quot;#{Time.now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)} - #{boom.class} - #{boom.message}:&quot;, *boom.backtrace].join(&quot;\n\t&quot;)
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1162" class="context" id="2"
+                  onclick="toggle(2);">
+                <li class="context-line" id="context-2"><code>      @env[&#x27;rack.errors&#x27;].puts(msg)</code></li>
+              </ol>
+
+              
+              <ol start="1163" class="post-context"
+                  id="post-2" onclick="toggle(2);">
+                
+                <li class="post-context-line"><code>    end
+</code></li>
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>    class &lt;&lt; self
+</code></li>
+                
+                <li class="post-context-line"><code>      CALLERS_TO_IGNORE = [ # :nodoc:
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;\&#x2F;sinatra(\&#x2F;(base|main|show_exceptions))?\.rb$&#x2F;,   # all sinatra code
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;lib\&#x2F;tilt.*\.rb$&#x2F;,                                 # all tilt code
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;^\(.*\)$&#x2F;,                                         # generated code
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>dump_errors!</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1155"
+                  class="pre-context" id="pre-3"
+                  onclick="toggle(3);">
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+                <li class="pre-context-line"><code>      return false unless key.respond_to? :superclass and key.superclass &lt; Exception
+</code></li>
+                
+                <li class="pre-context-line"><code>      error_block!(key.superclass, *block_params)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    def dump_errors!(boom)
+</code></li>
+                
+                <li class="pre-context-line"><code>      msg = [&quot;#{Time.now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)} - #{boom.class} - #{boom.message}:&quot;, *boom.backtrace].join(&quot;\n\t&quot;)
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1162" class="context" id="3"
+                  onclick="toggle(3);">
+                <li class="context-line" id="context-3"><code>      @env[&#x27;rack.errors&#x27;].puts(msg)</code></li>
+              </ol>
+
+              
+              <ol start="1163" class="post-context"
+                  id="post-3" onclick="toggle(3);">
+                
+                <li class="post-context-line"><code>    end
+</code></li>
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>    class &lt;&lt; self
+</code></li>
+                
+                <li class="post-context-line"><code>      CALLERS_TO_IGNORE = [ # :nodoc:
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;\&#x2F;sinatra(\&#x2F;(base|main|show_exceptions))?\.rb$&#x2F;,   # all sinatra code
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;lib\&#x2F;tilt.*\.rb$&#x2F;,                                 # all tilt code
+</code></li>
+                
+                <li class="post-context-line"><code>        &#x2F;^\(.*\)$&#x2F;,                                         # generated code
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>handle_exception!</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1122"
+                  class="pre-context" id="pre-4"
+                  onclick="toggle(4);">
+                
+                <li class="pre-context-line"><code>        status(500)
+</code></li>
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>      status(500) unless status.between? 400, 599
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>      boom_message = boom.message if boom.message &amp;&amp; boom.message != boom.class.name
+</code></li>
+                
+                <li class="pre-context-line"><code>      if server_error?
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1129" class="context" id="4"
+                  onclick="toggle(4);">
+                <li class="context-line" id="context-4"><code>        dump_errors! boom if settings.dump_errors?</code></li>
+              </ol>
+
+              
+              <ol start="1130" class="post-context"
+                  id="post-4" onclick="toggle(4);">
+                
+                <li class="post-context-line"><code>        raise boom if settings.show_exceptions? and settings.show_exceptions != :after_handler
+</code></li>
+                
+                <li class="post-context-line"><code>      elsif not_found?
+</code></li>
+                
+                <li class="post-context-line"><code>        headers[&#x27;X-Cascade&#x27;] = &#x27;pass&#x27; if settings.x_cascade?
+</code></li>
+                
+                <li class="post-context-line"><code>        body boom_message || &#x27;&lt;h1&gt;Not Found&lt;&#x2F;h1&gt;&#x27;
+</code></li>
+                
+                <li class="post-context-line"><code>      elsif bad_request?
+</code></li>
+                
+                <li class="post-context-line"><code>        body boom_message || &#x27;&lt;h1&gt;Bad Request&lt;&#x2F;h1&gt;&#x27;
+</code></li>
+                
+                <li class="post-context-line"><code>      end
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>block in dispatch!</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1094"
+                  class="pre-context" id="pre-5"
+                  onclick="toggle(5);">
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>      invoke do
+</code></li>
+                
+                <li class="pre-context-line"><code>        static! if settings.static? &amp;&amp; (request.get? || request.head?)
+</code></li>
+                
+                <li class="pre-context-line"><code>        filter! :before
+</code></li>
+                
+                <li class="pre-context-line"><code>        route!
+</code></li>
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+                <li class="pre-context-line"><code>    rescue ::Exception =&gt; boom
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1101" class="context" id="5"
+                  onclick="toggle(5);">
+                <li class="context-line" id="context-5"><code>      invoke { handle_exception!(boom) }</code></li>
+              </ol>
+
+              
+              <ol start="1102" class="post-context"
+                  id="post-5" onclick="toggle(5);">
+                
+                <li class="post-context-line"><code>    ensure
+</code></li>
+                
+                <li class="post-context-line"><code>      begin
+</code></li>
+                
+                <li class="post-context-line"><code>        filter! :after unless env[&#x27;sinatra.static_file&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>      rescue ::Exception =&gt; boom
+</code></li>
+                
+                <li class="post-context-line"><code>        invoke { handle_exception!(boom) } unless @env[&#x27;sinatra.error&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>      end
+</code></li>
+                
+                <li class="post-context-line"><code>    end
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>block in invoke</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1065"
+                  class="pre-context" id="pre-6"
+                  onclick="toggle(6);">
+                
+                <li class="pre-context-line"><code>      env[&#x27;sinatra.static_file&#x27;] = path
+</code></li>
+                
+                <li class="pre-context-line"><code>      cache_control(*settings.static_cache_control) if settings.static_cache_control?
+</code></li>
+                
+                <li class="pre-context-line"><code>      send_file path, options.merge(:disposition =&gt; nil)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    # Run the block with &#x27;throw :halt&#x27; support and apply result to the response.
+</code></li>
+                
+                <li class="pre-context-line"><code>    def invoke
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1072" class="context" id="6"
+                  onclick="toggle(6);">
+                <li class="context-line" id="context-6"><code>      res = catch(:halt) { yield }</code></li>
+              </ol>
+
+              
+              <ol start="1073" class="post-context"
+                  id="post-6" onclick="toggle(6);">
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>      res = [res] if Integer === res or String === res
+</code></li>
+                
+                <li class="post-context-line"><code>      if Array === res and Integer === res.first
+</code></li>
+                
+                <li class="post-context-line"><code>        res = res.dup
+</code></li>
+                
+                <li class="post-context-line"><code>        status(res.shift)
+</code></li>
+                
+                <li class="post-context-line"><code>        body(res.pop)
+</code></li>
+                
+                <li class="post-context-line"><code>        headers(*res)
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>catch</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1065"
+                  class="pre-context" id="pre-7"
+                  onclick="toggle(7);">
+                
+                <li class="pre-context-line"><code>      env[&#x27;sinatra.static_file&#x27;] = path
+</code></li>
+                
+                <li class="pre-context-line"><code>      cache_control(*settings.static_cache_control) if settings.static_cache_control?
+</code></li>
+                
+                <li class="pre-context-line"><code>      send_file path, options.merge(:disposition =&gt; nil)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    # Run the block with &#x27;throw :halt&#x27; support and apply result to the response.
+</code></li>
+                
+                <li class="pre-context-line"><code>    def invoke
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1072" class="context" id="7"
+                  onclick="toggle(7);">
+                <li class="context-line" id="context-7"><code>      res = catch(:halt) { yield }</code></li>
+              </ol>
+
+              
+              <ol start="1073" class="post-context"
+                  id="post-7" onclick="toggle(7);">
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>      res = [res] if Integer === res or String === res
+</code></li>
+                
+                <li class="post-context-line"><code>      if Array === res and Integer === res.first
+</code></li>
+                
+                <li class="post-context-line"><code>        res = res.dup
+</code></li>
+                
+                <li class="post-context-line"><code>        status(res.shift)
+</code></li>
+                
+                <li class="post-context-line"><code>        body(res.pop)
+</code></li>
+                
+                <li class="post-context-line"><code>        headers(*res)
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>invoke</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1065"
+                  class="pre-context" id="pre-8"
+                  onclick="toggle(8);">
+                
+                <li class="pre-context-line"><code>      env[&#x27;sinatra.static_file&#x27;] = path
+</code></li>
+                
+                <li class="pre-context-line"><code>      cache_control(*settings.static_cache_control) if settings.static_cache_control?
+</code></li>
+                
+                <li class="pre-context-line"><code>      send_file path, options.merge(:disposition =&gt; nil)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    # Run the block with &#x27;throw :halt&#x27; support and apply result to the response.
+</code></li>
+                
+                <li class="pre-context-line"><code>    def invoke
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1072" class="context" id="8"
+                  onclick="toggle(8);">
+                <li class="context-line" id="context-8"><code>      res = catch(:halt) { yield }</code></li>
+              </ol>
+
+              
+              <ol start="1073" class="post-context"
+                  id="post-8" onclick="toggle(8);">
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>      res = [res] if Integer === res or String === res
+</code></li>
+                
+                <li class="post-context-line"><code>      if Array === res and Integer === res.first
+</code></li>
+                
+                <li class="post-context-line"><code>        res = res.dup
+</code></li>
+                
+                <li class="post-context-line"><code>        status(res.shift)
+</code></li>
+                
+                <li class="post-context-line"><code>        body(res.pop)
+</code></li>
+                
+                <li class="post-context-line"><code>        headers(*res)
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>rescue in dispatch!</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1094"
+                  class="pre-context" id="pre-9"
+                  onclick="toggle(9);">
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>      invoke do
+</code></li>
+                
+                <li class="pre-context-line"><code>        static! if settings.static? &amp;&amp; (request.get? || request.head?)
+</code></li>
+                
+                <li class="pre-context-line"><code>        filter! :before
+</code></li>
+                
+                <li class="pre-context-line"><code>        route!
+</code></li>
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+                <li class="pre-context-line"><code>    rescue ::Exception =&gt; boom
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1101" class="context" id="9"
+                  onclick="toggle(9);">
+                <li class="context-line" id="context-9"><code>      invoke { handle_exception!(boom) }</code></li>
+              </ol>
+
+              
+              <ol start="1102" class="post-context"
+                  id="post-9" onclick="toggle(9);">
+                
+                <li class="post-context-line"><code>    ensure
+</code></li>
+                
+                <li class="post-context-line"><code>      begin
+</code></li>
+                
+                <li class="post-context-line"><code>        filter! :after unless env[&#x27;sinatra.static_file&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>      rescue ::Exception =&gt; boom
+</code></li>
+                
+                <li class="post-context-line"><code>        invoke { handle_exception!(boom) } unless @env[&#x27;sinatra.error&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>      end
+</code></li>
+                
+                <li class="post-context-line"><code>    end
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>dispatch!</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1093"
+                  class="pre-context" id="pre-10"
+                  onclick="toggle(10);">
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>      invoke do
+</code></li>
+                
+                <li class="pre-context-line"><code>        static! if settings.static? &amp;&amp; (request.get? || request.head?)
+</code></li>
+                
+                <li class="pre-context-line"><code>        filter! :before
+</code></li>
+                
+                <li class="pre-context-line"><code>        route!
+</code></li>
+                
+                <li class="pre-context-line"><code>      end
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1100" class="context" id="10"
+                  onclick="toggle(10);">
+                <li class="context-line" id="context-10"><code>    rescue ::Exception =&gt; boom</code></li>
+              </ol>
+
+              
+              <ol start="1101" class="post-context"
+                  id="post-10" onclick="toggle(10);">
+                
+                <li class="post-context-line"><code>      invoke { handle_exception!(boom) }
+</code></li>
+                
+                <li class="post-context-line"><code>    ensure
+</code></li>
+                
+                <li class="post-context-line"><code>      begin
+</code></li>
+                
+                <li class="post-context-line"><code>        filter! :after unless env[&#x27;sinatra.static_file&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>      rescue ::Exception =&gt; boom
+</code></li>
+                
+                <li class="post-context-line"><code>        invoke { handle_exception!(boom) } unless @env[&#x27;sinatra.error&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>      end
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>block in call!</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="912"
+                  class="pre-context" id="pre-11"
+                  onclick="toggle(11);">
+                
+                <li class="pre-context-line"><code>      @env      = env
+</code></li>
+                
+                <li class="pre-context-line"><code>      @params   = IndifferentHash.new
+</code></li>
+                
+                <li class="pre-context-line"><code>      @request  = Request.new(env)
+</code></li>
+                
+                <li class="pre-context-line"><code>      @response = Response.new
+</code></li>
+                
+                <li class="pre-context-line"><code>      template_cache.clear if settings.reload_templates
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>      @response[&#x27;Content-Type&#x27;] = nil
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="919" class="context" id="11"
+                  onclick="toggle(11);">
+                <li class="context-line" id="context-11"><code>      invoke { dispatch! }</code></li>
+              </ol>
+
+              
+              <ol start="920" class="post-context"
+                  id="post-11" onclick="toggle(11);">
+                
+                <li class="post-context-line"><code>      invoke { error_block!(response.status) } unless @env[&#x27;sinatra.error&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>      unless @response[&#x27;Content-Type&#x27;]
+</code></li>
+                
+                <li class="post-context-line"><code>        if Array === body and body[0].respond_to? :content_type
+</code></li>
+                
+                <li class="post-context-line"><code>          content_type body[0].content_type
+</code></li>
+                
+                <li class="post-context-line"><code>        else
+</code></li>
+                
+                <li class="post-context-line"><code>          content_type :html
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>block in invoke</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1065"
+                  class="pre-context" id="pre-12"
+                  onclick="toggle(12);">
+                
+                <li class="pre-context-line"><code>      env[&#x27;sinatra.static_file&#x27;] = path
+</code></li>
+                
+                <li class="pre-context-line"><code>      cache_control(*settings.static_cache_control) if settings.static_cache_control?
+</code></li>
+                
+                <li class="pre-context-line"><code>      send_file path, options.merge(:disposition =&gt; nil)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    # Run the block with &#x27;throw :halt&#x27; support and apply result to the response.
+</code></li>
+                
+                <li class="pre-context-line"><code>    def invoke
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1072" class="context" id="12"
+                  onclick="toggle(12);">
+                <li class="context-line" id="context-12"><code>      res = catch(:halt) { yield }</code></li>
+              </ol>
+
+              
+              <ol start="1073" class="post-context"
+                  id="post-12" onclick="toggle(12);">
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>      res = [res] if Integer === res or String === res
+</code></li>
+                
+                <li class="post-context-line"><code>      if Array === res and Integer === res.first
+</code></li>
+                
+                <li class="post-context-line"><code>        res = res.dup
+</code></li>
+                
+                <li class="post-context-line"><code>        status(res.shift)
+</code></li>
+                
+                <li class="post-context-line"><code>        body(res.pop)
+</code></li>
+                
+                <li class="post-context-line"><code>        headers(*res)
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>catch</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1065"
+                  class="pre-context" id="pre-13"
+                  onclick="toggle(13);">
+                
+                <li class="pre-context-line"><code>      env[&#x27;sinatra.static_file&#x27;] = path
+</code></li>
+                
+                <li class="pre-context-line"><code>      cache_control(*settings.static_cache_control) if settings.static_cache_control?
+</code></li>
+                
+                <li class="pre-context-line"><code>      send_file path, options.merge(:disposition =&gt; nil)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    # Run the block with &#x27;throw :halt&#x27; support and apply result to the response.
+</code></li>
+                
+                <li class="pre-context-line"><code>    def invoke
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1072" class="context" id="13"
+                  onclick="toggle(13);">
+                <li class="context-line" id="context-13"><code>      res = catch(:halt) { yield }</code></li>
+              </ol>
+
+              
+              <ol start="1073" class="post-context"
+                  id="post-13" onclick="toggle(13);">
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>      res = [res] if Integer === res or String === res
+</code></li>
+                
+                <li class="post-context-line"><code>      if Array === res and Integer === res.first
+</code></li>
+                
+                <li class="post-context-line"><code>        res = res.dup
+</code></li>
+                
+                <li class="post-context-line"><code>        status(res.shift)
+</code></li>
+                
+                <li class="post-context-line"><code>        body(res.pop)
+</code></li>
+                
+                <li class="post-context-line"><code>        headers(*res)
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>invoke</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="1065"
+                  class="pre-context" id="pre-14"
+                  onclick="toggle(14);">
+                
+                <li class="pre-context-line"><code>      env[&#x27;sinatra.static_file&#x27;] = path
+</code></li>
+                
+                <li class="pre-context-line"><code>      cache_control(*settings.static_cache_control) if settings.static_cache_control?
+</code></li>
+                
+                <li class="pre-context-line"><code>      send_file path, options.merge(:disposition =&gt; nil)
+</code></li>
+                
+                <li class="pre-context-line"><code>    end
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>    # Run the block with &#x27;throw :halt&#x27; support and apply result to the response.
+</code></li>
+                
+                <li class="pre-context-line"><code>    def invoke
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="1072" class="context" id="14"
+                  onclick="toggle(14);">
+                <li class="context-line" id="context-14"><code>      res = catch(:halt) { yield }</code></li>
+              </ol>
+
+              
+              <ol start="1073" class="post-context"
+                  id="post-14" onclick="toggle(14);">
+                
+                <li class="post-context-line"><code>
+</code></li>
+                
+                <li class="post-context-line"><code>      res = [res] if Integer === res or String === res
+</code></li>
+                
+                <li class="post-context-line"><code>      if Array === res and Integer === res.first
+</code></li>
+                
+                <li class="post-context-line"><code>        res = res.dup
+</code></li>
+                
+                <li class="post-context-line"><code>        status(res.shift)
+</code></li>
+                
+                <li class="post-context-line"><code>        body(res.pop)
+</code></li>
+                
+                <li class="post-context-line"><code>        headers(*res)
+</code></li>
+                
+              </ol>
+              
+              <div class="clear"></div>
+            </li>
+
+          
+
+        
+      
+          
+
+            <li class="frame-info app">
+              <code>&#x2F;usr&#x2F;lib&#x2F;ruby&#x2F;vendor_ruby&#x2F;sinatra&#x2F;base.rb</code> in
+                <code><strong>call!</strong></code>
+            </li>
+
+            <li class="code app">
+              
+              <ol start="912"
+                  class="pre-context" id="pre-15"
+                  onclick="toggle(15);">
+                
+                <li class="pre-context-line"><code>      @env      = env
+</code></li>
+                
+                <li class="pre-context-line"><code>      @params   = IndifferentHash.new
+</code></li>
+                
+                <li class="pre-context-line"><code>      @request  = Request.new(env)
+</code></li>
+                
+                <li class="pre-context-line"><code>      @response = Response.new
+</code></li>
+                
+                <li class="pre-context-line"><code>      template_cache.clear if settings.reload_templates
+</code></li>
+                
+                <li class="pre-context-line"><code>
+</code></li>
+                
+                <li class="pre-context-line"><code>      @response[&#x27;Content-Type&#x27;] = nil
+</code></li>
+                
+              </ol>
+              
+
+              <ol start="919" class="context" id="15"
+                  onclick="toggle(15);">
+                <li class="context-line" id="context-15"><code>      invo

@@ -1,0 +1,26 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://dev.stocker.htb
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Timeout:                 10s
+===============================================================
+2023/01/26 15:12:33 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/login                (Status: 200) [Size: 2667]
+[2K/static               (Status: 301) [Size: 179] [--> /static/]
+[2K/Login                (Status: 200) [Size: 2667]
+[2K/logout               (Status: 302) [Size: 28] [--> /login]
+[2K/stock                (Status: 302) [Size: 48] [--> /login?error=auth-required]
+[2K/Logout               (Status: 302) [Size: 28] [--> /login]
+[2K/Static               (Status: 301) [Size: 179] [--> /Static/]
+[2K/LogIn                (Status: 200) [Size: 2667]
+[2K/LOGIN                (Status: 200) [Size: 2667]
+===============================================================
+2023/01/26 15:27:01 Finished
+===============================================================

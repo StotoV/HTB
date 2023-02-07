@@ -1,0 +1,4 @@
+# Nmap 7.92 scan initiated Tue Nov 29 03:30:21 2022 as: nmap -sV --script=/usr/share/nmap/scripts/vulscan/vulscan.nse -oA logs/nmap_vulscan 10.129.100.34
+Host: 10.129.100.34 (precious.htb)	Status: Up
+Host: 10.129.100.34 (precious.htb)	Ports: 22/open/tcp//ssh//OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)/, 80/open/tcp//http//nginx 1.18.0/	Ignored State: closed (998)
+# Nmap done at Tue Nov 29 03:30:33 2022 -- 1 IP address (1 host up) scanned in 12.63 seconds

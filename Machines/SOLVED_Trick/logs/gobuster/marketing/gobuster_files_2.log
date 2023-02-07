@@ -1,0 +1,26 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://preprod-marketing.trick.htb
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Extensions:              txt,php,html,py,sh,csv,md,json,js
+[+] Timeout:                 10s
+===============================================================
+2023/01/11 11:58:22 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/index.php            (Status: 200) [Size: 9660]
+[2K/contact.html         (Status: 200) [Size: 7677]
+[2K/about.html           (Status: 200) [Size: 13272]
+[2K/home.html            (Status: 200) [Size: 9660]
+[2K/img                  (Status: 301) [Size: 185] [--> http://preprod-marketing.trick.htb/img/]
+[2K/services.html        (Status: 200) [Size: 10757]
+[2K/css                  (Status: 301) [Size: 185] [--> http://preprod-marketing.trick.htb/css/]
+[2K/js                   (Status: 301) [Size: 185] [--> http://preprod-marketing.trick.htb/js/]
+===============================================================
+2023/01/11 12:03:56 Finished
+===============================================================

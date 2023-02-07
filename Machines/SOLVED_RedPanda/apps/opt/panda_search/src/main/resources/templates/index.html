@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta author="wooden_k">
+    <!--Codepen by khr2003: https://codepen.io/khr2003/pen/BGZdXw -->
+    <link rel="stylesheet" href="css/panda.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <title>Red Panda Search | Made with Spring Boot</title>
+  </head>
+  <body>
+
+    <div class='pande'>
+      <div class='ear left'></div>
+      <div class='ear right'></div>
+      <div class='whiskers left'>
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <div class='whiskers right'>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class='face'>
+        <div class='eye left'></div>
+        <div class='eye right'></div>
+        <div class='eyebrow left'></div>
+        <div class='eyebrow right'></div>
+
+        <div class='cheek left'></div>
+        <div class='cheek right'></div>
+
+        <div class='mouth'>
+          <span class='nose'></span>
+          <span class='lips-top'></span>
+        </div>
+      </div>
+    </div>
+    <h1>RED PANDA SEARCH</h1>
+    <div class="wrapper" >
+    <form class="searchForm" action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+    </form>
+    </div>
+  </body>
+</html>

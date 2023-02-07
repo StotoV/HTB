@@ -1,0 +1,21 @@
+# Created at 2022-06-20T12:09:38.774
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+
+# Created at 2022-06-20T12:09:40.666
+Unexpected IOException with stream: 2022-06-20 12:09:40.665  INFO 228092 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+
+
+# Created at 2022-06-20T12:09:41.084
+Unexpected IOException with stream: 2022-06-20 12:09:41.084  INFO 228092 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+
+
+# Created at 2022-06-20T12:09:41.952
+Unexpected IOException with stream: 2022-06-20 12:09:41.952  INFO 228092 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+
+

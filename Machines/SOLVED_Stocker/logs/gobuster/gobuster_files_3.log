@@ -1,0 +1,23 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://stocker.htb
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/raft-medium-directories-lowercase.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Extensions:              html,py,txt,csv,json,js,sh,php,md
+[+] Timeout:                 10s
+===============================================================
+2023/01/26 14:21:15 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/js                   (Status: 301) [Size: 178] [--> http://stocker.htb/js/]
+[2K/css                  (Status: 301) [Size: 178] [--> http://stocker.htb/css/]
+[2K/img                  (Status: 301) [Size: 178] [--> http://stocker.htb/img/]
+[2K/index.html           (Status: 200) [Size: 15463]
+[2K/fonts                (Status: 301) [Size: 178] [--> http://stocker.htb/fonts/]
+===============================================================
+2023/01/26 14:28:46 Finished
+===============================================================

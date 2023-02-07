@@ -1,0 +1,31 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.11.170:8080
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Timeout:                 10s
+===============================================================
+2022/12/15 02:58:27 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/search               (Status: 405) [Size: 117]
+[2K/stats                (Status: 200) [Size: 987]
+[2K/error                (Status: 500) [Size: 86]
+[2K/http%3A%2F%2Fwww     (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fyoutube (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblogs   (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fblog    (Status: 400) [Size: 435]
+[2K/**http%3A%2F%2Fwww   (Status: 400) [Size: 435]
+[2K/External%5CX-News    (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fcommunity (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fradar   (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fjeremiahgrossman (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fweblog  (Status: 400) [Size: 435]
+[2K/http%3A%2F%2Fswik    (Status: 400) [Size: 435]
+===============================================================
+2022/12/15 03:17:37 Finished
+===============================================================

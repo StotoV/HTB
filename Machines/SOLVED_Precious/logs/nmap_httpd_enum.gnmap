@@ -1,0 +1,1 @@
+# Nmap 7.92 scan initiated Tue Nov 29 03:33:16 2022 as: nmap -sV --script=/usr/share/nmap/scripts/httpd.enum -oA logs/nmap_httpd_enum 10.129.100.34

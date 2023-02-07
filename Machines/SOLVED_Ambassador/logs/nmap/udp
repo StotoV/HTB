@@ -1,0 +1,33 @@
+# Nmap 7.92 scan initiated Mon Dec  5 08:00:12 2022 as: nmap -sU -sV -oN logs/nmap/udp 10.10.11.183
+Nmap scan report for ambassador.htb (10.10.11.183)
+Host is up (0.014s latency).
+Not shown: 975 closed udp ports (port-unreach)
+PORT      STATE         SERVICE      VERSION
+22/udp    open|filtered ssh
+42/udp    open|filtered nameserver
+68/udp    open|filtered dhcpc
+2048/udp  open|filtered dls-monitor
+3702/udp  open|filtered ws-discovery
+6001/udp  open|filtered X11:1
+6347/udp  open|filtered gnutella2
+16430/udp open|filtered unknown
+16912/udp open|filtered unknown
+17302/udp open|filtered unknown
+17989/udp open|filtered unknown
+19075/udp open|filtered unknown
+21131/udp open|filtered unknown
+21948/udp open|filtered unknown
+34580/udp open|filtered unknown
+39632/udp open|filtered unknown
+44179/udp open|filtered unknown
+45685/udp open|filtered unknown
+47915/udp open|filtered unknown
+49181/udp open|filtered unknown
+49193/udp open|filtered unknown
+51255/udp open|filtered unknown
+54711/udp open|filtered unknown
+61319/udp open|filtered unknown
+64481/udp open|filtered unknown
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Dec  5 08:21:48 2022 -- 1 IP address (1 host up) scanned in 1296.46 seconds

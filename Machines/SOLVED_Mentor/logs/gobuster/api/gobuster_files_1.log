@@ -1,0 +1,23 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://api.mentorquotes.htb
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Extensions:              sh,php,csv,md,html,py,txt,json,js
+[+] Timeout:                 10s
+===============================================================
+2022/12/13 08:48:42 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/admin                (Status: 307) [Size: 0] [--> http://api.mentorquotes.htb/admin/]
+[2K/docs                 (Status: 200) [Size: 969]
+[2K/quotes               (Status: 307) [Size: 0] [--> http://api.mentorquotes.htb/quotes/]
+[2K/server-status        (Status: 403) [Size: 285]
+[2K/users                (Status: 307) [Size: 0] [--> http://api.mentorquotes.htb/users/]
+===============================================================
+2022/12/13 08:50:30 Finished
+===============================================================

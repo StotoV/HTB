@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/UserInfo.csproj": {}
+  },
+  "projects": {
+    "/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/UserInfo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/UserInfo.csproj",
+        "projectName": "UserInfo",
+        "projectPath": "/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/UserInfo.csproj",
+        "packagesPath": "/home/tom/.nuget/packages/",
+        "outputPath": "/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/decompiled/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tom/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.109/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

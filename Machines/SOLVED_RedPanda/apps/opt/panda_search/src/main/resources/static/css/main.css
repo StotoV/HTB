@@ -1,0 +1,22 @@
+body {
+	overflow-x: hidden;
+}
+input {
+  width: 100%;
+}
+	
+.search {
+  position: absolute;
+  display: flex;
+  padding-top: 50%;
+  padding-left: 35%;
+  width: 28%;
+}
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  border-radius: 0 5px 5px 0;
+}
+

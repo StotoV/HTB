@@ -1,0 +1,11 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Domain:     trick.htb
+[+] Threads:    100
+[+] Timeout:    1s
+[+] Wordlist:   /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+===============================================================
+2023/01/11 06:02:51 Starting gobuster in DNS enumeration mode
+===============================================================

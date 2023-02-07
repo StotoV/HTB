@@ -1,0 +1,34 @@
+# Nmap 7.92 scan initiated Wed Jan 11 05:01:25 2023 as: nmap -sU -sV -oN logs/nmap/udp 10.10.11.166
+Nmap scan report for 10.10.11.166
+Host is up (0.013s latency).
+Not shown: 975 closed udp ports (port-unreach)
+PORT      STATE         SERVICE         VERSION
+53/udp    open          domain          ISC BIND 9.11.5-P4-5.1+deb10u7 (Debian Linux)
+68/udp    open|filtered dhcpc
+631/udp   open|filtered ipp
+782/udp   open|filtered hp-managed-node
+814/udp   open|filtered unknown
+1068/udp  open|filtered instl_bootc
+5353/udp  open|filtered zeroconf
+16838/udp open|filtered unknown
+17549/udp open|filtered unknown
+19625/udp open|filtered unknown
+19707/udp open|filtered unknown
+20120/udp open|filtered unknown
+21212/udp open|filtered unknown
+21261/udp open|filtered unknown
+21405/udp open|filtered unknown
+21468/udp open|filtered unknown
+28493/udp open|filtered unknown
+32528/udp open|filtered unknown
+32779/udp open|filtered sometimes-rpc22
+35438/udp open|filtered unknown
+43094/udp open|filtered unknown
+44101/udp open|filtered unknown
+49154/udp open|filtered unknown
+49197/udp open|filtered unknown
+64481/udp open|filtered unknown
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jan 11 05:23:19 2023 -- 1 IP address (1 host up) scanned in 1313.43 seconds

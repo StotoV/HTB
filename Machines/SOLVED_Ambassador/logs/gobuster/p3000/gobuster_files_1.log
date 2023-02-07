@@ -1,0 +1,62 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.11.183:3000
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/common.txt
+[+] Negative Status codes:   404,302
+[+] User Agent:              gobuster/3.3
+[+] Extensions:              csv,md,json,sh,txt,php,js,html,py
+[+] Timeout:                 10s
+===============================================================
+2022/12/07 10:06:33 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/api.json             (Status: 401) [Size: 27]
+[2K/api.md               (Status: 401) [Size: 27]
+[2K/api                  (Status: 401) [Size: 27]
+[2K/api.csv              (Status: 401) [Size: 27]
+[2K/apis.py              (Status: 401) [Size: 27]
+[2K/apis.sh              (Status: 401) [Size: 27]
+[2K/apis.php             (Status: 401) [Size: 27]
+[2K/apis.js              (Status: 401) [Size: 27]
+[2K/apis.txt             (Status: 401) [Size: 27]
+[2K/apis.html            (Status: 401) [Size: 27]
+[2K/apis.json            (Status: 401) [Size: 27]
+[2K/apis.csv             (Status: 401) [Size: 27]
+[2K/apis.md              (Status: 401) [Size: 27]
+[2K/apis                 (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.php (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.sh (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.py (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.js (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.csv (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.md (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.json (Status: 401) [Size: 27]
+[2K/api/experiments.md   (Status: 401) [Size: 27]
+[2K/api/experiments/configurations (Status: 401) [Size: 27]
+[2K/api/experiments.json (Status: 401) [Size: 27]
+[2K/api/experiments.php  (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.html (Status: 401) [Size: 27]
+[2K/api/experiments.js   (Status: 401) [Size: 27]
+[2K/api/experiments/configurations.txt (Status: 401) [Size: 27]
+[2K/api/experiments.txt  (Status: 401) [Size: 27]
+[2K/api/experiments.py   (Status: 401) [Size: 27]
+[2K/api/experiments.sh   (Status: 401) [Size: 27]
+[2K/api/experiments      (Status: 401) [Size: 27]
+[2K/api/experiments.csv  (Status: 401) [Size: 27]
+[2K/api/experiments.html (Status: 401) [Size: 27]
+[2K/api.txt              (Status: 401) [Size: 27]
+[2K/api.js               (Status: 401) [Size: 27]
+[2K/api.html             (Status: 401) [Size: 27]
+[2K/api.php              (Status: 401) [Size: 27]
+[2K/api.sh               (Status: 401) [Size: 27]
+[2K/api.py               (Status: 401) [Size: 27]
+[2K/login                (Status: 200) [Size: 26724]
+[2K/robots.txt           (Status: 200) [Size: 26]
+[2K/robots.txt           (Status: 200) [Size: 26]
+[2K/signup               (Status: 200) [Size: 26693]
+===============================================================
+2022/12/07 10:06:51 Finished
+===============================================================

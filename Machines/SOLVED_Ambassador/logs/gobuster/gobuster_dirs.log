@@ -1,0 +1,22 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.11.183
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Timeout:                 10s
+===============================================================
+2022/12/05 08:13:55 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/images               (Status: 301) [Size: 313] [--> http://10.10.11.183/images/]
+[2K/categories           (Status: 301) [Size: 317] [--> http://10.10.11.183/categories/]
+[2K/posts                (Status: 301) [Size: 312] [--> http://10.10.11.183/posts/]
+[2K/tags                 (Status: 301) [Size: 311] [--> http://10.10.11.183/tags/]
+[2K/server-status        (Status: 403) [Size: 277]
+===============================================================
+2022/12/05 08:14:47 Finished
+===============================================================

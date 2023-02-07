@@ -1,0 +1,14 @@
+# Nmap 7.92 scan initiated Tue Nov 29 03:34:32 2022 as: nmap -sV --script=http-enum.nse -oA logs/nmap_http_enum 10.129.100.34
+Nmap scan report for precious.htb (10.129.100.34)
+Host is up (0.016s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+80/tcp open  http    nginx 1.18.0
+| http-server-header: 
+|   nginx/1.18.0
+|_  nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Nov 29 03:36:59 2022 -- 1 IP address (1 host up) scanned in 146.38 seconds

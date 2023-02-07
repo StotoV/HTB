@@ -1,0 +1,53 @@
+# Nmap 7.92 scan initiated Mon Dec 12 06:49:37 2022 as: nmap -sU -sV -Pn -oN logs/nmap/udp 10.10.10.169
+Nmap scan report for 10.10.10.169
+Host is up (0.019s latency).
+Not shown: 977 closed udp ports (port-unreach)
+PORT      STATE         SERVICE      VERSION
+53/udp    open          domain       Simple DNS Plus
+88/udp    open          kerberos-sec Microsoft Windows Kerberos (server time: 2022-12-12 12:16:43Z)
+123/udp   open          ntp          NTP v3
+137/udp   open|filtered netbios-ns
+138/udp   open|filtered netbios-dgm
+389/udp   open          ldap         Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+464/udp   open|filtered kpasswd5
+500/udp   open|filtered isakmp
+4500/udp  open|filtered nat-t-ike
+5353/udp  open|filtered zeroconf
+5355/udp  open|filtered llmnr
+49259/udp open          unknown
+53589/udp open|filtered unknown
+54094/udp open|filtered unknown
+55544/udp open|filtered unknown
+57958/udp open          unknown
+59207/udp open|filtered unknown
+61319/udp open|filtered unknown
+61322/udp open|filtered unknown
+61412/udp open          domain       (generic dns response: SERVFAIL)
+62677/udp open          domain       (generic dns response: SERVFAIL)
+62699/udp open          domain       (generic dns response: SERVFAIL)
+62958/udp open          domain       (generic dns response: SERVFAIL)
+5 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port49259-UDP:V=7.92%I=7%D=12/12%Time=63971A22%P=x86_64-pc-linux-gnu%r(
+SF:Sqlping,1,"\x02")%r(DNS-SD,2E,"\0\0\x80\x82\0\x01\0\0\0\0\0\0\t_service
+SF:s\x07_dns-sd\x04_udp\x05local\0\0\x0c\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port61412-UDP:V=7.92%I=7%D=12/12%Time=63971A15%P=x86_64-pc-linux-gnu%r(
+SF:NBTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port62677-UDP:V=7.92%I=7%D=12/12%Time=63971A15%P=x86_64-pc-linux-gnu%r(
+SF:NBTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port62699-UDP:V=7.92%I=7%D=12/12%Time=63971A15%P=x86_64-pc-linux-gnu%r(
+SF:NBTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAAA\0\0!\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port62958-UDP:V=7.92%I=7%D=12/12%Time=63971A15%P=x86_64-pc-linux-gnu%r(
+SF:NBTStat,32,"\x80\xf0\x80\x82\0\x01\0\0\0\0\0\0\x20CKAAAAAAAAAAAAAAAAAAA
+SF:AAAAAAAAAAA\0\0!\0\x01");
+Service Info: Host: RESOLUTE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Dec 12 07:11:25 2022 -- 1 IP address (1 host up) scanned in 1307.88 seconds

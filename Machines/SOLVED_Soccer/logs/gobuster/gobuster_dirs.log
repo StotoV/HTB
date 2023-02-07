@@ -1,0 +1,18 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://soccer.htb
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Timeout:                 10s
+===============================================================
+2022/12/19 06:52:19 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/tiny                 (Status: 301) [Size: 178] [--> http://soccer.htb/tiny/]
+===============================================================
+2022/12/19 06:55:48 Finished
+===============================================================

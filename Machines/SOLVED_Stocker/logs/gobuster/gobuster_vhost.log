@@ -1,0 +1,18 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:             http://stocker.htb
+[+] Method:          GET
+[+] Threads:         100
+[+] Wordlist:        /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+[+] User Agent:      gobuster/3.3
+[+] Timeout:         10s
+[+] Append Domain:   false
+===============================================================
+2023/01/26 15:02:57 Starting gobuster in VHOST enumeration mode
+===============================================================
+===============================================================
+2023/01/26 15:03:54 Finished
+===============================================================
+

@@ -1,0 +1,17 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:             http://soccer.htb:9091
+[+] Method:          GET
+[+] Threads:         100
+[+] Wordlist:        /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+[+] User Agent:      gobuster/3.3
+[+] Timeout:         10s
+[+] Append Domain:   false
+===============================================================
+2022/12/19 06:04:22 Starting gobuster in VHOST enumeration mode
+===============================================================
+===============================================================
+2022/12/19 06:04:43 Finished
+===============================================================

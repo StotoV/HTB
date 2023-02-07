@@ -1,0 +1,19 @@
+
+; <<>> DiG 9.18.4-2-Debian <<>> any victim.com @10.10.11.166
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: REFUSED, id: 32406
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 081d4c2001df3d25bf2bbf6063be9695a08b07a4ef2f9cc3 (good)
+;; QUESTION SECTION:
+;victim.com.			IN	ANY
+
+;; Query time: 63 msec
+;; SERVER: 10.10.11.166#53(10.10.11.166) (TCP)
+;; WHEN: Wed Jan 11 05:59:33 EST 2023
+;; MSG SIZE  rcvd: 67
+

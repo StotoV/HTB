@@ -1,0 +1,12 @@
+# Nmap 7.92 scan initiated Wed Jan 11 05:21:47 2023 as: nmap -sV -p 25 --script smtp-enum-users -oN logs/smtp/enum-users 10.10.11.166
+Nmap scan report for 10.10.11.166
+Host is up (0.014s latency).
+
+PORT   STATE SERVICE VERSION
+25/tcp open  smtp    Postfix smtpd
+| smtp-enum-users: 
+|_  Method RCPT returned a unhandled status code.
+Service Info: Host:  debian.localdomain
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jan 11 05:22:08 2023 -- 1 IP address (1 host up) scanned in 21.05 seconds

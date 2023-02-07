@@ -1,0 +1,26 @@
+# Nmap 7.92 scan initiated Wed Dec  7 10:15:00 2022 as: nmap -sV -Pn -vv -p 3306 -oN logs/nmap/3306_vul_scans --script mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122 10.10.11.183
+Nmap scan report for ambassador.htb (10.10.11.183)
+Host is up, received user-set (0.013s latency).
+Scanned at 2022-12-07 10:15:00 EST for 18s
+
+PORT     STATE SERVICE REASON  VERSION
+3306/tcp open  mysql   syn-ack MySQL 8.0.30-0ubuntu0.20.04.2
+|_mysql-empty-password: ERROR: Script execution failed (use -d to debug)
+| mysql-info: 
+|   Protocol: 10
+|   Version: 8.0.30-0ubuntu0.20.04.2
+|   Thread ID: 10
+|   Capabilities flags: 65535
+|   Some Capabilities: InteractiveClient, Support41Auth, SwitchToSSLAfterHandshake, LongPassword, Speaks41ProtocolOld, DontAllowDatabaseTableColumn, SupportsTransactions, ODBCClient, FoundRows, LongColumnFlag, ConnectWithDatabase, IgnoreSpaceBeforeParenthesis, Speaks41ProtocolNew, IgnoreSigpipes, SupportsLoadDataLocal, SupportsCompression, SupportsAuthPlugins, SupportsMultipleStatments, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: \x16N\x0B\x14\x0F<G\x0CzDh\x1C=\x08#*0t+Z
+|_  Auth Plugin Name: caching_sha2_password
+|_mysql-vuln-cve2012-2122: ERROR: Script execution failed (use -d to debug)
+| mysql-enum: 
+|   Accounts: No valid accounts found
+|   Statistics: Performed 0 guesses in 5 seconds, average tps: 0.0
+|_  ERROR: The service seems to have failed or is heavily firewalled...
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Dec  7 10:15:18 2022 -- 1 IP address (1 host up) scanned in 18.34 seconds

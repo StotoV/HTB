@@ -1,0 +1,15 @@
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.csproj.AssemblyReference.cache
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.GeneratedMSBuildEditorConfig.editorconfig
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.AssemblyInfoInputs.cache
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.AssemblyInfo.cs
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.csproj.CoreCompileInputs.cache
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/bin/Debug/net6.0/print_key
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/bin/Debug/net6.0/print_key.deps.json
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/bin/Debug/net6.0/print_key.runtimeconfig.json
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/bin/Debug/net6.0/print_key.dll
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/bin/Debug/net6.0/ref/print_key.dll
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/bin/Debug/net6.0/print_key.pdb
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.dll
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/ref/print_key.dll
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.pdb
+/home/tom/Documents/Security/HackTheBox/SeeTheSharpFlag/print_key/obj/Debug/net6.0/print_key.genruntimeconfig.cache

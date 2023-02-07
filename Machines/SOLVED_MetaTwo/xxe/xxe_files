@@ -1,0 +1,6 @@
+/etc/passwd
+/etc/ssh/sshd_config
+/etc/ssh/ssh_config
+/etc/nginx/nginx.conf
+../wp-config.php
+/etc/nginx/sites-enabled/default.conf

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/XGt+B0gjt6LHGPnhmk7Eb72vVbrypuRPf3O2yqI/aSCSkX6uskdY3rQEgw6Ad6q7kQNio7B4S7pJvPtX+02bA==",
+  "success": true,
+  "projectFilePath": "/home/tom/Documents/Security/HackTheBox/Machines/Support/mount/support-tools/UserInfo.exe/UserInfo.exe.csproj",
+  "expectedPackageFiles": [
+    "/home/tom/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

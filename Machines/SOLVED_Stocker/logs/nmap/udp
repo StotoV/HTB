@@ -1,0 +1,34 @@
+# Nmap 7.92 scan initiated Thu Jan 26 13:55:23 2023 as: nmap -sU -sV -oN logs/nmap/udp -Pn 10.10.11.196
+Warning: 10.10.11.196 giving up on port because retransmission cap hit (10).
+Nmap scan report for stocker.htb (10.10.11.196)
+Host is up (0.018s latency).
+Not shown: 975 closed udp ports (port-unreach)
+PORT      STATE         SERVICE      VERSION
+68/udp    open|filtered dhcpc
+427/udp   open|filtered svrloc
+1046/udp  open|filtered wfremotertm
+1053/udp  open|filtered remote-as
+1761/udp  open|filtered cft-0
+2362/udp  open|filtered digiman
+10080/udp open|filtered amanda
+16573/udp open|filtered unknown
+17205/udp open|filtered unknown
+17946/udp open|filtered unknown
+18449/udp open|filtered unknown
+19415/udp open|filtered unknown
+19600/udp open|filtered unknown
+20464/udp open|filtered unknown
+21621/udp open|filtered unknown
+21649/udp open|filtered unknown
+27444/udp open|filtered Trinoo_Bcast
+31073/udp open|filtered unknown
+42434/udp open|filtered unknown
+44190/udp open|filtered unknown
+45441/udp open|filtered unknown
+47808/udp open|filtered bacnet
+49157/udp open|filtered unknown
+49170/udp open|filtered unknown
+49188/udp open|filtered unknown
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jan 26 14:35:38 2023 -- 1 IP address (1 host up) scanned in 2415.21 seconds

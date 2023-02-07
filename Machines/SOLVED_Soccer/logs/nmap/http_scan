@@ -1,0 +1,4 @@
+# Nmap 7.92 scan initiated Mon Dec 19 05:01:30 2022 as: nmap -sV --script=unusual-port.nse -oN logs/nmap/http_scan http://soccer.htb:9091
+Unable to split netmask from target expression: "http://soccer.htb:9091"
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Mon Dec 19 05:01:31 2022 -- 0 IP addresses (0 hosts up) scanned in 0.20 seconds

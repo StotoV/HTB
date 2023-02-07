@@ -1,0 +1,10 @@
+# Nmap 7.92 scan initiated Mon Dec 12 09:06:04 2022 as: nmap -p 53 -vv -Pn -oN logs/nmap/dns 10.129.109.43
+Nmap scan report for 10.129.109.43
+Host is up, received user-set.
+Scanned at 2022-12-12 09:06:05 EST for 2s
+
+PORT   STATE    SERVICE REASON
+53/tcp filtered domain  no-response
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Mon Dec 12 09:06:07 2022 -- 1 IP address (1 host up) scanned in 2.34 seconds

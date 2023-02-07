@@ -1,0 +1,38 @@
+[2K[32metc/issue               [Status: 200, Size: 54, Words: 10, Lines: 4, Duration: 34ms][0m
+[2K[32metc/inittab             [Status: 200, Size: 570, Words: 47, Lines: 24, Duration: 81ms][0m
+[2K[32metc/shadow              [Status: 200, Size: 422, Words: 1, Lines: 28, Duration: 354ms][0m
+[2K[32metc/passwd              [Status: 200, Size: 1172, Words: 3, Lines: 28, Duration: 385ms][0m
+[2K[32metc/fstab               [Status: 200, Size: 89, Words: 5, Lines: 3, Duration: 391ms][0m
+[2K[32metc/hosts               [Status: 200, Size: 174, Words: 3, Lines: 8, Duration: 420ms][0m
+[2K[32metc/motd                [Status: 200, Size: 283, Words: 34, Lines: 11, Duration: 369ms][0m
+[2K[32metc/mtab                [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 329ms][0m
+[2K[32metc/profile             [Status: 200, Size: 877, Words: 99, Lines: 46, Duration: 406ms][0m
+[2K[32metc/resolv.conf         [Status: 200, Size: 584, Words: 81, Lines: 14, Duration: 405ms][0m
+[2K[32mproc/cpuinfo            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 400ms][0m
+[2K[32mproc/filesystems        [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 395ms][0m
+[2K[32mproc/interrupts         [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 406ms][0m
+[2K[32mproc/ioports            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 411ms][0m
+[2K[32mproc/meminfo            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 404ms][0m
+[2K[32mproc/mounts             [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 397ms][0m
+[2K[32mproc/stat               [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 393ms][0m
+[2K[32mproc/swaps              [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 377ms][0m
+[2K[32mproc/version            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 371ms][0m
+[2K[32mproc/modules            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 410ms][0m
+[2K[32mproc/self/net/arp       [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 366ms][0m
+[2K[32mvar/spool/cron/crontabs/root [Status: 200, Size: 283, Words: 10, Lines: 9, Duration: 330ms][0m
+[2K[32metc/ca-certificates.conf [Status: 200, Size: 5303, Words: 14, Lines: 136, Duration: 345ms][0m
+[2K[32metc/group               [Status: 200, Size: 697, Words: 1, Lines: 49, Duration: 346ms][0m
+[2K[32metc/hostname            [Status: 200, Size: 13, Words: 1, Lines: 2, Duration: 323ms][0m
+[2K[32metc/modules             [Status: 200, Size: 15, Words: 1, Lines: 3, Duration: 293ms][0m
+[2K[32metc/os-release          [Status: 200, Size: 164, Words: 4, Lines: 7, Duration: 242ms][0m
+[2K[32metc/sysctl.conf         [Status: 200, Size: 53, Words: 8, Lines: 2, Duration: 135ms][0m
+[2K[32mproc/devices            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 247ms][0m
+[2K[32mproc/net/tcp            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 251ms][0m
+[2K[32mproc/self/cmdline       [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 249ms][0m
+[2K[32mproc/self/environ       [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 223ms][0m
+[2K[32mproc/net/udp            [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 256ms][0m
+[2K[32mproc/self/mounts        [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 186ms][0m
+[2K[32mproc/self/stat          [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 189ms][0m
+[2K[32mproc/self/status        [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 176ms][0m
+[2K[32mproc/self/fd/2          [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 275ms][0m
+[2K[32mproc/self/fd/4          [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 391ms][0m

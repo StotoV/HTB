@@ -1,0 +1,83 @@
+  ___ _   _ _ ___    _____  _ _   _ __  __ 
+ / __| | | / |   \  |__ / \| | | | |  \/  |                                                                                                             
+ \__ \ |_| | | |) |  |_ \ .` | |_| | |\/| |                                                                                                             
+ |___/\___/|_|___/  |___/_|\_|\___/|_|  |_|  twitter@syed__umar                                                                                         
+                                                                                                                                                        
+[#] Finding/Listing all SUID Binaries ..                                                                                                                
+------------------------------                                                                                                                          
+/usr/libexec/polkit-agent-helper-1                                                                                                                      
+/usr/bin/umount                                                                                                                                         
+/usr/bin/su                                                                                                                                             
+/usr/bin/vmware-user-suid-wrapper                                                                                                                       
+/usr/bin/chsh                                                                                                                                           
+/usr/bin/chfn                                                                                                                                           
+/usr/bin/mount                                                                                                                                          
+/usr/bin/passwd                                                                                                                                         
+/usr/bin/newgrp                                                                                                                                         
+/usr/bin/gpasswd                                                                                                                                        
+/usr/bin/sudo                                                                                                                                           
+/usr/bin/fusermount3                                                                                                                                    
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper                                                                                                               
+/usr/lib/openssh/ssh-keysign                                                                                                                            
+/usr/lib/snapd/snap-confine    
+/usr/lib/xorg/Xorg.wrap    
+/usr/sbin/pppd    
+/snap/core20/1623/usr/bin/chfn    
+/snap/core20/1623/usr/bin/chsh    
+/snap/core20/1623/usr/bin/gpasswd    
+/snap/core20/1623/usr/bin/mount    
+/snap/core20/1623/usr/bin/newgrp    
+/snap/core20/1623/usr/bin/passwd    
+/snap/core20/1623/usr/bin/su    
+/snap/core20/1623/usr/bin/sudo    
+/snap/core20/1623/usr/bin/umount    
+/snap/core20/1623/usr/lib/dbus-1.0/dbus-daemon-launch-helper    
+/snap/core20/1623/usr/lib/openssh/ssh-keysign    
+/snap/snapd/17029/usr/lib/snapd/snap-confine    
+/snap/snapd/17336/usr/lib/snapd/snap-confine    
+------------------------------
+                                                           
+[!] Default Binaries (Don't bother)                                                                                                                           
+------------------------------                                                                                                                                
+/usr/libexec/polkit-agent-helper-1                                                                                                                            
+/usr/bin/umount                                                                                                                                               
+/usr/bin/su                                                                                                                                                   
+/usr/bin/vmware-user-suid-wrapper                                                                                                                             
+/usr/bin/chsh                                                                                                                                                 
+/usr/bin/chfn                                                                                                                                                 
+/usr/bin/mount                                                                                                                                                
+/usr/bin/passwd                                                                                                                                               
+/usr/bin/newgrp                                                                                                                                               
+/usr/bin/gpasswd                                                                                                                                              
+/usr/bin/sudo                                                                                                                                                 
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper                                                                                                                   
+/usr/lib/openssh/ssh-keysign                                                                                                                                  
+/usr/lib/snapd/snap-confine                                                                                                                                   
+/usr/lib/xorg/Xorg.wrap                                                                                                                                       
+/usr/sbin/pppd                                                                                                                                                
+/snap/core20/1623/usr/bin/chfn                                                                                                                                
+/snap/core20/1623/usr/bin/chsh                                                                                                                                
+/snap/core20/1623/usr/bin/gpasswd                                                                                                                             
+/snap/core20/1623/usr/bin/mount                                                                                                                               
+/snap/core20/1623/usr/bin/newgrp                                                                                                                              
+/snap/core20/1623/usr/bin/passwd                                                                                                                              
+/snap/core20/1623/usr/bin/su                                                                                                                                  
+/snap/core20/1623/usr/bin/sudo                                                                                                                                
+/snap/core20/1623/usr/bin/umount                                                                                                                              
+/snap/core20/1623/usr/lib/dbus-1.0/dbus-daemon-launch-helper                                                                                                  
+/snap/core20/1623/usr/lib/openssh/ssh-keysign                                                                                                                 
+/snap/snapd/17029/usr/lib/snapd/snap-confine                                                                                                                  
+/snap/snapd/17336/usr/lib/snapd/snap-confine                                                                                                                  
+------------------------------                                                                                                                                
+                                                                                                                                                              
+                                                                                                                                                              
+[~] Custom SUID Binaries (Interesting Stuff)                                                                                                                  
+------------------------------                                                                                                                                
+/usr/bin/fusermount3                                                                                                                                          
+------------------------------                                                                                                                                
+                                                                                                                                                              
+                                                                                                                                                              
+[#] SUID Binaries found in GTFO bins..                                                                                                                        
+------------------------------                                                                                                                                
+[!] None :(                                                                                                                                                   
+------------------------------

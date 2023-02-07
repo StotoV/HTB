@@ -1,0 +1,2288 @@
+                                                                                                                                                              
+                                                                                                                                                              
+                            ▄▄▄▄▄▄▄▄▄▄▄▄▄▄                                                                                                                    
+                    ▄▄▄▄▄▄▄             ▄▄▄▄▄▄▄▄                                                                                                              
+             ▄▄▄▄▄▄▄      ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄                                                                                                          
+         ▄▄▄▄     ▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄                                                                                                     
+         ▄    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄                                                                                                   
+         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄                                                                                                   
+         ▄▄▄▄▄▄▄▄▄▄▄          ▄▄▄▄▄▄               ▄▄▄▄▄▄ ▄                                                                                                   
+         ▄▄▄▄▄▄              ▄▄▄▄▄▄▄▄                 ▄▄▄▄                                                                                                    
+         ▄▄                  ▄▄▄ ▄▄▄▄▄                  ▄▄▄                                                                                                   
+         ▄▄                ▄▄▄▄▄▄▄▄▄▄▄▄                  ▄▄                                                                                                   
+         ▄            ▄▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄   ▄▄                                                                                                   
+         ▄      ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄                                                                                                   
+         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄                                ▄▄▄▄                                                                                                   
+         ▄▄▄▄▄  ▄▄▄▄▄                       ▄▄▄▄▄▄     ▄▄▄▄                                                                                                   
+         ▄▄▄▄   ▄▄▄▄▄                       ▄▄▄▄▄      ▄ ▄▄                                                                                                   
+         ▄▄▄▄▄  ▄▄▄▄▄        ▄▄▄▄▄▄▄        ▄▄▄▄▄     ▄▄▄▄▄                                                                                                   
+         ▄▄▄▄▄▄  ▄▄▄▄▄▄▄      ▄▄▄▄▄▄▄      ▄▄▄▄▄▄▄   ▄▄▄▄▄                                                                                                    
+          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄        ▄          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄                                                                                                    
+         ▄▄▄▄▄▄▄▄▄▄▄▄▄                       ▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+         ▄▄▄▄▄▄▄▄▄▄▄                         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄            ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+          ▀▀▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄▀▀▀▀▀▀
+               ▀▀▀▄▄▄▄▄      ▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▀▀
+                     ▀▀▀▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▀▀▀
+
+    /---------------------------------------------------------------------------------\
+    |                             Do you like PEASS?                                  |                                                                       
+    |---------------------------------------------------------------------------------|                                                                       
+    |         Get the latest version    :     https://github.com/sponsors/carlospolop |                                                                       
+    |         Follow on Twitter         :     @carlospolopm                           |                                                                       
+    |         Respect on HTB            :     SirBroccoli                             |                                                                       
+    |---------------------------------------------------------------------------------|                                                                       
+    |                                 Thank you!                                      |                                                                       
+    \---------------------------------------------------------------------------------/                                                                       
+          linpeas-ng by carlospolop                                                                                                                           
+                                                                                                                                                              
+ADVISORY: This script should be used for authorized penetration testing and/or educational purposes only. Any misuse of this software will not be the responsibility of the author or of any other collaborator. Use it at your own computers and/or with the computer owner's permission.                                  
+                                                                                                                                                              
+Linux Privesc Checklist: https://book.hacktricks.xyz/linux-hardening/linux-privilege-escalation-checklist
+ LEGEND:                                                                                                                                                      
+  RED/YELLOW: 95% a PE vector
+  RED: You should take a look to it
+  LightCyan: Users with console
+  Blue: Users without console & mounted devs
+  Green: Common things (users, groups, SUID/SGID, mounts, .sh scripts, cronjobs) 
+  LightMagenta: Your username
+
+ Starting linpeas. Caching Writable Folders...
+
+                               ╔═══════════════════╗
+═══════════════════════════════╣ Basic information ╠═══════════════════════════════                                                                           
+                               ╚═══════════════════╝                                                                                                          
+OS: Linux version 5.15.0-52-generic (buildd@lcy02-amd64-032) (gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #58-Ubuntu SMP Thu Oct 13 08:03:55 UTC 2022
+User & Groups: uid=1001(bean) gid=1001(bean) groups=1001(bean)
+Hostname: awkward
+Writable folder: /dev/shm
+[+] /usr/bin/ping is available for network discovery (linpeas can discover hosts, learn more with -h)
+[+] /usr/bin/bash is available for network discovery, port scanning and port forwarding (linpeas can discover hosts, scan ports, and forward ports. Learn more with -h)                                                                                                                                                     
+[+] /usr/bin/nc is available for network discovery & port scanning (linpeas can discover hosts and scan ports, learn more with -h)                            
+                                                                                                                                                              
+                                                                                                                                                              
+
+Caching directories . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . DONE                                              
+                                                                            
+                              ╔════════════════════╗
+══════════════════════════════╣ System Information ╠══════════════════════════════                                                                      
+                              ╚════════════════════╝                        
+╔══════════╣ Operative system
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#kernel-exploits                                                                      
+Linux version 5.15.0-52-generic (buildd@lcy02-amd64-032) (gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #58-Ubuntu SMP Thu Oct 13 08:03:55 UTC 2022
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.1 LTS
+Release:        22.04
+Codename:       jammy
+
+╔══════════╣ Sudo version
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-version                                                                         
+Sudo version 1.9.9                                                          
+
+╔══════════╣ CVEs Check
+Potentially Vulnerable to CVE-2022-0847                                     
+
+Potentially Vulnerable to CVE-2022-2588
+
+
+
+╔══════════╣ PATH
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-path-abuses                                                                 
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+New path exported: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+╔══════════╣ Date & uptime
+Mon Nov 28 09:31:02 PM AEDT 2022                                            
+ 21:31:02 up  2:45,  2 users,  load average: 0.84, 0.47, 0.30
+
+╔══════════╣ Any sd*/disk* disk in /dev? (limit 20)
+disk                                                                        
+sda
+sda1
+sda2
+sda3
+sda4
+
+╔══════════╣ Unmounted file-system?
+╚ Check if you can mount umounted devices                                   
+UUID=d67e4bcd-cc54-42d7-98ec-3b1457668022 /               ext4    errors=remount-ro 0       1
+UUID=8E2B-9123  /boot/efi       vfat    umask=0077      0       1
+/dev/sda4                                 none            swap    sw              0       0
+
+
+╔══════════╣ Environment
+╚ Any private information inside environment variables?                     
+LESSOPEN=| /usr/bin/lesspipe %s                                             
+HISTFILESIZE=0
+LANGUAGE=en_AU:en
+USER=bean
+SSH_CLIENT=10.10.16.5 56232 22
+XDG_SESSION_TYPE=tty
+SHLVL=0
+MOTD_SHOWN=pam
+HOME=/home/bean
+OLDPWD=/run/user/1001/doc/by-app
+SSH_TTY=/dev/pts/0
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
+LOGNAME=bean
+_=./linpeas.sh
+XDG_SESSION_CLASS=user
+TERM=xterm-256color
+XDG_SESSION_ID=12
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+XDG_RUNTIME_DIR=/run/user/1001
+LANG=en_AU.UTF-8
+HISTSIZE=0
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+SHELL=/bin/bash
+LESSCLOSE=/usr/bin/lesspipe %s %s
+PWD=/home/bean
+LC_ALL=en_US.UTF-8
+SSH_CONNECTION=10.10.16.5 56232 10.10.11.185 22
+XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+HISTFILE=/dev/null
+
+╔══════════╣ Searching Signature verification failed in dmesg
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#dmesg-signature-verification-failed                                                  
+dmesg Not Found                                                             
+                                                                            
+╔══════════╣ Executing Linux Exploit Suggester
+╚ https://github.com/mzet-/linux-exploit-suggester                          
+[+] [CVE-2022-32250] nft_object UAF (NFT_MSG_NEWSET)                        
+
+   Details: https://research.nccgroup.com/2022/09/01/settlers-of-netlink-exploiting-a-limited-uaf-in-nf_tables-cve-2022-32250/
+https://blog.theori.io/research/CVE-2022-32250-linux-kernel-lpe-2022/
+   Exposure: probable
+   Tags: [ ubuntu=(22.04) ]{kernel:5.15.0-27-generic}
+   Download URL: https://raw.githubusercontent.com/theori-io/CVE-2022-32250-exploit/main/exp.c
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2022-2586] nft_object UAF
+
+   Details: https://www.openwall.com/lists/oss-security/2022/08/29/5
+   Exposure: less probable
+   Tags: ubuntu=(20.04){kernel:5.12.13}
+   Download URL: https://www.openwall.com/lists/oss-security/2022/08/29/5/1
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2022-0847] DirtyPipe
+
+   Details: https://dirtypipe.cm4all.com/
+   Exposure: less probable
+   Tags: ubuntu=(20.04|21.04),debian=11
+   Download URL: https://haxx.in/files/dirtypipez.c
+
+[+] [CVE-2021-4034] PwnKit
+
+   Details: https://www.qualys.com/2022/01/25/cve-2021-4034/pwnkit.txt
+   Exposure: less probable
+   Tags: ubuntu=10|11|12|13|14|15|16|17|18|19|20|21,debian=7|8|9|10|11,fedora,manjaro
+   Download URL: https://codeload.github.com/berdav/CVE-2021-4034/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: less probable
+   Tags: mint=19,ubuntu=18|20, debian=10
+   Download URL: https://codeload.github.com/blasty/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit 2
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: less probable
+   Tags: centos=6|7|8,ubuntu=14|16|17|18|19|20, debian=9|10
+   Download URL: https://codeload.github.com/worawit/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-22555] Netfilter heap out-of-bounds write
+
+   Details: https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html
+   Exposure: less probable
+   Tags: ubuntu=20.04{kernel:5.8.0-*}
+   Download URL: https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c
+   ext-url: https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2021-22555/exploit.c
+   Comments: ip_tables kernel module must be loaded
+
+
+╔══════════╣ Executing Linux Exploit Suggester 2
+╚ https://github.com/jondonas/linux-exploit-suggester-2                     
+                                                                            
+╔══════════╣ Protections
+═╣ AppArmor enabled? .............. You do not have enough privilege to read the profile set.
+apparmor module is loaded.
+═╣ grsecurity present? ............ grsecurity Not Found
+═╣ PaX bins present? .............. PaX Not Found                           
+═╣ Execshield enabled? ............ Execshield Not Found                    
+═╣ SELinux enabled? ............... sestatus Not Found                      
+═╣ Seccomp enabled? ............... disabled                                
+═╣ AppArmor profile? .............. unconfined
+═╣ User namespace? ................ enabled
+═╣ Cgroup2 enabled? ............... enabled
+═╣ Is ASLR enabled? ............... Yes
+═╣ Printer? ....................... No
+═╣ Is this a virtual machine? ..... Yes (vmware)                            
+
+                                   ╔═══════════╗
+═══════════════════════════════════╣ Container ╠═══════════════════════════════════                                                                     
+                                   ╚═══════════╝                            
+╔══════════╣ Container related tools present
+╔══════════╣ Am I Containered?                                              
+╔══════════╣ Container details                                              
+═╣ Is this a container? ........... No                                      
+═╣ Any running containers? ........ No                                      
+                                                                            
+
+                                     ╔═══════╗
+═════════════════════════════════════╣ Cloud ╠═════════════════════════════════════                                                                     
+                                     ╚═══════╝                              
+═╣ Google Cloud Platform? ............... No
+═╣ AWS ECS? ............................. No
+═╣ AWS EC2? ............................. No
+═╣ AWS Lambda? .......................... No
+
+
+
+                ╔════════════════════════════════════════════════╗
+════════════════╣ Processes, Crons, Timers, Services and Sockets ╠════════════════                                                                      
+                ╚════════════════════════════════════════════════╝          
+╔══════════╣ Cleaned processes
+╚ Check weird & unexpected proceses run by root: https://book.hacktricks.xyz/linux-hardening/privilege-escalation#processes                             
+root           1  0.0  0.2 166636 11932 ?        Ss   18:45   0:03 /sbin/init auto noprompt splash
+root         369  0.0  0.8  81056 32364 ?        S<s  18:45   0:02 /lib/systemd/systemd-journald
+root         401  0.0  0.0 227324   264 ?        Ssl  18:45   0:00 vmware-vmblock-fuse /run/vmblock-fuse -o rw,subtype=vmware-vmblock,default_permissions,allow_other,dev,suid
+root         430  0.0  0.1  26692  7092 ?        Ss   18:45   0:00 /lib/systemd/systemd-udevd
+systemd+     640  0.1  0.1  14824  5996 ?        Ss   18:45   0:14 /lib/systemd/systemd-oomd
+  └─(Caps) 0x0000000000000022=cap_dac_override,cap_kill
+systemd+     642  0.0  0.3  25660 13376 ?        Ss   18:45   0:01 /lib/systemd/systemd-resolved
+  └─(Caps) 0x0000000000002000=cap_net_raw
+systemd+     643  0.0  0.1  89376  6468 ?        Ssl  18:45   0:00 /lib/systemd/systemd-timesyncd
+  └─(Caps) 0x0000000002000000=cap_sys_time
+root         644  0.0  0.0  85240  2200 ?        S<sl 18:45   0:00 /sbin/auditd
+_laurel      646  0.0  0.1   7120  5152 ?        S<   18:45   0:00  _ /usr/local/sbin/laurel --config /etc/laurel/config.toml
+  └─(Caps) 0x0000000000080004=cap_dac_read_search,cap_sys_ptrace
+root         714  0.0  0.2  62388 11668 ?        Ss   18:45   0:00 /usr/bin/VGAuthService                                                               
+root         729  0.1  0.2 327156  9832 ?        Ssl  18:45   0:15 /usr/bin/vmtoolsd                                                                    
+root         742  0.0  0.1 101232  5924 ?        Ssl  18:45   0:00 /sbin/dhclient -1 -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+root         900  0.0  0.1 248560  7844 ?        Ssl  18:45   0:00 /usr/libexec/accounts-daemon[0m
+root         903  0.0  0.0   2812  1176 ?        Ss   18:45   0:00 /usr/sbin/acpid
+avahi       1013  0.0  0.0   7440   344 ?        S    18:45   0:00  _ avahi-daemon: chroot helper                                                       
+root         911  0.0  0.0  18148  2868 ?        Ss   18:45   0:00 /usr/sbin/cron -f -P
+message+     913  0.0  0.1   9960  6000 ?        Ss   18:45   0:01 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+  └─(Caps) 0x0000000020000000=cap_audit_write
+root         914  0.0  0.4 269344 18044 ?        Ssl  18:45   0:01 /usr/sbin/NetworkManager --no-daemon[0m
+root         929  0.0  0.0  82828  3908 ?        Ssl  18:45   0:00 /usr/sbin/irqbalance --foreground
+root         932  0.0  0.0  18624  3596 ?        Ss   18:45   0:00 /bin/bash /root/scripts/notify.sh
+root         950  0.0  0.0   2988  1220 ?        S    18:45   0:00  _ inotifywait --quiet --monitor --event modify /var/www/private/leave_requests.csv
+root         951  0.0  0.0  18624  1880 ?        S    18:45   0:00  _ /bin/bash /root/scripts/notify.sh
+root         952  0.0  0.2 236928 10188 ?        Ssl  18:45   0:01 /usr/libexec/polkitd --no-debug
+root         953  0.0  0.1 248744  7136 ?        Ssl  18:45   0:00 /usr/libexec/power-profiles-daemon[0m
+syslog       957  0.0  0.1 222400  5276 ?        Ssl  18:45   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         964  0.0  1.4 875200 55884 ?        Ssl  18:45   0:05 /usr/lib/snapd/snapd
+root         977  0.0  0.1 245132  6828 ?        Ssl  18:45   0:00 /usr/libexec/switcheroo-control
+root         991  0.0  0.2  15432  8072 ?        Ss   18:45   0:00 /lib/systemd/systemd-logind
+root         992  0.0  0.3 392936 13168 ?        Ssl  18:45   0:00 /usr/libexec/udisks2/udisksd
+root         997  0.0  0.1  16492  5732 ?        Ss   18:45   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+root        1053  0.0  0.3 251472 12084 ?        Ssl  18:45   0:00 /usr/sbin/ModemManager
+www-data    1209  0.0  1.4 700804 56292 ?        Ssl  18:45   0:07 PM2 v5.2.0: God Daemon (/var/www/.pm2)
+www-data    1280  0.0  1.4 643384 57784 ?        Ssl  18:45   0:01  _ npm run serve
+www-data    1332  0.0  0.0   2888   972 ?        S    18:45   0:00  |   _ sh -c ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve
+www-data    1333  0.2  6.7 1092356 269472 ?      Sl   18:45   0:25  |       _ node ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve
+www-data    2128  0.3  1.6 843736 63876 ?        Ssl  18:46   0:29  _ node /var/www/hat-valley.htb/server
+root        1553  0.0  0.4 213940 19760 ?        Ss   18:46   0:00 php-fpm: master process (/etc/php/8.1/fpm/php-fpm.conf)
+www-data    1593  0.0  0.1 214416  7332 ?        S    18:46   0:00  _ php-fpm: pool www
+www-data    1594  0.0  0.1 214416  7332 ?        S    18:46   0:00  _ php-fpm: pool www
+kernoops    1568  0.0  0.0  13080   460 ?        Ss   18:46   0:00 /usr/sbin/kerneloops --test
+bean        3401  0.0  0.2  17548  8160 ?        S    19:37   0:00  |   _ sshd: bean@pts/0                                                              
+bean        3404  0.0  0.1  20152  5672 pts/0    Ss   19:37   0:00  |       _ -bash
+bean       63920  0.1  0.0   3964  2896 pts/0    S+   21:30   0:00  |           _ /bin/sh ./linpeas.sh
+bean       67070  0.0  0.0   3964  1184 pts/0    S+   21:31   0:00  |           |   _ /bin/sh ./linpeas.sh
+bean       67074  0.0  0.0  21748  3904 pts/0    R+   21:31   0:00  |           |   |   _ ps fauxwww
+bean       67073  0.0  0.0   3964  1184 pts/0    S+   21:31   0:00  |           |   _ /bin/sh ./linpeas.sh
+bean       63921  0.0  0.0  17076  1000 pts/0    S+   21:30   0:00  |           _ tee linpeas.log
+bean       64332  0.0  0.2  17548  7996 ?        S    21:30   0:00      _ sshd: bean@pts/1                                                              
+bean       64333  0.0  0.1  19912  5472 pts/1    Ss+  21:30   0:00          _ -bash
+kernoops    1585  0.0  0.0  13080   452 ?        Ss   18:46   0:00 /usr/sbin/kerneloops
+root        1590  0.0  0.0  55196  1760 ?        Ss   18:46   0:00 nginx: master process /usr/sbin/nginx -g daemon[0m on; master_process on;
+www-data    1596  0.0  0.1  55916  6484 ?        S    18:46   0:00  _ nginx: worker process
+www-data    1597  0.0  0.1  55916  6428 ?        S    18:46   0:00  _ nginx: worker process
+root        1591  0.0  0.2 249860  9020 ?        Ssl  18:46   0:00 /usr/sbin/gdm3
+gdm         1656  0.0  0.1 171072  6108 tty1     Ssl+ 18:46   0:00      _ /usr/libexec/gdm-wayland-session dbus-run-session -- gnome-session --autostart /usr/share/gdm/greeter/autostart
+gdm         1691  0.0  0.0   6492  1548 tty1     S+   18:46   0:00          _ dbus-run-session -- gnome-session --autostart /usr/share/gdm/greeter/autostart
+gdm         1693  0.0  0.1   8856  4968 tty1     S+   18:46   0:00              _ dbus-daemon --nofork --print-address 4 --session
+gdm         1698  0.0  0.4 527940 17596 tty1     Sl+  18:46   0:00              _ /usr/libexec/gnome-session-binary --autostart /usr/share/gdm/greeter/autostart
+gdm         1757  0.2  5.0 3840492 199320 tty1   Sl+  18:46   0:26                  _ /usr/bin/gnome-shell
+gdm         2122  0.0  1.3 182868 53336 tty1     S+   18:46   0:00                  |   _ /usr/bin/Xwayland :1024 -rootless -noreset -accessx -core -auth /run/user/127/.mutter-Xwaylandauth.RTTIW1 -listen 4 -listen 5 -displayfd 6 -initfd 7
+gdm         2681  0.0  0.2 323540 11624 tty1     Sl   18:46   0:00                  |   _ ibus-daemon --panel disable -r --xim
+gdm         2690  0.0  0.1 245960  7284 tty1     Sl   18:46   0:00                  |       _ /usr/libexec/ibus-dconf
+gdm         2722  0.0  0.1 172136  7232 tty1     Sl   18:46   0:00                  |       _ /usr/libexec/ibus-engine-simple
+gdm         2533  0.0  0.2 474620 10040 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-sharing
+gdm         2535  0.0  0.5 423220 21956 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-wacom
+gdm         2538  0.0  0.6 459872 25072 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-color
+gdm         2539  0.0  0.5 348888 21656 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-keyboard
+gdm         2542  0.0  0.2 332144 11068 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-print-notifications
+gdm         2544  0.0  0.1 466540  6656 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-rfkill
+gdm         2546  0.0  0.2 468580  8232 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-smartcard
+gdm         2560  0.0  0.4 384272 16392 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-datetime
+gdm         2562  0.0  0.6 872948 26444 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-media-keys
+gdm         2563  0.0  0.1 244972  6392 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-screensaver-proxy
+gdm         2564  0.0  0.2 328152  9440 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-sound
+gdm         2573  0.0  0.1 319236  6760 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-a11y-settings
+gdm         2577  0.0  0.1 320932  7792 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-housekeeping
+gdm         2581  0.0  0.6 459344 25164 tty1     Sl+  18:46   0:00                  _ /usr/libexec/gsd-power
+mysql       1621  0.8  9.9 1790200 397036 ?      Ssl  18:46   1:21 /usr/sbin/mysqld
+gdm         1626  0.0  0.2  17708 10428 ?        Ss   18:46   0:01 /lib/systemd/systemd --user
+gdm         1628  0.0  0.1 169780  4096 ?        S    18:46   0:00  _ (sd-pam)
+gdm         1651  0.0  0.1  48084  6448 ?        S<sl 18:46   0:00  _ /usr/bin/pipewire
+gdm         1652  0.0  0.1  32108  6364 ?        Ssl  18:46   0:00  _ /usr/bin/pipewire-media-session
+gdm         1653  0.0  0.5 829952 22344 ?        S<sl 18:46   0:00  _ /usr/bin/pulseaudio --daemonize=no --log-target=journal
+gdm         1682  0.0  0.1   8568  4752 ?        Ss   18:46   0:00  _ /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+gdm         1695  0.0  0.1 471832  7208 ?        Ssl  18:46   0:00  _ /usr/libexec/xdg-document-portal
+root        1707  0.0  0.0   2792  1024 ?        Ss   18:46   0:00  |   _ fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/127/doc
+gdm         1699  0.0  0.1 244800  5560 ?        Ssl  18:46   0:00  _ /usr/libexec/xdg-permission-store
+gdm         1736  0.0  0.2 249328  8328 ?        Ssl  18:46   0:00  _ /usr/libexec/gvfsd
+gdm         1744  0.0  0.1 380884  5840 ?        Sl   18:46   0:00  _ /usr/libexec/gvfsd-fuse /run/user/127/gvfs -f
+gdm         1813  0.0  0.6 715836 26048 ?        SNsl 18:46   0:01  _ /usr/libexec/tracker-miner-fs-3
+gdm         1839  0.0  0.2 324572  9144 ?        Ssl  18:46   0:00  _ /usr/libexec/gvfs-udisks2-volume-monitor
+gdm         1849  0.0  0.2 323888  8248 ?        Ssl  18:46   0:00  _ /usr/libexec/gvfs-afc-volume-monitor
+gdm         1857  0.0  0.1 245112  6660 ?        Ssl  18:46   0:00  _ /usr/libexec/gvfs-mtp-volume-monitor
+gdm         1868  0.0  0.1 245316  6424 ?        Ssl  18:46   0:00  _ /usr/libexec/gvfs-goa-volume-monitor
+gdm         1873  0.0  0.9 643660 39132 ?        Sl   18:46   0:00  _ /usr/libexec/goa-daemon
+gdm         1920  0.0  0.3 420820 14920 ?        Sl   18:46   0:00  _ /usr/libexec/goa-identity-service
+gdm         1936  0.0  0.1 246068  6848 ?        Ssl  18:46   0:00  _ /usr/libexec/gvfs-gphoto2-volume-monitor
+rtkit       1665  0.0  0.0 154000  1584 ?        SNsl 18:46   0:00 /usr/libexec/rtkit-daemon
+  └─(Caps) 0x0000000000800004=cap_dac_read_search,cap_sys_nice
+root        1955  0.0  0.2 250868  8720 ?        Ssl  18:46   0:00 /usr/libexec/upowerd
+gdm         2027  0.0  0.1 309740  7812 tty1     Sl+  18:46   0:00 /usr/libexec/at-spi-bus-launcher
+gdm         2048  0.0  0.1   8428  4124 tty1     S+   18:46   0:00  _ /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/127/at-spi/bus
+gdm         2297  0.0  0.1 244804  5484 tty1     Sl+  18:46   0:00 /usr/libexec/xdg-permission-store
+root        2506  0.0  0.1  41220  4692 ?        Ss   18:46   0:00 /usr/lib/postfix/sbin/master -w                                                      
+postfix     2508  0.0  0.1  41740  7128 ?        S    18:46   0:00  _ qmgr -l -t unix -u
+postfix    36139  0.0  0.1  41548  7512 ?        S    21:20   0:00  _ pickup -l -t unix -u -c
+postfix    63903  0.0  0.1  41648  7620 ?        S    21:30   0:00  _ cleanup -z -t unix -u -c
+postfix    63910  0.0  0.1  41556  7084 ?        S    21:30   0:00  _ trivial-rewrite -n rewrite -t unix -u -c
+postfix    63913  0.0  0.1  41284  6756 ?        S    21:30   0:00  _ local -t unix
+postfix    63914  0.0  0.1  41284  6780 ?        S    21:30   0:00  _ local -t unix
+root        2513  0.0  0.5 306852 20756 ?        Ssl  18:46   0:00 /usr/libexec/packagekitd
+gdm         2518  0.0  0.6 2542508 27020 tty1    Sl+  18:46   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+gdm         2523  0.0  0.1 162676  7356 tty1     Sl+  18:46   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+gdm         2580  0.0  0.1 249324  7908 tty1     Sl+  18:46   0:00 /usr/libexec/gvfsd
+gdm         2610  0.0  0.3 351040 13808 tty1     Sl+  18:46   0:00 /usr/libexec/gsd-printer
+colord      2671  0.0  0.3 253932 13320 ?        Ssl  18:46   0:00 /usr/libexec/colord
+gdm         2688  0.0  0.7 2608172 27916 tty1    Sl+  18:46   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+gdm         2692  0.0  1.4 360576 59364 tty1     Sl   18:46   0:00 /usr/libexec/ibus-x11 --kill-daemon
+gdm         2697  0.0  0.1 245916  7624 tty1     Sl+  18:46   0:00 /usr/libexec/ibus-portal
+bean        3248  0.0  0.2  17796 10436 ?        Ss   19:37   0:00 /lib/systemd/systemd --user
+bean        3249  0.0  0.1 169924  4164 ?        S    19:37   0:00  _ (sd-pam)
+bean        3255  0.0  0.1  48092  6536 ?        Ssl  19:37   0:00  _ /usr/bin/pipewire
+bean        3257  0.0  0.1  32120  6732 ?        Ssl  19:37   0:00  _ /usr/bin/pipewire-media-session
+bean        3259  0.0  0.5 305672 22520 ?        Ssl  19:37   0:00  _ /usr/bin/pulseaudio --daemonize=no --log-target=journal
+bean        3277  0.0  0.1   8564  4776 ?        Ss   19:37   0:00  _ /usr/bin/dbus-daemon[0m --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+bean        3287  0.0  0.2 249328  8420 ?        Ssl  19:37   0:00  _ /usr/libexec/gvfsd
+bean        3299  0.0  0.1 380884  6492 ?        Sl   19:37   0:00  _ /usr/libexec/gvfsd-fuse /run/user/1001/gvfs -f
+bean        3314  0.0  0.1 546596  7224 ?        Ssl  19:37   0:00  _ /usr/libexec/xdg-document-portal
+root        3329  0.0  0.0   2792  1052 ?        Ss   19:37   0:00  |   _ fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1001/doc                                                            
+bean        3322  0.0  0.1 244800  5576 ?        Ssl  19:37   0:00  _ /usr/libexec/xdg-permission-store
+bean        3365  0.0  0.7 642068 28640 ?        SNsl 19:37   0:01  _ /usr/libexec/tracker-miner-fs-3
+bean        3407  0.0  0.2 324572  9164 ?        Ssl  19:37   0:00  _ /usr/libexec/gvfs-udisks2-volume-monitor
+bean        3417  0.0  0.2 323884  8236 ?        Ssl  19:37   0:00  _ /usr/libexec/gvfs-afc-volume-monitor
+bean        3422  0.0  0.1 245112  6568 ?        Ssl  19:37   0:00  _ /usr/libexec/gvfs-mtp-volume-monitor
+bean        3426  0.0  0.1 245316  6596 ?        Ssl  19:37   0:00  _ /usr/libexec/gvfs-goa-volume-monitor
+bean        3430  0.0  0.9 643656 39824 ?        Sl   19:37   0:00  _ /usr/libexec/goa-daemon[0m
+bean        3450  0.0  0.3 347088 15140 ?        Sl   19:37   0:00  _ /usr/libexec/goa-identity-service
+bean        3456  0.0  0.1 246068  6812 ?        Ssl  19:37   0:00  _ /usr/libexec/gvfs-gphoto2-volume-monitor
+bean        3496  0.0  0.1 171696  6460 ?        Ssl  19:37   0:00  _ /usr/libexec/gvfsd-metadata
+bean       18494  0.0  0.0  92652  3276 ?        SLs  21:14   0:00  _ /usr/bin/gpg-agent --supervised
+bean       67037  1.3  0.7 407776 31048 ?        SNsl 21:31   0:00  _ /usr/libexec/tracker-extract-3
+
+╔══════════╣ Binary processes permissions (non 'root root' and not belonging to current user)                                                           
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#processes
+                                                                            
+╔══════════╣ Files opened by processes belonging to other users
+╚ This is usually empty because of the lack of privileges to read other user processes information                                                      
+COMMAND     PID   TID TASKCMD               USER   FD      TYPE             DEVICE SIZE/OFF       NODE NAME
+
+╔══════════╣ Processes with credentials in memory (root req)
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#credentials-from-process-memory                                                      
+gdm-password Not Found                                                      
+gnome-keyring-daemon Not Found                                              
+lightdm Not Found                                                           
+vsftpd Not Found                                                            
+apache2 Not Found                                                           
+sshd: process found (dump creds from memory as root)                        
+
+╔══════════╣ Cron jobs
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#scheduled-cron-jobs                                                                  
+/usr/bin/crontab                                                            
+incrontab Not Found
+-rw-r--r-- 1 root root    1136 Mar 24  2022 /etc/crontab                    
+
+/etc/cron.d:
+total 32
+drwxr-xr-x   2 root root  4096 Sep 15 22:37 .
+drwxr-xr-x 138 root root 12288 Oct 23 21:45 ..
+-rw-r--r--   1 root root   219 Oct 10  2021 anacron
+-rw-r--r--   1 root root   201 Jan  9  2022 e2scrub_all
+-rw-r--r--   1 root root   712 Jan 28  2022 php
+-rw-r--r--   1 root root   102 Mar 24  2022 .placeholder
+
+/etc/cron.daily:
+total 48
+drwxr-xr-x   2 root root  4096 Oct  6 00:49 .
+drwxr-xr-x 138 root root 12288 Oct 23 21:45 ..
+-rwxr-xr-x   1 root root   311 Oct 10  2021 0anacron
+-rwxr-xr-x   1 root root   376 Oct 27  2021 apport
+-rwxr-xr-x   1 root root  1478 Apr  8  2022 apt-compat
+-rwxr-xr-x   1 root root   384 Nov 20  2019 cracklib-runtime
+-rwxr-xr-x   1 root root   123 Dec  6  2021 dpkg
+-rwxr-xr-x   1 root root   377 Jan 25  2022 logrotate
+-rwxr-xr-x   1 root root  1330 Mar 18  2022 man-db
+-rw-r--r--   1 root root   102 Mar 24  2022 .placeholder
+
+/etc/cron.hourly:
+total 20
+drwxr-xr-x   2 root root  4096 Aug  9 21:48 .
+drwxr-xr-x 138 root root 12288 Oct 23 21:45 ..
+-rw-r--r--   1 root root   102 Mar 24  2022 .placeholder
+
+/etc/cron.monthly:
+total 24
+drwxr-xr-x   2 root root  4096 Aug  9 21:50 .
+drwxr-xr-x 138 root root 12288 Oct 23 21:45 ..
+-rwxr-xr-x   1 root root   313 Oct 10  2021 0anacron
+-rw-r--r--   1 root root   102 Mar 24  2022 .placeholder
+
+/etc/cron.weekly:
+total 28
+drwxr-xr-x   2 root root  4096 Aug  9 21:51 .
+drwxr-xr-x 138 root root 12288 Oct 23 21:45 ..
+-rwxr-xr-x   1 root root   312 Oct 10  2021 0anacron
+-rwxr-xr-x   1 root root  1020 Mar 18  2022 man-db
+-rw-r--r--   1 root root   102 Mar 24  2022 .placeholder
+
+/var/spool/anacron:
+total 20
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 .
+drwxr-xr-x 7 root root 4096 Oct  6 01:35 ..
+-rw------- 1 root root    9 Nov 28 18:50 cron.daily
+-rw------- 1 root root    9 Nov 28 19:00 cron.monthly
+-rw------- 1 root root    9 Nov 28 18:55 cron.weekly
+
+SHELL=/bin/sh
+
+17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+
+
+SHELL=/bin/sh
+HOME=/root
+LOGNAME=root
+
+1       5       cron.daily      run-parts --report /etc/cron.daily
+7       10      cron.weekly     run-parts --report /etc/cron.weekly
+@monthly        15      cron.monthly    run-parts --report /etc/cron.monthly
+
+╔══════════╣ Systemd PATH
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#systemd-path-relative-paths                                                          
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin 
+
+╔══════════╣ Analyzing .service files
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#services 
+/etc/systemd/system/multi-user.target.wants/grub-common.service is executing some relative path
+/etc/systemd/system/sleep.target.wants/grub-common.service is executing some relative path
+You can't write on systemd PATH
+
+╔══════════╣ System timers
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#timers   
+NEXT                         LEFT          LAST                         PASSED               UNIT                           ACTIVATES
+Mon 2022-11-28 21:34:30 AEDT 2min 47s left Mon 2022-11-28 20:33:02 AEDT 58min ago            anacron.timer                  anacron.service
+Mon 2022-11-28 21:39:00 AEDT 7min left     Mon 2022-11-28 21:09:02 AEDT 22min ago            phpsessionclean.timer          phpsessionclean.service
+Tue 2022-11-29 00:00:00 AEDT 2h 28min left n/a                          n/a                  dpkg-db-backup.timer           dpkg-db-backup.service
+Tue 2022-11-29 00:00:00 AEDT 2h 28min left Mon 2022-11-28 18:45:50 AEDT 2h 45min ago         logrotate.timer                logrotate.service
+Tue 2022-11-29 01:44:26 AEDT 4h 12min left Mon 2022-11-28 20:11:21 AEDT 1h 20min ago         motd-news.timer                motd-news.service
+Tue 2022-11-29 02:09:57 AEDT 4h 38min left Mon 2022-11-28 19:37:51 AEDT 1h 53min ago         ua-timer.timer                 ua-timer.service
+Tue 2022-11-29 03:19:15 AEDT 5h 47min left Thu 2022-09-15 21:23:45 AEST 2 months 13 days ago fwupd-refresh.timer            fwupd-refresh.service
+Tue 2022-11-29 05:57:49 AEDT 8h left       Thu 2022-09-15 21:23:45 AEST 2 months 13 days ago man-db.timer                   man-db.service
+Tue 2022-11-29 06:36:18 AEDT 9h left       Mon 2022-11-28 18:56:41 AEDT 2h 35min ago         apt-daily-upgrade.timer        apt-daily-upgrade.service
+Tue 2022-11-29 08:47:10 AEDT 11h left      Mon 2022-11-28 19:06:31 AEDT 2h 25min ago         apt-daily.timer                apt-daily.service
+Tue 2022-11-29 18:50:43 AEDT 21h left      Mon 2022-11-28 18:50:43 AEDT 2h 40min ago         update-notifier-download.timer update-notifier-download.service
+Tue 2022-11-29 19:00:41 AEDT 21h left      Mon 2022-11-28 19:00:41 AEDT 2h 31min ago         systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Sun 2022-12-04 01:44:03 AEDT 5 days left   Thu 2022-09-15 21:23:46 AEST 2 months 13 days ago update-notifier-motd.timer     update-notifier-motd.service
+Sun 2022-12-04 03:10:48 AEDT 5 days left   Mon 2022-11-28 18:46:09 AEDT 2h 45min ago         e2scrub_all.timer              e2scrub_all.service
+Mon 2022-12-05 00:09:39 AEDT 6 days left   Mon 2022-11-28 19:07:36 AEDT 2h 24min ago         fstrim.timer                   fstrim.service
+n/a                          n/a           n/a                          n/a                  apport-autoreport.timer        apport-autoreport.service
+n/a                          n/a           n/a                          n/a                  snapd.snap-repair.timer        snapd.snap-repair.service
+
+╔══════════╣ Analyzing .timer files
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#timers   
+                                                                            
+╔══════════╣ Analyzing .socket files
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sockets  
+/etc/systemd/system/sockets.target.wants/avahi-daemon.socket is calling this writable listener: /run/avahi-daemon/socket
+/etc/systemd/system/sockets.target.wants/uuidd.socket is calling this writable listener: /run/uuidd/request                                             
+/snap/core20/1623/usr/lib/systemd/system/dbus.socket is calling this writable listener: /var/run/dbus/system_bus_socket                                 
+/snap/core20/1623/usr/lib/systemd/system/sockets.target.wants/dbus.socket is calling this writable listener: /var/run/dbus/system_bus_socket
+/snap/core20/1623/usr/lib/systemd/system/sockets.target.wants/systemd-journald-dev-log.socket is calling this writable listener: /run/systemd/journal/dev-log                                                                       
+/snap/core20/1623/usr/lib/systemd/system/sockets.target.wants/systemd-journald.socket is calling this writable listener: /run/systemd/journal/stdout
+/snap/core20/1623/usr/lib/systemd/system/sockets.target.wants/systemd-journald.socket is calling this writable listener: /run/systemd/journal/socket
+/snap/core20/1623/usr/lib/systemd/system/syslog.socket is calling this writable listener: /run/systemd/journal/syslog                                   
+/snap/core20/1623/usr/lib/systemd/system/systemd-journald-dev-log.socket is calling this writable listener: /run/systemd/journal/dev-log
+/snap/core20/1623/usr/lib/systemd/system/systemd-journald.socket is calling this writable listener: /run/systemd/journal/stdout
+/snap/core20/1623/usr/lib/systemd/system/systemd-journald.socket is calling this writable listener: /run/systemd/journal/socket
+/usr/lib/systemd/system/avahi-daemon.socket is calling this writable listener: /run/avahi-daemon/socket                                                 
+/usr/lib/systemd/system/dbus.socket is calling this writable listener: /run/dbus/system_bus_socket                                                      
+/usr/lib/systemd/system/sockets.target.wants/dbus.socket is calling this writable listener: /run/dbus/system_bus_socket                                 
+/usr/lib/systemd/system/sockets.target.wants/systemd-journald-dev-log.socket is calling this writable listener: /run/systemd/journal/dev-log
+/usr/lib/systemd/system/sockets.target.wants/systemd-journald.socket is calling this writable listener: /run/systemd/journal/socket
+/usr/lib/systemd/system/sockets.target.wants/systemd-journald.socket is calling this writable listener: /run/systemd/journal/stdout
+
+╔══════════╣ Unix Sockets Listening
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sockets  
+/anvil                                                                      
+/bounce
+/bsmtp
+/cleanup
+/defer
+/discard
+/error
+/flush
+/home/bean/.config/xpad/server
+  └─(Read Write)
+/ifmail
+/lmtp
+/local
+/maildrop
+/mailman
+/pickup
+/proxymap
+/proxywrite
+/qmgr
+/relay
+/retry
+/rewrite
+/run/acpid.socket
+  └─(Read Write)
+/run/avahi-daemon/socket
+  └─(Read Write)
+/run/dbus/system_bus_socket
+  └─(Read Write)
+/run/irqbalance/irqbalance929.sock
+  └─(Read )
+/run/mysqld/mysqld.sock
+  └─(Read Write)
+/run/mysqld/mysqlx.sock
+  └─(Read Write)
+/run/php/php8.1-fpm.sock
+/run/snapd-snap.socket
+  └─(Read Write)
+/run/snapd.socket
+  └─(Read Write)
+/run/systemd/fsck.progress
+/run/systemd/inaccessible/sock
+/run/systemd/io.system.ManagedOOM
+  └─(Read Write)
+/run/systemd/journal/dev-log
+  └─(Read Write)
+/run/systemd/journal/io.systemd.journal
+/run/systemd/journal/socket
+  └─(Read Write)
+/run/systemd/journal/stdout
+  └─(Read Write)
+/run/systemd/journal/syslog
+  └─(Read Write)
+/run/systemd/notify
+  └─(Read Write)
+/run/systemd/private
+  └─(Read Write)
+/run/systemd/resolve/io.systemd.Resolve
+  └─(Read Write)
+/run/systemd/userdb/io.systemd.DynamicUser
+  └─(Read Write)
+/run/udev/control
+/run/user/1001/bus
+  └─(Read Write)
+/run/user/1001/gnupg/S.dirmngr
+  └─(Read Write)
+/run/user/1001/gnupg/S.gpg-agent
+  └─(Read Write)
+/run/user/1001/gnupg/S.gpg-agent.browser
+  └─(Read Write)
+/run/user/1001/gnupg/S.gpg-agent.extra
+  └─(Read Write)
+/run/user/1001/gnupg/S.gpg-agent.ssh
+  └─(Read Write)
+/run/user/1001/pipewire-0
+  └─(Read Write)
+/run/user/1001/pk-debconf-socket
+  └─(Read Write)
+/run/user/1001/pulse/native
+  └─(Read Write)
+/run/user/1001/snapd-session-agent.socket
+  └─(Read Write)
+/run/user/1001/systemd/inaccessible/sock
+/run/user/1001/systemd/notify
+  └─(Read Write)
+/run/user/1001/systemd/private
+  └─(Read Write)
+/run/user/127/at-spi/bus
+/run/user/127/bus
+/run/user/127/gnupg/S.dirmngr
+/run/user/127/gnupg/S.gpg-agent
+/run/user/127/gnupg/S.gpg-agent.browser
+/run/user/127/gnupg/S.gpg-agent.extra
+/run/user/127/gnupg/S.gpg-agent.ssh
+/run/user/127/pipewire-0
+/run/user/127/pk-debconf-socket
+/run/user/127/pulse/native
+/run/user/127/snapd-session-agent.socket
+/run/user/127/systemd/private
+/run/user/127/wayland-0
+/run/uuidd/request
+  └─(Read Write)
+/run/vmware/guestServicePipe
+  └─(Read Write)
+/scache
+/scalemail-backend
+/showq
+/smtp
+/tlsmgr
+/tmp/dbus-e4wWKbRR
+/tmp/dbus-miRccQuV
+/tmp/dbus-MywtB3W2c7
+/tmp/dbus-piGR83BA
+/tmp/dbus-YyUaFOi4
+/tmp/.ICE-unix/1698
+  └─(Read Write)
+/tmp/.X11-unix/X1024
+  └─(Read )
+/tmp/.X11-unix/X1025
+  └─(Read )
+/trace
+/uucp
+/var/lib/gdm3/.cache/ibus/dbus-9WUbbgme
+/var/run/mysqld/mysqld.sock
+  └─(Read Write)
+/var/run/mysqld/mysqlx.sock
+  └─(Read Write)
+/var/run/vmware/guestServicePipe
+  └─(Read Write)
+/var/spool/postfix/dev/log
+  └─(Read Write)
+/var/www/.pm2/pub.sock
+/var/www/.pm2/rpc.sock
+/verify
+/virtual
+
+╔══════════╣ D-Bus config files
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#d-bus    
+Possible weak user policy found on /etc/dbus-1/system.d/avahi-dbus.conf (  <policy user="avahi">)
+Possible weak user policy found on /etc/dbus-1/system.d/avahi-dbus.conf (  <policy group="netdev">)
+Possible weak user policy found on /etc/dbus-1/system.d/bluetooth.conf (  <policy group="bluetooth">)
+Possible weak user policy found on /etc/dbus-1/system.d/dnsmasq.conf (        <policy user="dnsmasq">)
+Possible weak user policy found on /etc/dbus-1/system.d/gdm.conf (  <policy user="gdm">)
+Possible weak user policy found on /etc/dbus-1/system.d/kerneloops.conf (  <policy user="kernoops">)
+Possible weak user policy found on /etc/dbus-1/system.d/net.hadess.SensorProxy.conf (  <policy user="geoclue">)
+Possible weak user policy found on /etc/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf (  <policy user="geoclue">)
+Possible weak user policy found on /etc/dbus-1/system.d/org.freedesktop.GeoClue2.conf (  <policy user="geoclue">)
+Possible weak user policy found on /etc/dbus-1/system.d/org.freedesktop.thermald.conf (        <policy group="power">)
+Possible weak user policy found on /etc/dbus-1/system.d/org.opensuse.CupsPkHelper.Mechanism.conf (  <policy user="cups-pk-helper">)
+Possible weak user policy found on /etc/dbus-1/system.d/pulseaudio-system.conf (  <policy user="pulse">)
+Possible weak user policy found on /etc/dbus-1/system.d/wpa_supplicant.conf (        <policy group="netdev">)
+
+╔══════════╣ D-Bus Service Objects list
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#d-bus    
+NAME                                  PID PROCESS         USER             CONNECTION    UNIT                          SESSION DESCRIPTION
+:1.0                                  642 systemd-resolve systemd-resolve  :1.0          systemd-resolved.service      -       -
+:1.1                                  643 systemd-timesyn systemd-timesync :1.1          systemd-timesyncd.service     -       -
+:1.10                                 977 switcheroo-cont root             :1.10         switcheroo-control.service    -       -
+:1.12                                 900 accounts-daemon[0m root             :1.12         accounts-daemon.service       -       -
+:1.13                                 991 systemd-logind  root             :1.13         systemd-logind.service        -       -
+:1.136                              72694 busctl          bean             :1.136        session-12.scope              12      -
+:1.14                                1053 ModemManager    root             :1.14         ModemManager.service          -       -
+:1.17                                 964 snapd           root             :1.17         snapd.service                 -       -
+:1.2                                  640 systemd-oomd    systemd-oom      :1.2          systemd-oomd.service          -       -
+:1.24                                1568 kerneloops      kernoops         :1.24         kerneloops.service            -       -
+:1.25                                1585 kerneloops      kernoops         :1.25         kerneloops.service            -       -
+:1.26                                1591 gdm3            root             :1.26         gdm.service                   -       -
+:1.29                                1626 systemd         gdm              :1.29         user@127.service              -       -
+:1.3                                  952 polkitd         root             :1.3          polkit.service                -       -
+:1.30                                1652 pipewire-media- gdm              :1.30         user@127.service              -       -
+:1.31                                1651 pipewire        gdm              :1.31         user@127.service              -       -
+:1.32                                1665 rtkit-daemon    root             :1.32         rtkit-daemon.service          -       -
+:1.33                                1656 gdm-wayland-ses gdm              :1.33         session-c1.scope              c1      -
+:1.35                                1698 gnome-session-b gdm              :1.35         session-c1.scope              c1      -
+:1.38                                1839 gvfs-udisks2-vo gdm              :1.38         user@127.service              -       -
+:1.39                                1757 gnome-shell     gdm              :1.39         session-c1.scope              c1      -
+:1.4                                  953 power-profiles- root             :1.4          power-profiles-daemon[0m.service -       -
+:1.40                                1873 goa-daemon[0m      gdm              :1.40         user@127.service              -       -
+:1.41                                1813 tracker-miner-f gdm              :1.41         user@127.service              -       -
+:1.42                                1955 upowerd         root             :1.42         upower.service                -       -
+:1.44                                2513 packagekitd     root             :1.44         packagekit.service            -       -
+:1.48                                2533 gsd-sharing     gdm              :1.48         session-c1.scope              c1      -
+:1.5                                  992 udisksd         root             :1.5          udisks2.service               -       -
+:1.50                                2544 gsd-rfkill      gdm              :1.50         session-c1.scope              c1      -
+:1.51                                2542 gsd-print-notif gdm              :1.51         session-c1.scope              c1      -
+:1.52                                2610 gsd-printer     gdm              :1.52         session-c1.scope              c1      -
+:1.55                                2538 gsd-color       gdm              :1.55         session-c1.scope              c1      -
+:1.56                                2539 gsd-keyboard    gdm              :1.56         session-c1.scope              c1      -
+:1.57                                2671 colord          colord           :1.57         colord.service                -       -
+:1.58                                2562 gsd-media-keys  gdm              :1.58         session-c1.scope              c1      -
+:1.59                                2581 gsd-power       gdm              :1.59         session-c1.scope              c1      -
+:1.6                                  997 wpa_supplicant  root             :1.6          wpa_supplicant.service        -       -
+:1.61                                2690 ibus-dconf      gdm              :1.61         session-c1.scope              c1      -
+:1.7                                  914 NetworkManager  root             :1.7          NetworkManager.service        -       -
+:1.75                                3248 systemd         bean             :1.75         user@1001.service             -       -
+:1.76                                3255 pipewire        bean             :1.76         user@1001.service             -       -
+:1.77                                3257 pipewire-media- bean             :1.77         user@1001.service             -       -
+:1.8                                    1 systemd         root             :1.8          init.scope                    -       -
+:1.89                                3259 pulseaudio      bean             :1.89         user@1001.service             -       -
+:1.9                                  908 avahi-daemon    avahi            :1.9          avahi-daemon.service          -       -
+:1.95                                3407 gvfs-udisks2-vo bean             :1.95         user@1001.service             -       -
+:1.96                                3430 goa-daemon[0m      bean             :1.96         user@1001.service             -       -
+:1.97                                3365 tracker-miner-f bean             :1.97         user@1001.service             -       -
+com.canonical.UbuntuAdvantage           - -               -                (activatable) -                             -       -
+com.hp.hplip                            - -               -                (activatable) -                             -       -
+com.ubuntu.LanguageSelector             - -               -                (activatable) -                             -       -
+com.ubuntu.SoftwareProperties           - -               -                (activatable) -                             -       -
+com.ubuntu.WhoopsiePreferences          - -               -                (activatable) -                             -       -
+fi.w1.wpa_supplicant1                 997 wpa_supplicant  root             :1.6          wpa_supplicant.service        -       -
+net.hadess.PowerProfiles              953 power-profiles- root             :1.4          power-profiles-daemon[0m.service -       -
+ -- UID=0 EUID=0 
+net.hadess.SwitcherooControl          977 switcheroo-cont root             :1.10         switcheroo-control.service    -       -
+ -- UID=0 EUID=0 
+net.reactivated.Fprint                  - -               -                (activatable) -                             -       -
+org.bluez                               - -               -                (activatable) -                             -       -
+org.debian.apt                          - -               -                (activatable) -                             -       -
+org.freedesktop.Accounts              900 accounts-daemon[0m root             :1.12         accounts-daemon.service       -       -
+org.freedesktop.Avahi                 908 avahi-daemon    avahi            :1.9          avahi-daemon.service          -       -
+org.freedesktop.ColorManager         2671 colord          colord           :1.57         colord.service                -       -
+org.freedesktop.DBus                    1 systemd         root             -             init.scope                    -       -
+org.freedesktop.GeoClue2                - -               -                (activatable) -                             -       -
+org.freedesktop.ModemManager1        1053 ModemManager    root             :1.14         ModemManager.service          -       -
+org.freedesktop.NetworkManager        914 NetworkManager  root             :1.7          NetworkManager.service        -       -
+org.freedesktop.PackageKit           2513 packagekitd     root             :1.44         packagekit.service            -       -
+org.freedesktop.PolicyKit1            952 polkitd         root             :1.3          polkit.service                -       -
+org.freedesktop.RealtimeKit1         1665 rtkit-daemon    root             :1.32         rtkit-daemon.service          -       -
+org.freedesktop.UDisks2               992 udisksd         root             :1.5          udisks2.service               -       -
+org.freedesktop.UPower               1955 upowerd         root             :1.42         upower.service                -       -
+org.freedesktop.bolt                    - -               -                (activatable) -                             -       -
+org.freedesktop.fwupd                   - -               -                (activatable) -                             -       -
+org.freedesktop.hostname1               - -               -                (activatable) -                             -       -
+org.freedesktop.locale1                 - -               -                (activatable) -                             -       -
+org.freedesktop.login1                991 systemd-logind  root             :1.13         systemd-logind.service        -       -
+org.freedesktop.network1                - -               -                (activatable) -                             -       -
+org.freedesktop.nm_dispatcher           - -               -                (activatable) -                             -       -
+org.freedesktop.nm_priv_helper          - -               -                (activatable) -                             -       -
+org.freedesktop.oom1                  640 systemd-oomd    systemd-oom      :1.2          systemd-oomd.service          -       -
+ -- UID=108 EUID=108 
+org.freedesktop.resolve1              642 systemd-resolve systemd-resolve  :1.0          systemd-resolved.service      -       -
+org.freedesktop.systemd1                1 systemd         root             :1.8          init.scope                    -       -
+org.freedesktop.thermald                - -               -                (activatable) -                             -       -
+org.freedesktop.timedate1               - -               -                (activatable) -                             -       -
+org.freedesktop.timesync1             643 systemd-timesyn systemd-timesync :1.1          systemd-timesyncd.service     -       -
+org.gnome.DisplayManager             1591 gdm3            root             :1.26         gdm.service                   -       -
+ -- UID=0 EUID=0 
+org.opensuse.CupsPkHelper.Mechanism     - -               -                (activatable) -                             -       -
+
+
+                              ╔═════════════════════╗
+══════════════════════════════╣ Network Information ╠══════════════════════════════                                                                     
+                              ╚═════════════════════╝                       
+╔══════════╣ Hostname, hosts and DNS
+awkward                                                                     
+127.0.0.1       localhost hat-valley.htb store.hat-valley.htb
+127.0.0.1       awkward
+
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search .
+
+╔══════════╣ Interfaces
+# symbolic names for networks, see networks(5) for more information         
+link-local 169.254.0.0
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.10.11.185  netmask 255.255.254.0  broadcast 10.10.11.255
+        inet6 fe80::250:56ff:feb9:a82  prefixlen 64  scopeid 0x20<link>
+        inet6 dead:beef::250:56ff:feb9:a82  prefixlen 64  scopeid 0x0<global>
+        ether 00:50:56:b9:0a:82  txqueuelen 1000  (Ethernet)
+        RX packets 25197  bytes 6153105 (6.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 19369  bytes 39271977 (39.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 10962  bytes 66067319 (66.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10962  bytes 66067319 (66.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+╔══════════╣ Active Ports
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#open-ports                                                                           
+tcp        0      0 127.0.0.1:33060         0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:3002          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:8080          0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::80                   :::*                    LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+
+╔══════════╣ Can I sniff with tcpdump?
+No                                                                          
+                                                                            
+
+
+                               ╔═══════════════════╗
+═══════════════════════════════╣ Users Information ╠═══════════════════════════════                                                                     
+                               ╚═══════════════════╝                        
+╔══════════╣ My user
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#users    
+uid=1001(bean) gid=1001(bean) groups=1001(bean)                             
+
+╔══════════╣ Do I have PGP keys?
+/usr/bin/gpg                                                                
+netpgpkeys Not Found
+netpgp Not Found                                                            
+                                                                            
+╔══════════╣ Checking 'sudo -l', /etc/sudoers, and /etc/sudoers.d
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid                                                                        
+                                                                            
+╔══════════╣ Checking sudo tokens
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#reusing-sudo-tokens                                                                  
+ptrace protection is enabled (1)                                            
+gdb was found in PATH
+
+╔══════════╣ Checking Pkexec policy
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation/interesting-groups-linux-pe#pe-method-2                                              
+                                                                            
+[Configuration]
+AdminIdentities=unix-user:0
+[Configuration]
+AdminIdentities=unix-group:sudo;unix-group:admin
+
+╔══════════╣ Superusers
+root:x:0:0:root:/root:/bin/bash                                             
+
+╔══════════╣ Users with console
+bean:x:1001:1001:,,,:/home/bean:/bin/bash                                   
+christine:x:1002:1002:,,,:/home/christine:/bin/bash
+root:x:0:0:root:/root:/bin/bash
+
+╔══════════╣ All users & groups
+uid=0(root) gid=0(root) groups=0(root)                                      
+uid=1001(bean) gid=1001(bean) groups=1001(bean)
+uid=1002(christine) gid=1002(christine) groups=1002(christine)
+uid=100(systemd-network) gid=102(systemd-network) groups=102(systemd-network)
+uid=101(systemd-resolve) gid=103(systemd-resolve) groups=103(systemd-resolve)
+uid=102(messagebus) gid=105(messagebus) groups=105(messagebus)
+uid=103(systemd-timesync) gid=106(systemd-timesync) groups=106(systemd-timesync)                                                                        
+uid=104(syslog) gid=111(syslog) groups=111(syslog),4(adm)
+uid=105(_apt) gid=65534(nogroup) groups=65534(nogroup)
+uid=106(tss) gid=112(tss) groups=112(tss)
+uid=107(uuidd) gid=115(uuidd) groups=115(uuidd)
+uid=108(systemd-oom) gid=116(systemd-oom) groups=116(systemd-oom)
+uid=109(tcpdump) gid=117(tcpdump) groups=117(tcpdump)
+uid=10(uucp) gid=10(uucp) groups=10(uucp)
+uid=110(avahi-autoipd) gid=119(avahi-autoipd) groups=119(avahi-autoipd)
+uid=111(usbmux) gid=46(plugdev) groups=46(plugdev)
+uid=112(dnsmasq) gid=65534(nogroup) groups=65534(nogroup)
+uid=113(kernoops) gid=65534(nogroup) groups=65534(nogroup)
+uid=114(avahi) gid=121(avahi) groups=121(avahi)
+uid=115(cups-pk-helper) gid=122(lpadmin) groups=122(lpadmin)
+uid=116(rtkit) gid=123(rtkit) groups=123(rtkit)
+uid=117(whoopsie) gid=124(whoopsie) groups=124(whoopsie)
+uid=118(sssd) gid=125(sssd) groups=125(sssd)
+uid=119(speech-dispatcher) gid=29(audio) groups=29(audio)
+uid=120(nm-openvpn) gid=126(nm-openvpn) groups=126(nm-openvpn)
+uid=121(saned) gid=128(saned) groups=128(saned),127(scanner)
+uid=122(colord) gid=129(colord) groups=129(colord)
+uid=123(geoclue) gid=130(geoclue) groups=130(geoclue)
+uid=124(pulse) gid=131(pulse) groups=131(pulse),29(audio)
+uid=125(gnome-initial-setup) gid=65534(nogroup) groups=65534(nogroup)
+uid=126(hplip) gid=7(lp) groups=7(lp)
+uid=127(gdm) gid=133(gdm) groups=133(gdm)
+uid=128(postfix) gid=136(postfix) groups=136(postfix)
+uid=129(mysql) gid=138(mysql) groups=138(mysql)
+uid=130(sshd) gid=65534(nogroup) groups=65534(nogroup)
+uid=13(proxy) gid=13(proxy) groups=13(proxy)
+uid=1(daemon[0m) gid=1(daemon[0m) groups=1(daemon[0m)
+uid=2(bin) gid=2(bin) groups=2(bin)
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+uid=34(backup) gid=34(backup) groups=34(backup)
+uid=38(list) gid=38(list) groups=38(list)
+uid=39(irc) gid=39(irc) groups=39(irc)
+uid=3(sys) gid=3(sys) groups=3(sys)
+uid=41(gnats) gid=41(gnats) groups=41(gnats)
+uid=4(sync) gid=65534(nogroup) groups=65534(nogroup)
+uid=5(games) gid=60(games) groups=60(games)
+uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
+uid=6(man) gid=12(man) groups=12(man)
+uid=7(lp) gid=7(lp) groups=7(lp)
+uid=8(mail) gid=8(mail) groups=8(mail)
+uid=999(_laurel) gid=999(_laurel) groups=999(_laurel)
+uid=9(news) gid=9(news) groups=9(news)
+
+╔══════════╣ Login now
+ 21:31:48 up  2:46,  2 users,  load average: 0.87, 0.52, 0.33               
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+bean     pts/0    10.10.16.5       19:37    1:48   0.50s  0.00s /bin/sh ./linpeas.sh
+bean     pts/1    10.10.16.5       21:30    4.00s  0.03s  0.03s -bash
+
+╔══════════╣ Last logons
+bean     pts/0        Mon Nov 28 19:37:55 2022   still logged in                       10.10.16.5
+reboot   system boot  Mon Nov 28 18:45:43 2022   still running                         0.0.0.0
+bean     pts/0        Sun Oct 23 21:38:08 2022 - Sun Oct 23 21:50:26 2022  (00:12)     10.10.14.6
+reboot   system boot  Sun Oct 23 21:37:25 2022 - Sun Oct 23 21:50:29 2022  (00:13)     0.0.0.0
+bean     pts/0        Thu Oct 20 22:53:58 2022 - Thu Oct 20 23:03:12 2022  (00:09)     10.10.14.6
+reboot   system boot  Thu Oct 20 22:52:57 2022 - Thu Oct 20 23:03:15 2022  (00:10)     0.0.0.0
+bean     pts/0        Thu Oct 20 22:35:15 2022 - Thu Oct 20 22:52:44 2022  (00:17)     10.10.14.6
+reboot   system boot  Thu Oct 20 22:34:52 2022 - Thu Oct 20 22:52:47 2022  (00:17)     0.0.0.0
+
+wtmp begins Thu Oct 20 22:34:52 2022
+
+╔══════════╣ Last time logon each user
+Username         Port     From             Latest                           
+bean             pts/1    10.10.16.5       Mon Nov 28 21:30:37 +1100 2022
+
+╔══════════╣ Do not forget to test 'su' as any other user with shell: without password and with their names as password (I can't do it...)              
+                                                                            
+╔══════════╣ Do not forget to execute 'sudo -l' without password or with valid password (if you know it)!!                                              
+                                                                            
+
+
+                             ╔══════════════════════╗
+═════════════════════════════╣ Software Information ╠═════════════════════════════                                                                      
+                             ╚══════════════════════╝                       
+╔══════════╣ Useful software
+/usr/bin/base64                                                             
+/usr/bin/curl
+/usr/bin/g++
+/usr/bin/gcc
+/usr/bin/gdb
+/usr/bin/make
+/usr/bin/nc
+/usr/bin/netcat
+/usr/bin/perl
+/usr/bin/php
+/usr/bin/ping
+/usr/bin/python3
+/usr/bin/sudo
+/usr/bin/wget
+
+╔══════════╣ Installed Compilers
+ii  g++                                        4:11.2.0-1ubuntu1                       amd64        GNU C++ compiler
+ii  g++-11                                     11.2.0-19ubuntu1                        amd64        GNU C++ compiler
+ii  gcc                                        4:11.2.0-1ubuntu1                       amd64        GNU C compiler
+ii  gcc-11                                     11.2.0-19ubuntu1                        amd64        GNU C compiler
+ii  rpcsvc-proto                               1.4.2-0ubuntu6                          amd64        RPC protocol compiler and definitions
+/usr/bin/gcc
+
+╔══════════╣ MySQL version
+mysql  Ver 8.0.30-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))           
+
+
+═╣ MySQL connection using default root/root ........... No
+═╣ MySQL connection using root/toor ................... No                  
+═╣ MySQL connection using root/NOPASS ................. No                  
+                                                                            
+╔══════════╣ Searching mysql credentials and exec
+Found lib_mysqludf_sys.so:                                                  
+If you can login in MySQL you can execute commands doing: SELECT sys_eval('id');                                                                        
+Found lib_mysqludf_sys.so:
+If you can login in MySQL you can execute commands doing: SELECT sys_eval('id');                                                                        
+From '/etc/mysql/mysql.conf.d/mysqld.cnf' Mysql user: user              = mysql
+Found readable /etc/mysql/my.cnf
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mysql.conf.d/
+Found lib_mysqludf_sys.so:
+If you can login in MySQL you can execute commands doing: SELECT sys_eval('id');                                                                        
+Found lib_mysqludf_sys.so:
+If you can login in MySQL you can execute commands doing: SELECT sys_eval('id');                                                                        
+
+╔══════════╣ Analyzing MariaDB Files (limit 70)
+                                                                            
+-rw------- 1 root root 317 Sep 15 22:44 /etc/mysql/debian.cnf
+
+╔══════════╣ Analyzing Apache-Nginx Files (limit 70)
+Apache version: apache2 Not Found                                           
+httpd Not Found                                                             
+                                                                            
+Nginx version: 
+══╣ Nginx modules
+ngx_http_geoip2_module.so                                                   
+ngx_http_image_filter_module.so
+ngx_http_xslt_filter_module.so
+ngx_mail_module.so
+ngx_stream_geoip2_module.so
+ngx_stream_module.so
+══╣ PHP exec extensions
+drwxr-xr-x 2 root root 4096 Sep 15 23:34 /etc/nginx/sites-enabled           
+drwxr-xr-x 2 root root 4096 Sep 15 23:34 /etc/nginx/sites-enabled
+lrwxrwxrwx 1 root root 46 Sep 15 23:33 /etc/nginx/sites-enabled/hat-valley.htb.conf -> /etc/nginx/sites-available/hat-valley.htb.conf                   
+server {
+    listen 80;
+    server_name hat-valley.htb;
+    root /var/www/hat-valley.htb;
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+lrwxrwxrwx 1 root root 37 Sep 15 23:34 /etc/nginx/sites-enabled/store.conf -> /etc/nginx/sites-available/store.conf                                     
+server {
+    listen       80;
+    server_name  store.hat-valley.htb;
+    root /var/www/store;
+    location / {
+        index index.php index.html index.htm;
+    }
+    location ~ /cart/.*\.php$ {
+        return 403;
+    }
+    location ~ /product-details/.*\.php$ {
+        return 403;
+    }
+    location ~ \.php$ {
+        auth_basic "Restricted";
+        auth_basic_user_file /etc/nginx/conf.d/.htpasswd;
+        fastcgi_pass   unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
+lrwxrwxrwx 1 root root 34 Sep 15 21:55 /etc/nginx/sites-enabled/default -> /etc/nginx/sites-available/default                                           
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
+
+
+-rw-r--r-- 1 root root 72924 Aug 17 23:08 /etc/php/8.1/cli/php.ini
+allow_url_fopen = On
+allow_url_include = Off
+odbc.allow_persistent = On
+mysqli.allow_persistent = On
+pgsql.allow_persistent = On
+-rw-r--r-- 1 root root 72928 Aug 17 23:08 /etc/php/8.1/fpm/php.ini
+allow_url_fopen = On
+allow_url_include = Off
+odbc.allow_persistent = On
+mysqli.allow_persistent = On
+pgsql.allow_persistent = On
+
+-rw-r--r-- 1 root root 1447 Aug 25  2020 /etc/nginx/nginx.conf
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+events {
+        worker_connections 768;
+}
+http {
+        sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+        ssl_prefer_server_ciphers on;
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+        gzip on;
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
+}
+
+-rw-r--r-- 1 root root 389 Nov  7  2018 /etc/default/nginx
+
+-rwxr-xr-x 1 root root 4579 Nov  7  2018 /etc/init.d/nginx
+
+-rw-r--r-- 1 root root 329 Nov  7  2018 /etc/logrotate.d/nginx
+
+drwxr-xr-x 8 root root 4096 Oct  6 00:49 /etc/nginx
+lrwxrwxrwx 1 root root 46 Sep 15 23:33 /etc/nginx/sites-enabled/hat-valley.htb.conf -> /etc/nginx/sites-available/hat-valley.htb.conf
+server {
+    listen 80;
+    server_name hat-valley.htb;
+    root /var/www/hat-valley.htb;
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+lrwxrwxrwx 1 root root 37 Sep 15 23:34 /etc/nginx/sites-enabled/store.conf -> /etc/nginx/sites-available/store.conf
+server {
+    listen       80;
+    server_name  store.hat-valley.htb;
+    root /var/www/store;
+    location / {
+        index index.php index.html index.htm;
+    }
+    location ~ /cart/.*\.php$ {
+        return 403;
+    }
+    location ~ /product-details/.*\.php$ {
+        return 403;
+    }
+    location ~ \.php$ {
+        auth_basic "Restricted";
+        auth_basic_user_file /etc/nginx/conf.d/.htpasswd;
+        fastcgi_pass   unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
+-rw-r--r-- 1 root root 347 Sep 15 22:35 /etc/nginx/sites-available/hat-valley.htb.conf
+server {
+    listen 80;
+    server_name hat-valley.htb;
+    root /var/www/hat-valley.htb;
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+-rw-r--r-- 1 root root 838 Oct  5 02:46 /etc/nginx/sites-available/store.conf                                                                           
+server {
+    listen       80;
+    server_name  store.hat-valley.htb;
+    root /var/www/store;
+    location / {
+        index index.php index.html index.htm;
+    }
+    location ~ /cart/.*\.php$ {
+        return 403;
+    }
+    location ~ /product-details/.*\.php$ {
+        return 403;
+    }
+    location ~ \.php$ {
+        auth_basic "Restricted";
+        auth_basic_user_file /etc/nginx/conf.d/.htpasswd;
+        fastcgi_pass   unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
+-rw-r--r-- 1 root root 1125 Aug 25  2020 /etc/nginx/fastcgi.conf
+fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+fastcgi_param  QUERY_STRING       $query_string;
+fastcgi_param  REQUEST_METHOD     $request_method;
+fastcgi_param  CONTENT_TYPE       $content_type;
+fastcgi_param  CONTENT_LENGTH     $content_length;
+fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;
+fastcgi_param  REQUEST_URI        $request_uri;
+fastcgi_param  DOCUMENT_URI       $document_uri;
+fastcgi_param  DOCUMENT_ROOT      $document_root;
+fastcgi_param  SERVER_PROTOCOL    $server_protocol;
+fastcgi_param  REQUEST_SCHEME     $scheme;
+fastcgi_param  HTTPS              $https if_not_empty;
+fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;
+fastcgi_param  SERVER_SOFTWARE    nginx/$nginx_version;
+fastcgi_param  REMOTE_ADDR        $remote_addr;
+fastcgi_param  REMOTE_PORT        $remote_port;
+fastcgi_param  REMOTE_USER        $remote_user;
+fastcgi_param  SERVER_ADDR        $server_addr;
+fastcgi_param  SERVER_PORT        $server_port;
+fastcgi_param  SERVER_NAME        $server_name;
+fastcgi_param  REDIRECT_STATUS    200;
+lrwxrwxrwx 1 root root 60 Sep 15 21:55 /etc/nginx/modules-enabled/50-mod-http-xslt-filter.conf -> /usr/share/nginx/modules-available/mod-http-xslt-filter.conf
+load_module modules/ngx_http_xslt_filter_module.so;
+lrwxrwxrwx 1 root root 55 Sep 15 21:55 /etc/nginx/modules-enabled/50-mod-http-geoip2.conf -> /usr/share/nginx/modules-available/mod-http-geoip2.conf
+load_module modules/ngx_http_geoip2_module.so;
+lrwxrwxrwx 1 root root 48 Sep 15 21:55 /etc/nginx/modules-enabled/50-mod-mail.conf -> /usr/share/nginx/modules-available/mod-mail.conf
+load_module modules/ngx_mail_module.so;
+lrwxrwxrwx 1 root root 61 Sep 15 21:55 /etc/nginx/modules-enabled/50-mod-http-image-filter.conf -> /usr/share/nginx/modules-available/mod-http-image-filter.conf
+load_module modules/ngx_http_image_filter_module.so;
+lrwxrwxrwx 1 root root 57 Sep 15 21:55 /etc/nginx/modules-enabled/70-mod-stream-geoip2.conf -> /usr/share/nginx/modules-available/mod-stream-geoip2.conf
+load_module modules/ngx_stream_geoip2_module.so;
+lrwxrwxrwx 1 root root 50 Sep 15 21:55 /etc/nginx/modules-enabled/50-mod-stream.conf -> /usr/share/nginx/modules-available/mod-stream.conf
+load_module modules/ngx_stream_module.so;
+-rw-r--r-- 1 root root 217 Nov  7  2018 /etc/nginx/snippets/snakeoil.conf
+ssl_certificate /etc/ssl/certs/ssl-cert-snakeoil.pem;
+ssl_certificate_key /etc/ssl/private/ssl-cert-snakeoil.key;
+-rw-r--r-- 1 root root 423 Mar 12  2020 /etc/nginx/snippets/fastcgi-php.conf
+fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+try_files $fastcgi_script_name =404;
+set $path_info $fastcgi_path_info;
+fastcgi_param PATH_INFO $path_info;
+fastcgi_index index.php;
+include fastcgi.conf;
+-rw-r--r-- 1 root root 1447 Aug 25  2020 /etc/nginx/nginx.conf
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+events {
+        worker_connections 768;
+}
+http {
+        sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+        ssl_prefer_server_ciphers on;
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+        gzip on;
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
+}
+
+-rw-r--r-- 1 root root 374 Nov  7  2018 /etc/ufw/applications.d/nginx
+
+drwxr-xr-x 3 root root 4096 Oct  6 01:35 /usr/lib/nginx
+
+-rwxr-xr-x 1 root root 1240136 Aug  3 08:24 /usr/sbin/nginx
+
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /usr/share/doc/nginx
+
+drwxr-xr-x 4 root root 4096 Oct  6 01:35 /usr/share/nginx
+-rw-r--r-- 1 root root 53 Aug  3 08:24 /usr/share/nginx/modules-available/mod-http-image-filter.conf
+load_module modules/ngx_http_image_filter_module.so;
+-rw-r--r-- 1 root root 40 Aug  3 08:24 /usr/share/nginx/modules-available/mod-mail.conf
+load_module modules/ngx_mail_module.so;
+-rw-r--r-- 1 root root 47 Aug  3 08:24 /usr/share/nginx/modules-available/mod-http-geoip2.conf
+load_module modules/ngx_http_geoip2_module.so;
+-rw-r--r-- 1 root root 42 Aug  3 08:24 /usr/share/nginx/modules-available/mod-stream.conf
+load_module modules/ngx_stream_module.so;
+-rw-r--r-- 1 root root 49 Aug  3 08:24 /usr/share/nginx/modules-available/mod-stream-geoip2.conf
+load_module modules/ngx_stream_geoip2_module.so;
+-rw-r--r-- 1 root root 52 Aug  3 08:24 /usr/share/nginx/modules-available/mod-http-xslt-filter.conf
+load_module modules/ngx_http_xslt_filter_module.so;
+
+drwxr-xr-x 7 root root 4096 Oct  6 01:35 /var/lib/nginx
+find: ‘/var/lib/nginx/body’: Permission denied
+find: ‘/var/lib/nginx/uwsgi’: Permission denied
+find: ‘/var/lib/nginx/fastcgi’: Permission denied
+find: ‘/var/lib/nginx/scgi’: Permission denied
+find: ‘/var/lib/nginx/proxy’: Permission denied
+
+drwxr-xr-x 2 root adm 4096 Oct 20 22:35 /var/log/nginx
+
+
+╔══════════╣ Analyzing FastCGI Files (limit 70)
+-rw-r--r-- 1 root root 1055 Aug 25  2020 /etc/nginx/fastcgi_params          
+
+╔══════════╣ Analyzing Htpasswd Files (limit 70)
+-rw-r--r-- 1 root root 44 Sep 15 22:34 /etc/nginx/conf.d/.htpasswd          
+admin:$apr1$lfvrwhqi$hd49MbBX3WNluMezyjWls1
+
+╔══════════╣ Analyzing Rsync Files (limit 70)
+-rw-r--r-- 1 root root 1044 Nov  2  2021 /usr/share/doc/rsync/examples/rsyncd.conf                                                                      
+[ftp]
+        comment = public archive
+        path = /var/www/pub
+        use chroot = yes
+        lock file = /var/lock/rsyncd
+        read only = yes
+        list = yes
+        uid = nobody
+        gid = nogroup
+        strict modes = yes
+        ignore errors = no
+        ignore nonreadable = yes
+        transfer logging = no
+        timeout = 600
+        refuse options = checksum dry-run
+        dont compress = *.gz *.tgz *.zip *.z *.rpm *.deb *.iso *.bz2 *.tbz
+
+
+╔══════════╣ Analyzing Wifi Connections Files (limit 70)
+drwxr-xr-x 2 root root 4096 Sep 23 20:08 /etc/NetworkManager/system-connections                                                                         
+drwxr-xr-x 2 root root 4096 Sep 23 20:08 /etc/NetworkManager/system-connections                                                                         
+-rw------- 1 root root 287 Sep 23 20:08 /etc/NetworkManager/system-connections/Wired connection 1.nmconnection                                          
+
+
+╔══════════╣ Analyzing Ldap Files (limit 70)
+The password hash is from the {SSHA} to 'structural'                        
+drwxr-xr-x 2 root root 4096 Sep 15 21:26 /etc/ldap
+
+drwxr-xr-x 2 root root 32 Sep  2 23:42 /snap/snap-store/592/etc/ldap
+
+drwxr-xr-x 2 root root 32 Sep 16 23:14 /snap/snap-store/599/etc/ldap
+
+
+╔══════════╣ Searching ssl/ssh files
+UsePAM yes                                                                  
+
+══╣ Possible private SSH keys were found!
+/var/www/hat-valley.htb/node_modules/spdy/test/fixtures.js
+/var/www/hat-valley.htb/node_modules/selfsigned/README.md
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/ec.pass.priv
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/test_key.pem
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/pass.1024.priv
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/test_rsa_privkey.pem                                                                           
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/ec.priv
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/rsa.pass.priv
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/test_rsa_privkey_encrypted.pem                                                                 
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/rsa.2028.priv
+/var/www/hat-valley.htb/node_modules/public-encrypt/test/rsa.1024.priv
+/var/www/hat-valley.htb/node_modules/node-ipc/local-node-ipc-certs/private/server.key                                                                   
+/var/www/hat-valley.htb/node_modules/node-ipc/local-node-ipc-certs/private/client.key                                                                   
+/var/www/hat-valley.htb/node_modules/node-ipc/local-node-ipc-certs/private/oldclient.key                                                                
+/var/www/hat-valley.htb/node_modules/node-ipc/local-node-ipc-certs/private/oldserver.key                                                                
+/var/www/hat-valley.htb/node_modules/http-signature/http_signing.md
+
+══╣ Some certificates were found (out limited):
+/etc/pki/fwupd/LVFS-CA.pem                                                  
+/etc/pki/fwupd-metadata/LVFS-CA.pem
+/snap/core20/1623/etc/ssl/certs/ACCVRAIZ1.pem
+/snap/core20/1623/etc/ssl/certs/AC_RAIZ_FNMT-RCM.pem
+/snap/core20/1623/etc/ssl/certs/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+/snap/core20/1623/etc/ssl/certs/Actalis_Authentication_Root_CA.pem
+/snap/core20/1623/etc/ssl/certs/AffirmTrust_Commercial.pem
+/snap/core20/1623/etc/ssl/certs/AffirmTrust_Networking.pem
+/snap/core20/1623/etc/ssl/certs/AffirmTrust_Premium_ECC.pem
+/snap/core20/1623/etc/ssl/certs/AffirmTrust_Premium.pem
+/snap/core20/1623/etc/ssl/certs/Amazon_Root_CA_1.pem
+/snap/core20/1623/etc/ssl/certs/Amazon_Root_CA_2.pem
+/snap/core20/1623/etc/ssl/certs/Amazon_Root_CA_3.pem
+/snap/core20/1623/etc/ssl/certs/Amazon_Root_CA_4.pem
+/snap/core20/1623/etc/ssl/certs/ANF_Secure_Server_Root_CA.pem
+/snap/core20/1623/etc/ssl/certs/Atos_TrustedRoot_2011.pem
+/snap/core20/1623/etc/ssl/certs/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+/snap/core20/1623/etc/ssl/certs/Baltimore_CyberTrust_Root.pem
+/snap/core20/1623/etc/ssl/certs/Buypass_Class_2_Root_CA.pem
+/snap/core20/1623/etc/ssl/certs/Buypass_Class_3_Root_CA.pem
+63920PSTORAGE_CERTSBIN
+
+══╣ Writable ssh and gpg agents
+/etc/systemd/user/sockets.target.wants/gpg-agent-browser.socket             
+/etc/systemd/user/sockets.target.wants/gpg-agent.socket
+/etc/systemd/user/sockets.target.wants/gpg-agent-extra.socket
+/etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket
+══╣ Some home ssh config file was found
+/usr/share/openssh/sshd_config                                              
+Include /etc/ssh/sshd_config.d/*.conf
+KbdInteractiveAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+
+══╣ /etc/hosts.allow file found, trying to read the rules:
+/etc/hosts.allow                                                            
+
+
+Searching inside /etc/ssh/ssh_config for interesting info
+Include /etc/ssh/ssh_config.d/*.conf
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+
+╔══════════╣ Analyzing PAM Auth Files (limit 70)
+drwxr-xr-x 2 root root 4096 Oct 20 22:46 /etc/pam.d                         
+-rw-r--r-- 1 root root 2133 Feb 26  2022 /etc/pam.d/sshd
+
+
+
+
+╔══════════╣ Analyzing Cloud Init Files (limit 70)
+-rw-r--r-- 1 root root 3674 Jun 16 02:34 /snap/core20/1623/etc/cloud/cloud.cfg                                                                          
+     lock_passwd: True
+
+╔══════════╣ Analyzing Keyring Files (limit 70)
+drwxr-xr-x 2 root root 4096 Apr  8  2022 /etc/apt/keyrings                  
+drwx------ 2 bean bean 4096 Sep 23 20:20 /home/bean/.local/share/keyrings
+drwxr-xr-x 2 root root 200 Aug 26 16:46 /snap/core20/1623/usr/share/keyrings
+drwxr-xr-x 2 root root 4096 Oct 18 03:34 /usr/share/keyrings
+
+-rw------- 1 bean bean 105 Sep 15 21:35 /home/bean/.local/share/keyrings/login.keyring
+
+-rw------- 1 bean bean 207 Sep 15 21:35 /home/bean/.local/share/keyrings/user.keystore
+
+
+╔══════════╣ Searching uncommon passwd files (splunk)
+passwd file: /etc/nginx/conf.d/.htpasswd                                    
+passwd file: /etc/pam.d/passwd
+passwd file: /etc/passwd
+passwd file: /snap/core20/1623/etc/pam.d/passwd
+passwd file: /snap/core20/1623/etc/passwd
+passwd file: /snap/core20/1623/usr/share/bash-completion/completions/passwd
+passwd file: /snap/core20/1623/usr/share/lintian/overrides/passwd
+passwd file: /snap/core20/1623/var/lib/extrausers/passwd
+passwd file: /usr/share/bash-completion/completions/passwd
+passwd file: /usr/share/lintian/overrides/passwd
+
+╔══════════╣ Analyzing Github Files (limit 70)
+drwxr-xr-x 3 root root 4096 Oct  5 21:58 /usr/local/lib/node_modules/pm2/node_modules/ast-types/.github
+drwxr-xr-x 2 root root 4096 Oct  5 21:58 /usr/local/lib/node_modules/pm2/node_modules/balanced-match/.github
+drwxr-xr-x 3 root root 4096 Oct  5 21:58 /usr/local/lib/node_modules/pm2/node_modules/proxy-agent/.github
+drwxr-xr-x 2 root root 4096 Oct  5 21:58 /usr/local/lib/node_modules/pm2/node_modules/resolve/.github
+drwxr-xr-x 2 root root 4096 Oct  5 21:58 /usr/local/lib/node_modules/pm2/node_modules/supports-preserve-symlinks-flag/.github
+drwxr-xr-x 2 root root 4096 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/aws4/.github
+drwxr-xr-x 2 root root 4096 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/balanced-match/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/body-parser/node_modules/qs/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/call-bind/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/dotenv/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/es-to-primitive/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/events/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/express/node_modules/qs/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/fast-json-stable-stringify/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/flatted/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/get-intrinsic/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/get-symbol-description/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/has-bigints/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/has-symbols/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/has-tostringtag/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/internal-slot/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-arguments/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-bigint/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-boolean-object/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-callable/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-date-object/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-negative-zero/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-number-object/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-shared-array-buffer/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-string/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-symbol/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/is-weakref/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/loglevel/.github
+drwxr-xr-x 3 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/node-ipc/.github
+drwxr-xr-x 3 root root 4096 Oct  6 01:46 /var/www/hat-valley.htb/node_modules/object.assign/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/object-inspect/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/qs/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/resolve/.github
+drwxr-xr-x 3 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/shell-quote/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/side-channel/.github
+drwxr-xr-x 3 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/@soda/get-current-script/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/supports-preserve-symlinks-flag/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/unbox-primitive/.github
+drwxr-xr-x 3 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/undefsafe/.github
+drwxr-xr-x 2 root root 4096 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/vm-browserify/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/vue-style-loader/.github
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /var/www/hat-valley.htb/node_modules/which-boxed-primitive/.github
+
+
+
+
+╔══════════╣ Analyzing PGP-GPG Files (limit 70)
+/usr/bin/gpg                                                                
+netpgpkeys Not Found
+netpgp Not Found                                                            
+                                                                            
+-rw-r--r-- 1 root root 2794 Mar 27  2021 /etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg
+-rw-r--r-- 1 root root 1733 Mar 27  2021 /etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg
+-rw------- 1 bean bean 1200 Sep 15 21:36 /home/bean/.gnupg/trustdb.gpg
+-rw-r--r-- 1 root root 7399 Sep 18  2018 /snap/core20/1623/usr/share/keyrings/ubuntu-archive-keyring.gpg
+-rw-r--r-- 1 root root 6713 Oct 28  2016 /snap/core20/1623/usr/share/keyrings/ubuntu-archive-removed-keys.gpg
+-rw-r--r-- 1 root root 4097 Feb  7  2018 /snap/core20/1623/usr/share/keyrings/ubuntu-cloudimage-keyring.gpg
+-rw-r--r-- 1 root root 0 Jan 18  2018 /snap/core20/1623/usr/share/keyrings/ubuntu-cloudimage-removed-keys.gpg
+-rw-r--r-- 1 root root 1227 May 28  2010 /snap/core20/1623/usr/share/keyrings/ubuntu-master-keyring.gpg
+-rw-r--r-- 1 root root 3267 Jul  5 02:20 /snap/snap-store/592/usr/share/gnupg/distsigkey.gpg
+-rw-r--r-- 1 root root 3267 Jul  5 02:20 /snap/snap-store/599/usr/share/gnupg/distsigkey.gpg
+-rw-r--r-- 1 root root 2899 Jul  5 02:17 /usr/share/gnupg/distsigkey.gpg
+-rw-r--r-- 1 root root 2247 Sep 28 06:07 /usr/share/keyrings/ubuntu-advantage-cc-eal.gpg
+-rw-r--r-- 1 root root 2274 Sep 28 06:07 /usr/share/keyrings/ubuntu-advantage-cis.gpg
+-rw-r--r-- 1 root root 2236 Sep 28 06:07 /usr/share/keyrings/ubuntu-advantage-esm-apps.gpg
+-rw-r--r-- 1 root root 2264 Sep 28 06:07 /usr/share/keyrings/ubuntu-advantage-esm-infra-trusty.gpg
+-rw-r--r-- 1 root root 2275 Sep 28 06:07 /usr/share/keyrings/ubuntu-advantage-fips.gpg
+-rw-r--r-- 1 root root 2250 Sep 28 06:07 /usr/share/keyrings/ubuntu-advantage-realtime-kernel.gpg
+-rw-r--r-- 1 root root 2235 Sep 28 06:07 /usr/share/keyrings/ubuntu-advantage-ros.gpg
+-rw-r--r-- 1 root root 7399 Sep 18  2018 /usr/share/keyrings/ubuntu-archive-keyring.gpg
+-rw-r--r-- 1 root root 6713 Oct 28  2016 /usr/share/keyrings/ubuntu-archive-removed-keys.gpg
+-rw-r--r-- 1 root root 3023 Mar 27  2021 /usr/share/keyrings/ubuntu-cloudimage-keyring.gpg
+-rw-r--r-- 1 root root 0 Jan 18  2018 /usr/share/keyrings/ubuntu-cloudimage-removed-keys.gpg
+-rw-r--r-- 1 root root 1227 May 28  2010 /usr/share/keyrings/ubuntu-master-keyring.gpg
+
+drwx------ 3 bean bean 4096 Nov 28 21:31 /home/bean/.gnupg
+
+╔══════════╣ Searching docker files (limit 70)
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout/docker-breakout-privilege-escalation                                 
+-rw-r--r-- 1 root root 477 Oct  5 21:58 /usr/local/lib/node_modules/pm2/node_modules/@pm2/io/docker-compose.yml
+
+
+╔══════════╣ Analyzing Postfix Files (limit 70)
+-rwxr-xr-x 1 root root 3089 Mar 19  2022 /etc/init.d/postfix                
+
+-rw-r--r-- 1 root root 30 Mar 22  2022 /etc/insserv.conf.d/postfix
+
+-rwxr-xr-x 1 root root 800 Mar 22  2022 /etc/network/if-down.d/postfix
+
+-rwxr-xr-x 1 root root 1183 Mar 22  2022 /etc/network/if-up.d/postfix
+
+drwxr-xr-x 5 root root 4096 Sep 15 21:51 /etc/postfix
+-rw-r--r-- 1 root root 6524 Sep 15 21:51 /etc/postfix/master.cf
+  flags=DRXhu user=vmail argv=/usr/bin/maildrop -d ${recipient}
+#  flags=DRX user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
+#  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
+  flags=Fqhu user=uucp argv=uux -r -n -z -a$sender - $nexthop!rmail ($recipient)
+  flags=F user=ftn argv=/usr/lib/ifmail/ifmail -r $nexthop ($recipient)
+  flags=Fq. user=bsmtp argv=/usr/lib/bsmtp/bsmtp -t$nexthop -f$sender $recipient
+  flags=R user=scalemail argv=/usr/lib/scalemail/bin/scalemail-store ${nexthop} ${user} ${extension}
+  flags=FRX user=list argv=/usr/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}
+
+-rwxr-xr-x 1 root root 800 Mar 22  2022 /etc/ppp/ip-down.d/postfix
+
+-rwxr-xr-x 1 root root 1183 Mar 22  2022 /etc/ppp/ip-up.d/postfix
+
+-rwxr-xr-x 1 root root 441 Mar 22  2022 /etc/resolvconf/update-libc.d/postfix                                                                           
+
+-rw-r--r-- 1 root root 361 Mar 22  2022 /etc/ufw/applications.d/postfix
+
+-rw-r--r-- 1 root root 813 Feb  2  2020 /snap/core20/1623/usr/share/bash-completion/completions/postfix
+
+-rwxr-xr-x 1 root root 800 Mar 22  2022 /usr/lib/networkd-dispatcher/off.d/postfix                                                                      
+
+-rwxr-xr-x 1 root root 1183 Mar 22  2022 /usr/lib/networkd-dispatcher/routable.d/postfix
+
+drwxr-xr-x 3 root root 4096 Oct  6 01:35 /usr/lib/postfix
+
+-rwxr-xr-x 1 root root 18816 Mar 22  2022 /usr/sbin/postfix
+
+-rw-r--r-- 1 root root 761 Nov 16  2021 /usr/share/bash-completion/completions/postfix
+
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /usr/share/doc/postfix
+
+-rw-r--r-- 1 root root 319 Mar 22  2022 /usr/share/lintian/overrides/postfix
+
+drwxr-xr-x 2 root root 4096 Oct  6 01:35 /usr/share/postfix
+
+drwxr-xr-x 2 postfix postfix 4096 Oct  6 01:35 /var/lib/postfix
+
+drwxr-xr-x 20 root root 4096 Oct  6 01:35 /var/spool/postfix
+find: ‘/var/spool/postfix/active’: Permission denied
+find: ‘/var/spool/postfix/defer’: Permission denied
+find: ‘/var/spool/postfix/bounce’: Permission denied
+find: ‘/var/spool/postfix/saved’: Permission denied
+find: ‘/var/spool/postfix/flush’: Permission denied
+find: ‘/var/spool/postfix/corrupt’: Permission denied
+find: ‘/var/spool/postfix/public’: Permission denied
+find: ‘/var/spool/postfix/deferred’: Permission denied
+find: ‘/var/spool/postfix/hold’: Permission denied
+find: ‘/var/spool/postfix/trace’: Permission denied
+find: ‘/var/spool/postfix/maildrop’: Permission denied
+find: ‘/var/spool/postfix/incoming’: Permission denied
+find: ‘/var/spool/postfix/private’: Permission denied
+
+
+╔══════════╣ Analyzing FTP Files (limit 70)
+                                                                            
+
+-rw-r--r-- 1 root root 69 Aug 17 23:08 /etc/php/8.1/mods-available/ftp.ini
+-rw-r--r-- 1 root root 69 Aug  8 17:28 /usr/share/php8.1-common/common/ftp.ini                                                                          
+
+
+
+
+
+
+╔══════════╣ Analyzing Bind Files (limit 70)
+-rw-r--r-- 1 root root 826 Nov 16  2021 /usr/share/bash-completion/completions/bind
+-rw-r--r-- 1 root root 826 Nov 16  2021 /usr/share/bash-completion/completions/bind                                                                     
+
+
+
+╔══════════╣ Analyzing Interesting logs Files (limit 70)
+-rw-r--r-- 1 root root 61945 Nov 28 19:36 /var/log/nginx/access.log         
+
+-rw-r--r-- 1 root root 0 Oct 23 21:50 /var/log/nginx/error.log
+
+╔══════════╣ Analyzing Windows Files (limit 70)
+                                                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lrwxrwxrwx 1 root root 20 Sep 15 22:44 /etc/alternatives/my.cnf -> /etc/mysql/mysql.cnf
+lrwxrwxrwx 1 root root 24 Sep 15 21:52 /etc/mysql/my.cnf -> /etc/alternatives/my.cnf
+-rw-r--r-- 1 root root 81 Sep 15 22:44 /var/lib/dpkg/alternatives/my.cnf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+╔══════════╣ Analyzing Other Interesting Files (limit 70)
+-rw-r--r-- 1 root root 3771 Jan  7  2022 /etc/skel/.bashrc                  
+-rw-r--r-- 1 bean bean 3847 Sep 15 21:45 /home/bean/.bashrc
+-rw-r--r-- 1 root root 3771 Feb 25  2020 /snap/core20/1623/etc/skel/.bashrc
+
+
+
+-rw------- 1 bean bean 20 Nov 28 21:29 /home/bean/.lesshst
+
+
+-rw-r--r-- 1 root root 807 Jan  7  2022 /etc/skel/.profile
+-rw-r--r-- 1 bean bean 807 Sep 15 21:34 /home/bean/.profile
+-rw-r--r-- 1 root root 807 Feb 25  2020 /snap/core20/1623/etc/skel/.profile
+
+
+
+
+
+
+                               ╔═══════════════════╗
+═══════════════════════════════╣ Interesting Files ╠═══════════════════════════════                                                                     
+                               ╚═══════════════════╝                        
+╔══════════╣ SUID - Check easy privesc, exploits and write perms
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid                                                                        
+-rwsr-xr-x 1 root root 19K Feb 26  2022 /usr/libexec/polkit-agent-helper-1  
+-rwsr-xr-x 1 root root 35K Feb 21  2022 /usr/bin/umount  --->  BSD/Linux(08-1996)                                                                       
+-rwsr-xr-x 1 root root 55K Feb 21  2022 /usr/bin/su
+-rwsr-xr-x 1 root root 15K Aug 16 23:21 /usr/bin/vmware-user-suid-wrapper
+-rwsr-xr-x 1 root root 44K Mar 14  2022 /usr/bin/chsh
+-rwsr-xr-x 1 root root 72K Mar 14  2022 /usr/bin/chfn  --->  SuSE_9.3/10
+-rwsr-xr-x 1 root root 47K Feb 21  2022 /usr/bin/mount  --->  Apple_Mac_OSX(Lion)_Kernel_xnu-1699.32.7_except_xnu-1699.24.8                             
+-rwsr-xr-x 1 root root 59K Mar 14  2022 /usr/bin/passwd  --->  Apple_Mac_OSX(03-2006)/Solaris_8/9(12-2004)/SPARC_8/9/Sun_Solaris_2.3_to_2.5.1(02-1997)  
+-rwsr-xr-x 1 root root 40K Mar 14  2022 /usr/bin/newgrp  --->  HP-UX_10.20
+-rwsr-xr-x 1 root root 71K Mar 14  2022 /usr/bin/gpasswd
+-rwsr-xr-x 1 root root 227K Aug  4 20:35 /usr/bin/sudo  --->  check_if_the_sudo_version_is_vulnerable                                                   
+-rwsr-xr-x 1 root root 35K Mar 24  2022 /usr/bin/fusermount3
+-rwsr-xr-- 1 root messagebus 35K Apr  2  2022 /usr/lib/dbus-1.0/dbus-daemon-launch-helper                                                               
+-rwsr-xr-x 1 root root 331K Feb 26  2022 /usr/lib/openssh/ssh-keysign
+-rwsr-xr-x 1 root root 136K Aug  8 19:17 /usr/lib/snapd/snap-confine  --->  Ubuntu_snapd<2.37_dirty_sock_Local_Privilege_Escalation(CVE-2019-7304)      
+-rwsr-sr-x 1 root root 15K Jul  6 23:45 /usr/lib/xorg/Xorg.wrap
+-rwsr-xr-- 1 root dip 415K Feb 25  2022 /usr/sbin/pppd  --->  Apple_Mac_OSX_10.4.8(05-2007)                                                             
+-rwsr-xr-x 1 root root 84K Mar 14  2022 /snap/core20/1623/usr/bin/chfn  --->  SuSE_9.3/10                                                               
+-rwsr-xr-x 1 root root 52K Mar 14  2022 /snap/core20/1623/usr/bin/chsh
+-rwsr-xr-x 1 root root 87K Mar 14  2022 /snap/core20/1623/usr/bin/gpasswd
+-rwsr-xr-x 1 root root 55K Feb  8  2022 /snap/core20/1623/usr/bin/mount  --->  Apple_Mac_OSX(Lion)_Kernel_xnu-1699.32.7_except_xnu-1699.24.8            
+-rwsr-xr-x 1 root root 44K Mar 14  2022 /snap/core20/1623/usr/bin/newgrp  --->  HP-UX_10.20                                                             
+-rwsr-xr-x 1 root root 67K Mar 14  2022 /snap/core20/1623/usr/bin/passwd  --->  Apple_Mac_OSX(03-2006)/Solaris_8/9(12-2004)/SPARC_8/9/Sun_Solaris_2.3_to_2.5.1(02-1997)                                                             
+-rwsr-xr-x 1 root root 67K Feb  8  2022 /snap/core20/1623/usr/bin/su
+-rwsr-xr-x 1 root root 163K Jan 20  2021 /snap/core20/1623/usr/bin/sudo  --->  check_if_the_sudo_version_is_vulnerable                                  
+-rwsr-xr-x 1 root root 39K Feb  8  2022 /snap/core20/1623/usr/bin/umount  --->  BSD/Linux(08-1996)                                                      
+-rwsr-xr-- 1 root systemd-resolve 51K Apr 29  2022 /snap/core20/1623/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+-rwsr-xr-x 1 root root 463K Mar 31  2022 /snap/core20/1623/usr/lib/openssh/ssh-keysign                                                                  
+-rwsr-xr-x 1 root root 121K Sep  3 03:21 /snap/snapd/17029/usr/lib/snapd/snap-confine  --->  Ubuntu_snapd<2.37_dirty_sock_Local_Privilege_Escalation(CVE-2019-7304)                                                                 
+-rwsr-xr-x 1 root root 121K Sep 29 20:26 /snap/snapd/17336/usr/lib/snapd/snap-confine  --->  Ubuntu_snapd<2.37_dirty_sock_Local_Privilege_Escalation(CVE-2019-7304)                                                                 
+
+╔══════════╣ SGID
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid                                                                        
+-rwxr-sr-x 1 root mail 23K Jul  6 23:46 /usr/libexec/camel-lock-helper-1.2  
+-rwxr-sr-x 1 root _ssh 287K Feb 26  2022 /usr/bin/ssh-agent
+-rwxr-sr-x 1 root shadow 71K Mar 14  2022 /usr/bin/chage
+-rwxr-sr-x 1 root crontab 39K Mar 24  2022 /usr/bin/crontab
+-rwxr-sr-x 1 root tty 23K Feb 21  2022 /usr/bin/wall
+-rwxr-sr-x 1 root root 16K Jan 12  2022 /usr/bin/dotlock.mailutils
+-rwxr-sr-x 1 root tty 23K Feb 21  2022 /usr/bin/write.ul (Unknown SGID binary)                                                                          
+-rwxr-sr-x 1 root shadow 23K Mar 14  2022 /usr/bin/expiry
+-rwsr-sr-x 1 root root 15K Jul  6 23:45 /usr/lib/xorg/Xorg.wrap
+-rwxr-sr-x 1 root shadow 23K Mar 24  2022 /usr/sbin/pam_extrausers_chkpwd
+-r-xr-sr-x 1 root postdrop 23K Mar 22  2022 /usr/sbin/postdrop
+-r-xr-sr-x 1 root postdrop 23K Mar 22  2022 /usr/sbin/postqueue
+-rwxr-sr-x 1 root shadow 27K Mar 24  2022 /usr/sbin/unix_chkpwd
+-rwxr-sr-x 1 root shadow 83K Mar 14  2022 /snap/core20/1623/usr/bin/chage
+-rwxr-sr-x 1 root shadow 31K Mar 14  2022 /snap/core20/1623/usr/bin/expiry
+-rwxr-sr-x 1 root messagebus 343K Mar 31  2022 /snap/core20/1623/usr/bin/ssh-agent                                                                      
+-rwxr-sr-x 1 root tty 35K Feb  8  2022 /snap/core20/1623/usr/bin/wall
+-rwxr-sr-x 1 root shadow 43K Sep 17  2021 /snap/core20/1623/usr/sbin/pam_extrausers_chkpwd                                                              
+-rwxr-sr-x 1 root shadow 43K Sep 17  2021 /snap/core20/1623/usr/sbin/unix_chkpwd                                                                        
+
+╔══════════╣ Checking misconfigurations of ld.so
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#ld-so    
+/etc/ld.so.conf                                                             
+include /etc/ld.so.conf.d/*.conf
+
+/etc/ld.so.conf.d
+  /etc/ld.so.conf.d/fakeroot-x86_64-linux-gnu.conf
+/usr/lib/x86_64-linux-gnu/libfakeroot
+  /etc/ld.so.conf.d/libc.conf
+/usr/local/lib
+  /etc/ld.so.conf.d/x86_64-linux-gnu.conf
+/usr/local/lib/x86_64-linux-gnu
+/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu
+
+╔══════════╣ Capabilities
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#capabilities                                                                         
+Current env capabilities:                                                   
+Current: =
+Current proc capabilities:
+CapInh: 0000000000000000
+CapPrm: 0000000000000000
+CapEff: 0000000000000000
+CapBnd: 000001ffffffffff
+CapAmb: 0000000000000000
+
+Parent Shell capabilities:
+0x0000000000000000=
+
+Files with capabilities (limited to 50):
+/usr/bin/ping cap_net_raw=ep
+/usr/bin/mtr-packet cap_net_raw=ep
+/usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper cap_net_bind_service,cap_net_admin=ep                                               
+/snap/core20/1623/usr/bin/ping cap_net_raw=ep
+
+╔══════════╣ Users with capabilities
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#capabilities                                                                         
+                                                                            
+╔══════════╣ AppArmor binary profiles
+-rw-r--r-- 1 root root  3461 Jun 21 20:38 sbin.dhclient                     
+-rw-r--r-- 1 root root 11144 Jun 18 01:03 usr.bin.evince
+-rw-r--r-- 1 root root  3448 Mar 18  2022 usr.bin.man
+-rw-r--r-- 1 root root  1421 Jun 21  2021 usr.bin.tcpdump
+-rw-r--r-- 1 root root 28376 Aug  8 19:17 usr.lib.snapd.snap-confine.real
+-rw-r--r-- 1 root root   677 Apr  7  2022 usr.sbin.cups-browsed
+-rw-r--r-- 1 root root  6141 May 27  2022 usr.sbin.cupsd
+-rw-r--r-- 1 root root  2006 Jul 27 02:14 usr.sbin.mysqld
+-rw-r--r-- 1 root root  1592 Nov 16  2021 usr.sbin.rsyslogd
+
+╔══════════╣ Files with ACLs (limited to 50)
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#acls     
+files with acls in searched folders Not Found                               
+                                                                            
+╔══════════╣ .sh files in path
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#script-binaries-in-path                                                              
+/usr/bin/gettext.sh                                                         
+
+╔══════════╣ Executable files potentially added by user (limit 70)
+2022-11-28+21:31:50.0723717660 /home/bean/linuxprivchecker.py               
+2022-11-28+21:31:13.4803704020 /home/bean/pspy64
+2022-11-28+21:13:08.2283299330 /home/bean/linpeas.sh
+2022-11-28+20:21:48.0722150730 /home/bean/exploit-2
+2022-11-28+20:21:47.9722150690 /home/bean/exploit-1
+2022-11-28+20:18:38.8282080160 /home/bean/dp_check.sh
+2022-11-28+19:42:37.7161274280 /home/bean/LinEnum.sh
+2022-10-20+22:41:48.5042045640 /var/lib/snapd/desktop/applications/firefox_firefox.desktop
+2022-10-15+01:42:40.0089526520 /var/lib/snapd/desktop/applications/snap-store_ubuntu-software-local-file.desktop
+2022-10-15+01:42:40.0089526520 /var/lib/snapd/desktop/applications/snap-store_ubuntu-software.desktop
+2022-10-15+01:42:40.0049524880 /var/lib/snapd/desktop/applications/snap-store_snap-store.desktop
+2022-10-15+01:39:34.3250735140 /usr/local/sbin/laurel
+2022-09-15+21:57:13.8627403130 /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/gmp-gmpopenh264/1.8.1.2/libgmpopenh264.so
+2022-09-15+21:57:13.8427403470 /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/gmp-gmpopenh264/1.8.1.2/gmpopenh264.info
+2022-09-15+21:55:37.5029021680 /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/times.json
+2022-09-15+21:45:01.0388413030 /home/bean/Documents/backup_home.sh
+2022-09-15+21:23:51.9079992580 /var/lib/colord/storage.db
+2022-09-15+21:23:51.9079992580 /var/lib/colord/mapping.db
+2022-09-15+21:19:22.4356767680 /etc/console-setup/cached_setup_terminal.sh
+2022-09-15+21:19:22.4356767680 /etc/console-setup/cached_setup_font.sh
+2022-09-15+21:19:22.4316772840 /etc/console-setup/cached_setup_keyboard.sh
+
+╔══════════╣ Unexpected in root
+                                                                            
+╔══════════╣ Files (scripts) in /etc/profile.d/
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#profiles-files                                                                       
+total 60                                                                    
+drwxr-xr-x   2 root root  4096 Aug  9 21:51 .
+drwxr-xr-x 138 root root 12288 Oct 23 21:45 ..
+-rw-r--r--   1 root root    96 Oct 15  2021 01-locale-fix.sh
+-rw-r--r--   1 root root   835 Aug  8 19:17 apps-bin-path.sh
+-rw-r--r--   1 root root   726 Nov 16  2021 bash_completion.sh
+-rw-r--r--   1 root root  1003 Aug 13  2019 cedilla-portuguese.sh
+-rw-------   1 root root   677 Aug  9 21:50 debuginfod.csh
+-rw-------   1 root root   692 Aug  9 21:50 debuginfod.sh
+-rw-r--r--   1 root root  1012 Mar 22  2022 gnome-session_gnomerc.sh
+-rw-r--r--   1 root root   376 Nov 16  2021 im-config_wayland.sh
+-rw-r--r--   1 root root  1908 Mar 28  2022 vte-2.91.sh
+-rw-r--r--   1 root root   967 Mar 28  2022 vte.csh
+-rw-r--r--   1 root root   954 Mar 22  2022 xdg_dirs_desktop_session.sh
+
+╔══════════╣ Permissions in init, init.d, systemd, and rc.d
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#init-init-d-systemd-and-rc-d                                                         
+                                                                            
+═╣ Hashes inside passwd file? ........... No
+═╣ Writable passwd file? ................ No                                
+═╣ Credentials in fstab/mtab? ........... No                                
+═╣ Can I read shadow files? ............. No                                
+═╣ Can I read shadow plists? ............ No                                
+═╣ Can I write shadow plists? ........... No                                
+═╣ Can I read opasswd file? ............. No                                
+═╣ Can I write in network-scripts? ...... No                                
+═╣ Can I read root folder? .............. No                                
+                                                                            
+╔══════════╣ Searching root files in home dirs (limit 30)
+/home/                                                                      
+/home/bean/user.txt
+/root/
+/var/www
+/var/www/hat-valley.htb
+/var/www/hat-valley.htb/vue.config.js
+/var/www/hat-valley.htb/src
+/var/www/hat-valley.htb/src/HR.vue
+/var/www/hat-valley.htb/src/Dashboard.vue
+/var/www/hat-valley.htb/src/static
+/var/www/hat-valley.htb/src/static/css
+/var/www/hat-valley.htb/src/static/css/bootstrap-reboot.css.map
+/var/www/hat-valley.htb/src/static/css/jquery.mCustomScrollbar.min.css
+/var/www/hat-valley.htb/src/static/css/meanmenu.css
+/var/www/hat-valley.htb/src/static/css/font-awesome.min.css
+/var/www/hat-valley.htb/src/static/css/bootstrap-reboot.min.css
+/var/www/hat-valley.htb/src/static/css/bootstrap.min.css.map
+/var/www/hat-valley.htb/src/static/css/default-skin.css
+/var/www/hat-valley.htb/src/static/css/jquery.fancybox.min.css
+/var/www/hat-valley.htb/src/static/css/jquery-ui.css
+/var/www/hat-valley.htb/src/static/css/bootstrap.min.css
+/var/www/hat-valley.htb/src/static/css/nice-select.css
+/var/www/hat-valley.htb/src/static/css/slick.css
+/var/www/hat-valley.htb/src/static/css/style.css
+/var/www/hat-valley.htb/src/static/css/responsive.css
+/var/www/hat-valley.htb/src/static/css/bootstrap-grid.min.css
+/var/www/hat-valley.htb/src/static/css/bootstrap-grid.min.css.map
+/var/www/hat-valley.htb/src/static/css/icomoon.css
+/var/www/hat-valley.htb/src/static/css/bootstrap-grid.css.map
+/var/www/hat-valley.htb/src/static/css/normalize.css
+
+╔══════════╣ Searching folders owned by me containing others files on it (limit 100)                                                                    
+/home/bean                                                                  
+
+╔══════════╣ Readable files belonging to root and readable by me but not world readable                                                                 
+-rw-r----- 1 root bean 33 Nov 28 18:46 /home/bean/user.txt                  
+
+╔══════════╣ Modified interesting files in the last 5mins (limit 100)
+/var/www/store/product-details/2.txt                                        
+/var/www/store/product-details/1.txt
+/var/www/store/product-details/3.txt
+/var/log/syslog
+/var/log/lastlog
+/var/log/mail.log
+/var/log/laurel/audit.log
+/var/log/journal/ee6a821b27764b4d9e547b4690827539/user-1001.journal
+/var/log/journal/ee6a821b27764b4d9e547b4690827539/system.journal
+/var/log/auth.log
+/var/log/wtmp
+/var/mail/christine
+/var/mail/root
+/home/bean/linuxprivchecker.py
+/home/bean/.cache/tracker3/files/meta.db-shm
+/home/bean/.cache/tracker3/files/meta.db-wal
+/home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
+/home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db
+/home/bean/.cache/tracker3/files/last-crawl.txt
+/home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-shm
+/home/bean/linuxprivchecker.log
+/home/bean/pspy64
+/home/bean/.lesshst
+
+
+╔══════════╣ Files inside /home/bean (limit 20)
+total 4424                                                                  
+drwxr-xr-x 17 bean bean    4096 Nov 28 21:32 .
+drwxr-xr-x  4 root root    4096 Oct  5 02:46 ..
+lrwxrwxrwx  1 bean bean       9 Sep 15 21:40 .bash_history -> /dev/null
+-rw-r--r--  1 bean bean     220 Sep 15 21:34 .bash_logout
+-rw-r--r--  1 bean bean    3847 Sep 15 21:45 .bashrc
+drwx------  9 bean bean    4096 Sep 22 14:30 .cache
+-rwxrwxr-x  1 bean bean      71 Nov 28 20:21 compile.sh
+drwx------ 13 bean bean    4096 Oct  6 01:35 .config
+drwxr-xr-x  2 bean bean    4096 Sep 15 21:35 Desktop
+drwxr-xr-x  3 bean bean    4096 Sep 15 21:46 Documents
+drwxr-xr-x  2 bean bean    4096 Sep 15 23:03 Downloads
+-rwxrwxr-x  1 bean bean     814 Nov 28 20:18 dp_check.sh
+-rw-rw-r--  1 bean bean   19576 Nov 28 20:59 exp.c
+-rwxrwxr-x  1 bean bean   16800 Nov 28 20:21 exploit-1
+-rw-rw-r--  1 bean bean    5364 Nov 28 20:21 exploit-1.c
+-rwxrwxr-x  1 bean bean   17216 Nov 28 20:21 exploit-2
+-rw-rw-r--  1 bean bean    7752 Nov 28 20:21 exploit-2.c
+drwx------  3 bean bean    4096 Nov 28 21:31 .gnupg
+-rw-rw-r--  1 bean bean    2908 Nov 28 20:14 les.out
+-rwxrwxr-x  1 bean bean   90917 Nov 28 20:13 les.sh
+-rw-------  1 bean bean      20 Nov 28 21:29 .lesshst
+-rwxrwxr-x  1 bean bean   46631 Nov 28 19:42 LinEnum.sh
+
+╔══════════╣ Files inside others home (limit 20)
+/var/www/hat-valley.htb/vue.config.js                                       
+/var/www/hat-valley.htb/src/HR.vue
+/var/www/hat-valley.htb/src/Dashboard.vue
+/var/www/hat-valley.htb/src/static/css/bootstrap-reboot.css.map
+/var/www/hat-valley.htb/src/static/css/jquery.mCustomScrollbar.min.css
+/var/www/hat-valley.htb/src/static/css/meanmenu.css
+/var/www/hat-valley.htb/src/static/css/font-awesome.min.css
+/var/www/hat-valley.htb/src/static/css/bootstrap-reboot.min.css
+/var/www/hat-valley.htb/src/static/css/bootstrap.min.css.map
+/var/www/hat-valley.htb/src/static/css/default-skin.css
+/var/www/hat-valley.htb/src/static/css/jquery.fancybox.min.css
+/var/www/hat-valley.htb/src/static/css/jquery-ui.css
+/var/www/hat-valley.htb/src/static/css/bootstrap.min.css
+/var/www/hat-valley.htb/src/static/css/nice-select.css
+/var/www/hat-valley.htb/src/static/css/slick.css
+/var/www/hat-valley.htb/src/static/css/style.css
+/var/www/hat-valley.htb/src/static/css/responsive.css
+/var/www/hat-valley.htb/src/static/css/bootstrap-grid.min.css
+/var/www/hat-valley.htb/src/static/css/bootstrap-grid.min.css.map
+/var/www/hat-valley.htb/src/static/css/icomoon.css
+
+╔══════════╣ Searching installed mail applications
+postfix                                                                     
+postfix-add-filter
+postfix-add-policy
+postfix-collate
+sendmail
+
+╔══════════╣ Mails (limit 50)
+    18090     48 -rw-------   1 christine mail        42596 Nov 28 21:30 /var/mail/christine
+    18089     96 -rw-------   1 root      mail        90412 Nov 28 21:31 /var/mail/root
+    18090     48 -rw-------   1 christine mail        42596 Nov 28 21:30 /var/spool/mail/christine
+    18089     96 -rw-------   1 root      mail        90412 Nov 28 21:31 /var/spool/mail/root
+
+╔══════════╣ Backup files (limited 100)
+-rw-r--r-- 1 root root 7138 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/form-data/README.md.bak
+-rw-r--r-- 1 root root 12070 Sep 15 22:14 /var/www/hat-valley.htb/node_modules/axios/node_modules/form-data/README.md.bak
+-rw-r--r-- 1 root root 191 Aug  9 21:51 /var/lib/sgml-base/supercatalog.old
+-rw-r--r-- 1 root root 61 Aug  9 21:48 /var/lib/systemd/deb-systemd-helper-enabled/dpkg-db-backup.timer.dsh-also
+-rw-r--r-- 1 root root 0 Aug  9 21:48 /var/lib/systemd/deb-systemd-helper-enabled/timers.target.wants/dpkg-db-backup.timer
+-rwxrwxr-x 1 bean bean 369 Sep 15 21:45 /home/bean/Documents/backup_home.sh
+-rw-rw-r-- 1 bean bean 31715 Sep 15 21:46 /home/bean/Documents/backup/bean_backup_final.tar.gz                                                          
+-rwxr-xr-x 1 root root 2196 May 25  2022 /usr/libexec/dpkg/dpkg-db-backup
+-rwxr-xr-x 1 root root 1086 Nov  1  2021 /usr/src/linux-headers-5.15.0-52/tools/testing/selftests/net/tcp_fastopen_backup_key.sh
+-rw-r--r-- 1 root root 138 Dec  6  2021 /usr/lib/systemd/system/dpkg-db-backup.timer                                                                    
+-rw-r--r-- 1 root root 147 Dec  6  2021 /usr/lib/systemd/system/dpkg-db-backup.service                                                                  
+-rw-r--r-- 1 root root 44008 Aug 16 23:21 /usr/lib/x86_64-linux-gnu/open-vm-tools/plugins/vmsvc/libvmbackup.so
+-rw-r--r-- 1 root root 13049 Oct 13 18:40 /usr/lib/modules/5.15.0-52-generic/kernel/drivers/net/team/team_mode_activebackup.ko
+-rw-r--r-- 1 root root 10833 Oct 13 18:40 /usr/lib/modules/5.15.0-52-generic/kernel/drivers/power/supply/wm831x_backup.ko
+-rw-r--r-- 1 root root 39456 Jul 27 02:14 /usr/lib/mysql/plugin/component_mysqlbackup.so
+-rw-r--r-- 1 root root 12285 Oct  6 00:50 /usr/share/info/dir.old
+-rwxr-xr-x 1 root root 1513 Jan 24  2020 /usr/share/doc/libipc-system-simple-perl/examples/rsync-backup.pl
+-rw-r--r-- 1 root root 7867 Jul 16  1996 /usr/share/doc/telnet/README.old.gz
+-rw-r--r-- 1 root root 416107 Dec 22  2020 /usr/share/doc/manpages/Changes.old.gz                                                                       
+-rw-r--r-- 1 root root 1815 Apr 13  2022 /usr/share/help/C/gnome-help/backup-check.page
+-rw-r--r-- 1 root root 2261 Apr 13  2022 /usr/share/help/C/gnome-help/backup-where.page
+-rw-r--r-- 1 root root 3330 Apr 13  2022 /usr/share/help/C/gnome-help/backup-thinkabout.page
+-rw-r--r-- 1 root root 2013 Apr 13  2022 /usr/share/help/C/gnome-help/backup-frequency.page
+-rw-r--r-- 1 root root 2505 Apr 13  2022 /usr/share/help/C/gnome-help/backup-what.page
+-rw-r--r-- 1 root root 1320 Apr 13  2022 /usr/share/help/C/gnome-help/backup-restore.page
+-rw-r--r-- 1 root root 2499 Apr 13  2022 /usr/share/help/C/gnome-help/backup-how.page
+-rw-r--r-- 1 root root 1262 Apr 13  2022 /usr/share/help/C/gnome-help/backup-why.page
+-rw-r--r-- 1 root root 1581 Sep 29  2021 /usr/share/help/C/seahorse/misc-key-backup.page
+-rw-r--r-- 1 root root 2543 May  7  2022 /usr/share/help-langpack/en_GB/evolution/backup-restore.page
+-rw-r--r-- 1 root root 171 Nov 28 18:45 /run/blkid/blkid.tab.old
+
+╔══════════╣ Searching tables inside readable .db/.sql/.sqlite files (limit 100)                                                                        
+Found /etc/aliases.db: Berkeley DB (Hash, version 9, native byte-order)     
+Found /home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db: SQLite 3.x database, last written using SQLite version 3037002, writer version 2, read version 2, file counter 2, database pages 316, cookie 0x12a, schema 4, UTF-8, version-valid-for 2
+Found /home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db: SQLite 3.x database, last written using SQLite version 3037002, writer version 2, read version 2, file counter 2, database pages 316, cookie 0x12a, schema 4, UTF-8, version-valid-for 2
+Found /home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db: SQLite 3.x database, last written using SQLite version 3037002, writer version 2, read version 2, file counter 16, database pages 342, 1st free page 342, free pages 1, cookie 0x12a, schema 4, UTF-8, version-valid-for 16
+Found /home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db: SQLite 3.x database, last written using SQLite version 3037002, writer version 2, read version 2, file counter 2, database pages 316, cookie 0x12a, schema 4, UTF-8, version-valid-for 2
+Found /home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db: SQLite 3.x database, last written using SQLite version 3037002, writer version 2, read version 2, file counter 5, database pages 357, 1st free page 343, free pages 2, cookie 0x12a, schema 4, UTF-8, version-valid-for 5
+Found /home/bean/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db: SQLite 3.x database, last written using SQLite version 3037002, writer version 2, read version 2, file counter 2, database pages 316, cookie 0x12a, schema 4, UTF-8, version-valid-for 2
+Found /home/bean/.cache/tracker3/files/meta.db: SQLite 3.x database, user version 26, last written using SQLite version 3037002, page size 8192, writer version 2, read version 2, file counter 2, database pages 344, cookie 0x12d, schema 4, UTF-8, version-valid-for 2
+Found /home/bean/.local/share/evolution/addressbook/system/contacts.db: SQLite 3.x database, last written using SQLite version 3037002, file counter 12, database pages 21, cookie 0x11, schema 4, UTF-8, version-valid-for 12
+Found /home/bean/.local/share/nautilus/tags/meta.db: SQLite 3.x database, user version 26, last written using SQLite version 3037002, page size 8192, writer version 2, read version 2, file counter 2, database pages 37, cookie 0x22, schema 4, UTF-8, version-valid-for 2
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/cert9.db: SQLite 3.x database, last written using SQLite version 3038003, page size 32768, file counter 19, database pages 7, cookie 0x5, schema 4, UTF-8, version-valid-for 19
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/content-prefs.sqlite: SQLite 3.x database, user version 4, last written using SQLite version 3038003, page size 32768, file counter 1, database pages 7, cookie 0x6, schema 4, UTF-8, version-valid-for 1
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/cookies.sqlite: SQLite 3.x database, user version 12, last written using SQLite version 3038003, page size 32768, writer version 2, read version 2, file counter 3, database pages 3, cookie 0x1, schema 4, UTF-8, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/favicons.sqlite: SQLite 3.x database, last written using SQLite version 3038003, page size 32768, writer version 2, read version 2, file counter 5, database pages 9, 1st free page 9, free pages 1, cookie 0x6, schema 4, largest root page 8, UTF-8, vacuum mode 1, version-valid-for 5
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/formhistory.sqlite: SQLite 3.x database, user version 5, last written using SQLite version 3038003, page size 32768, file counter 4, database pages 8, cookie 0x7, schema 4, UTF-8, version-valid-for 4
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/key4.db: SQLite 3.x database, last written using SQLite version 3038003, page size 32768, file counter 2, database pages 9, cookie 0x6, schema 4, UTF-8, version-valid-for 2
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/permissions.sqlite: SQLite 3.x database, user version 12, last written using SQLite version 3038003, page size 32768, file counter 14, database pages 3, cookie 0x2, schema 4, UTF-8, version-valid-for 14
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/places.sqlite: SQLite 3.x database, user version 68, last written using SQLite version 3038003, page size 32768, writer version 2, read version 2, file counter 3, database pages 52, cookie 0x2c, schema 4, UTF-8, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/protections.sqlite: SQLite 3.x database, user version 1, last written using SQLite version 3038003, page size 32768, file counter 3, database pages 2, cookie 0x1, schema 4, UTF-8, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/default/moz-extension+++bb56fb70-1b92-4add-9da9-c11f9b09f647^userContextId=4294967295/idb/3647222921wleabcEoxlt-eengsairo.sqlite: SQLite 3.x database, user version 416, last written using SQLite version 3038003, writer version 2, read version 2, file counter 3, database pages 11, cookie 0xd, schema 4, largest root page 11, UTF-8, vacuum mode 1, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/ls-archive.sqlite: SQLite 3.x database, user version 2, last written using SQLite version 3038003, page size 32768, file counter 4, database pages 4, cookie 0x3, schema 4, UTF-8, version-valid-for 4
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/1451318868ntouromlalnodry--epcr.sqlite: SQLite 3.x database, user version 416, last written using SQLite version 3038003, writer version 2, read version 2, file counter 3, database pages 11, cookie 0xd, schema 4, largest root page 11, UTF-8, vacuum mode 1, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/1657114595AmcateirvtiSty.sqlite: SQLite 3.x database, user version 416, last written using SQLite version 3038003, writer version 2, read version 2, file counter 3, database pages 11, cookie 0xd, schema 4, largest root page 11, UTF-8, vacuum mode 1, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/2823318777ntouromlalnodry--naod.sqlite: SQLite 3.x database, user version 416, last written using SQLite version 3038003, writer version 2, read version 2, file counter 3, database pages 11, cookie 0xd, schema 4, largest root page 11, UTF-8, vacuum mode 1, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/2918063365piupsah.sqlite: SQLite 3.x database, user version 416, last written using SQLite version 3038003, writer version 2, read version 2, file counter 3, database pages 11, cookie 0xd, schema 4, largest root page 11, UTF-8, vacuum mode 1, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/3561288849sdhlie.sqlite: SQLite 3.x database, user version 416, last written using SQLite version 3038003, writer version 2, read version 2, file counter 3, database pages 11, cookie 0xd, schema 4, largest root page 11, UTF-8, vacuum mode 1, version-valid-for 3
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/3870112724rsegmnoittet-es.sqlite: SQLite 3.x database, user version 416, last written using SQLite version 3038003, writer version 2, read version 2, file counter 19, database pages 2189, cookie 0xd, schema 4, largest root page 11, UTF-8, vacuum mode 1, version-valid-for 19
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage.sqlite: SQLite 3.x database, user version 131075, last written using SQLite version 3038003, page size 512, file counter 5, database pages 8, cookie 0x4, schema 4, UTF-8, version-valid-for 5
+Found /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/webappsstore.sqlite: SQLite 3.x database, user version 2, last written using SQLite version 3038003, page size 32768, writer version 2, read version 2, file counter 2, database pages 3, cookie 0x2, schema 4, UTF-8, version-valid-for 2
+Found /var/lib/colord/mapping.db: SQLite 3.x database, last written using SQLite version 3037002, file counter 3, database pages 4, cookie 0x2, schema 4, UTF-8, version-valid-for 3
+Found /var/lib/colord/storage.db: SQLite 3.x database, last written using SQLite version 3037002, file counter 3, database pages 7, cookie 0x3, schema 4, UTF-8, version-valid-for 3
+Found /var/lib/command-not-found/commands.db: SQLite 3.x database, last written using SQLite version 3037002, file counter 5, database pages 818, cookie 0x4, schema 4, UTF-8, version-valid-for 5
+Found /var/lib/PackageKit/transactions.db: SQLite 3.x database, last written using SQLite version 3037002, file counter 5, database pages 8, cookie 0x4, schema 4, UTF-8, version-valid-for 5
+Found /var/lib/snapd/errtracker.db: regular file, no read permission
+
+ -> Extracting tables from /home/bean/.cache/tracker3/files/meta.db (limit 20)                                                                          
+  --> Found interesting column names in nco:Role_nco:hasEmailAddress (output limit 10)                                                                  
+CREATE TABLE "nco:Role_nco:hasEmailAddress" (ID INTEGER NOT NULL, "nco:hasEmailAddress" INTEGER NOT NULL)
+
+  --> Found interesting column names in nco:EmailAddress (output limit 10)
+CREATE TABLE "nco:EmailAddress" (ID INTEGER NOT NULL PRIMARY KEY, "nco:emailAddress" TEXT COLLATE TRACKER UNIQUE)
+
+  --> Found interesting column names in nco:VoicePhoneNumber (output limit 10)                                                                          
+CREATE TABLE "nco:VoicePhoneNumber" (ID INTEGER NOT NULL PRIMARY KEY, "nco:voiceMail" INTEGER)
+
+  --> Found interesting column names in nfo:FileDataObject (output limit 10)
+CREATE TABLE "nfo:FileDataObject" (ID INTEGER NOT NULL PRIMARY KEY, "nfo:fileLastAccessed" INTEGER, "nfo:fileCreated" INTEGER, "nfo:fileSize" INTEGER, "nfo:permissions" TEXT COLLATE TRACKER, "nfo:fileName" TEXT COLLATE TRACKER, "nfo:hasHash" INTEGER, "nfo:fileOwner" INTEGER, "nfo:fileLastModified" INTEGER, "tracker:extractorHash" TEXT COLLATE TRACKER)
+
+  --> Found interesting column names in nfo:FileHash (output limit 10)
+CREATE TABLE "nfo:FileHash" (ID INTEGER NOT NULL PRIMARY KEY, "nfo:hashValue" TEXT COLLATE TRACKER, "nfo:hashAlgorithm" TEXT COLLATE TRACKER)
+
+  --> Found interesting column names in nfo:ArchiveItem (output limit 10)
+CREATE TABLE "nfo:ArchiveItem" (ID INTEGER NOT NULL PRIMARY KEY, "nfo:isPasswordProtected" INTEGER)
+
+  --> Found interesting column names in fts5 (output limit 10)
+CREATE VIRTUAL TABLE fts5 USING fts5(content="fts_view", "nao:description", "nao:prefLabel", "nco:department", "nco:role", "nco:title", "nco:fullname", "nco:nickname", "nco:contactGroupName", "nco:note", "nco:emailAddress", "nco:imID", "nco:imNickname", "nco:nameAdditional", "nco:nameFamily", "nco:nameGiven", "nco:phoneNumber", "nco:country", "nco:county", "nco:district", "nco:extendedAddress", "nco:locality", "nco:pobox", "nco:postalcode", "nco:region", "nco:streetAddress", "nfo:tableOfContents", "nfo:fileName", "nfo:fontFamily", "nfo:genre", "nmm:genre", "nie:comment", "nie:description", "nie:plainTextContent", "nie:subject", "nie:title", "nie:keyword", "nmm:artistName", "nmm:category", tokenize=TrackerTokenizer)
+
+ -> Extracting tables from /home/bean/.local/share/evolution/addressbook/system/contacts.db (limit 20)
+  --> Found interesting column names in folder_id_email_list (output limit 10)                                                                          
+CREATE TABLE 'folder_id_email_list' (uid TEXT NOT NULL REFERENCES 'folder_id' (uid), value TEXT)
+
+ -> Extracting tables from /home/bean/.local/share/nautilus/tags/meta.db (limit 20)                                                                     
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/cert9.db (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/content-prefs.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/cookies.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/favicons.sqlite (limit 20)
+  --> Found interesting column names in moz_icons (output limit 10)         
+CREATE TABLE moz_icons ( id INTEGER PRIMARY KEY, icon_url TEXT NOT NULL, fixed_icon_url_hash INTEGER NOT NULL, width INTEGER NOT NULL DEFAULT 0, root INTEGER NOT NULL DEFAULT 0, color INTEGER, expire_ms INTEGER NOT NULL DEFAULT 0, data BLOB )
+1, fake-favicon-uri:https://support.mozilla.org/products/firefox, 136573370287311, 32, 0, None, 1663847739689, b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00 \x00\x00\x00 \x08\x06\x00\x00\x00szz\xf4\x00\x00\x07cIDATx\x01\xad\xd5\x03\x94kI\xd7\xc6\xf1\xff\xae:\'I\xa7\xfb\xa6s9\xb6}\xf1al\xdb\xc6\xf7\xbd\xb6m\xdb\xf6\xd8\xb6m\xfbr<\xd7\xed8\x07U\xef~\x93\xe6X{\xad\xdf)4\xea\xc9\xae\xb3Vx/\xcb\x97\x0e\xfe\x8c\x1f:h\xc0\x0f\x1eXT\xbc\x15\xa6=yO\x9c\n\xfcZ\x15\xf1|[\xf1V\x18<\xbck\xa9\xfb\x0c\xce\xff\x1f\xde\x83Gy]\xbbC\x15o\xc6\xb4\'\xefB#Z\x97$\xfduk\xee\xfd\x18\xe7O\xd5\xfdu\x15o\xc4\xb4\'\xefB\x9c|\x9b8\x85\xc4\xc1\xc4\x10Eu)\x89+*^\x8fy\xadMnz\xec\xff\xb8s\xee\xad\x8aQ\x0b*E\xc5\x04\xfd\xe5ui\xc6\xff\xa7!P\xed\xbfM\xdd\xf8.\xcc\xd4\xf1V\xc5\xeb1\xaf\xda\xbcX\x0fo\xa4\xa7\xbaF<[\xa1 ^\xfb3\xae\xcc\xe3\x8a\xf1\xf4\xf0]\x15-\x91J\xd2\xb6\xd4\x81\x1b}\x1ff\x92\xfaS\x91\xceu1\x9d3\x15\xe3\x99\t\x1b\xa7\xcd=\x94\x86\x9cJ\x1dL\x9c\x14\x14f\xe9\x86\xa7R\x96_\xc7\xfd,V\x8cG=\xdaF1J\x83\xb4\xbb1\x1c\xc2\x8ft\x83\xffk\x94\xaaG\xa4)\x97\xe3\xddL\xc5\x083\xba\xf8\xed\x13E"{*\xb1\x85\x86@\xddA\xa9\xf0(\xd4\xb5#\x11\xd9\x8a\xe4\x15\xd7\xfe\xfe\xcc\xe2\xf5\x7f<\xfb37\xfe\xe9\xdcK\x1f\xfc\xd7\xf7\xfe\xef\xf1\xf3>\xcb\xbc\xabOb\xf0\xc5\rp%\x07Q2&q\xe0\x00/\xe4B\xf9E\xb5\x9c\xcc\xc7\xb9K\xf1IQ\x81\nZ\x13\x80\xc4\xfe\x1a\xe3\x8b\x8a\x96\x86\xca\x0f\xce\xa4\xbb\x84\xfe5H\xe7\xcc\x07o\xfc\xecw\x10\xf9\xb4\x15[\x0c\xc408\xf7\xbf\xf1@\xea\x1d\x8b\xae<\x98\xc2fs\xf9\x9f\x0f\xfe\x99\xfc\x94>\x10\x03F\xd9\x00h\x87\xe8\xb2\xe9\xb6\xdeIA\xc4\x7f\x1b\xf8\xac\xc2~\xe73\x1b\xc2\x0f^.\x02\xe7!\xd0\xc2\xf0\xe8=\x88B\x05)3\xd6\x7fr\xd7\xe5\x8bw\xccE\xcdU1\xc6b\x11\x8c\x12\x01Tu\xc5d^|hKV\xdd\xecq\xb2\x9d\x15\xf0\x06\x9c\xf2\nA\x9cd\x01D\xdc\xa6\x90\xfe\x15\\\xa3\xdd\x81\xd8\xfc\x1fbA\xfc8\x0cW\n\xde\x011av\x80\x9d\x8f\xfc\x18\xf3\x1e\xfe\x18\xcf?v<\x89\xf3Xe\x9c#\xd3Qg\xc7o\xfd\x10\x97$TzV\xa5\x10\xf7\x02\x1e\xcc\x08@\x04I=\xde\xb8\xa2\x18\x7f(pZ\x80\xf7\x10\x07\xbb \x80x\x08Tw\x0c\xd3\x052Ye\x00\xa0\xd6\x84\xba\x86\xc8\xf5\xb3\xf5v?e\xc3Y\xe72\xf7\xa1\x8f\xf2\xd2\xd3\x07b\x9d\x83\xb8\xc0\xcd_\xfe\x1e\xb3\xde\xffg\xd6\xdd\xe9Np\x16\x06=8e\x00;,TN\xc0\xcb.\xed\x00\xa9\x81\xc8\xee\n\x1e\x00\xb2\x0eVkB&\x80\xd0\xea\xa8t\xce\xb4<\x88\x80\xf3\xca\x91\x9f\xdcd\xeb-\xced\xfe7\x0e#p\x0eI\x04\xefR\x1e<\xf3X\xa6m\xf0$]\xd3z!\x0f\xf4Y\x00\xb0\xa2\x80\x8c\x07k\x00f*\x02\x92V\x80"\x02-\x95\x0c,\xec\x82\x8d\x1b`\x1d8\x95*#\x10\x06\x90\x0f!\x13\xb2d\xd9\x7fs\xcfu\x9f\xa2\xae\xf3 M1xH\x05W\xef\xe4\x91\x0b\xf7c\xe7\xf7\xff\x0b\xa0\xfdw\x95\x10,\x10\x08\x14\x12H,\x88m\x07X6k\xcb\x99\xab\xed~/\x08\x80W\xc0\x92N\xe8\xcf\xc2\xaa\x11l\x98\xc2$\xc7@y\x15n{\xe8\xffX\xb8xOb7\x8d\xc0\x84\x84\xde\x12\x86`\xc5a\x1d\x88\x01p\xbc8wCh\xc6\x00`\x1cT\xf3`\x05\x02\x03\xd2\x84z\x1e\x8c\x01 PEb\xcbhyQ\xb4\xbd,\xb0Z\x8d\xfeh2\xbf:\xeb\x074\xc2U\x90\xbcA25\x02\x9b!\xc4\x92\xc1\x90M!\xf0\x0e\xe3SP\xf5\x95\xdd\xd0\x88\x01\x01\x07T\x0c\x04\x16\xa64!q\xf8\xba\x80( \xb8;S\x9b{\xc8P\x17aw\x05\x00\xfc\xf8 \xaal\xb8\xf7\xf9\xff\xa6\xbf\xea\xf1\x93*\xe0<\xe2\x13\x024@\xebi\x89=d]J\x90F\xa0\xbc\xa2\x16\x83\xcb@j\xa0l\xf19A:\xab\xd0\xf00\x18\x8e\xbe\xdc\xe6\xe4\xe2\xe2\xdeh\xa0\x00Q0\xa69\xce\x0b9\x8a\x85\x95\xd4\x93*\xf5\xb8L-.\xa92\xd5\xa4\xad6N#\xaa\x11E\rV[\xeb)\x1820hu\x0cp\xe5\x10\neH\x12\xa8\n\xbebi\x96\xcc\\E\xd0\xff\x0b\xebV|\xa4x_\xe7\xf4\xbem\xf1\xd0&mN-\xcb\xb3\xc3\x86\x0fqa\xf7\xfe\xac\xacM\xc7\x9b\x14|\x84I3\xa4\x84\xb8\xd4\xa2K|3\xc5E\tV\x03l\xb5\xe1\xbd\xd0\x9f\x01\x17\xe2\x1byd\xca@\xeb\xda\xa8[\\\x94\xd1Q\x90@\x9e\x030\xa2\x8bF#{[\xad\xb7\x08\xb1\x1d\xee\x82\x9d\xd8\x85\xbb\xa7\xf3\xd9}\xfeJ>\xa8 \xd5\x1a\x94+\xb8r\x89\xa86\xa4\x06i\xea\xd8\xac\x97h6J\xac5\xf5)f\xae\xfa(\xf4f\xa0/\x83\x04u$[\x85\x9a(p=9\x1d\r\x03}r\x8d\xc2\xe8\x83\'\xc2\xe8\xec\xd2\xcai\x10\xb7\x0eW\xe3GU\xcd\xb0\xce\xfd\x9eo\xee\xf8\'\xa6O\xeaA\x9a\xcd\xe1 e\x92j\x89\xa4V&\x8e\xaal6\xf91N\xdc\xe2,X\x99\x85!\x0b\xb6\ti\x0cU\x81\x8a\xe0K\x16\xb7\xb2\x03_\xb5\xdc0\xdf_\xae\xb0[\xaf\xbb)\x1fX<\xd4\xff\x81\xf2\xb4\xbd%\x955s\xf9&\xe2\x01\'\x13\xaf"\xb1\x14W:vY\xe7AVO\xfb\x01(\xda\n\xd3\xec\x00\x9b\xe5^\xe0\xd8\x19\xd7\xb1W\xf1\x1e\xc2\xc4\x81\xf1\x90M\x86\xff\xd6BjZ\x92\x95\xddP\xcb3X\x97\x8b\xf6\xbc<:\xed\xaag\x9c\x97\x8eu\x0f\x02\xe0\xf2\x81\xb5\x0e\xd9\xcc\x99\xcb\n\xab\xf6\xd0\xd5]\xc1\x98\x14\xec\x7f8\x08|{\x9c\xc0\x83q (\xaf\x00;|x\x00\xe4\x04\xb2F\xb5\xc74\xc9\xd1\xec\x99N\xd0\x11pE\x7f<\x13x\\\x11\x9c\xb1m\x0e\x80C\xee{\xf9\xfa\xfb\xfa\xd6\xfd\x97_1\xe5}\x1e\xe8*\xd41.A\\\n\xa9\x03+\xca\x8c\x1d\xd2\x1e\xc7\x88\x123\x16\xa8)\x90mK\xc9P\xd7\xc3m&\xc3\xd2\x9a\xff\xcd\xc9\xf77\x9ef\xb8F;\x00\xf0\x99\xea\xd4u>X/\\cMs\xf3\xaei%\n\xdd\r\xc4$\xadn\x88\xa4c\x9f\xba}\xe8\xc4\xb9\xf0\xeao\xd2\x10\x122TV\xce \xc8f\x89rr\xdf\x9a\x0b\xfa\xf6\x03\x06\x19.\x1b\x167a\xa4\xee\xcb\xd4\xcb\x03\xe2o\xda)\xee\xda=\xa9\x87\xd3kMC&\x0b"\x06\x8f\x01\'\xca \xadQ\xa5\x16\x9ciKGXH\x94\xce\xab+\nT_\x9a\x81\x89;\x88\xd3`\xee\xf7\x86\xaa\xc7\xcc\xc9\x84K\x15#\x82\x0fv\xe5\x19W\xee\xef\x0c-\x02\x0e\xffFu\xea%R3\x9b/_\x1c\x92\xebj0\xa9\x10\x91\xcd\xa4\x88Q\xce!2\xc2\xc3(\x94\xa7V\xcdR\x1b\x98DZ\xeb\xc4\xfa\x0c\xcd\xd0\xcc\xfdv\xd4\x7f\xf8\x19\xbe\xf6,\xa35\xfe\n^]\xe6\xf8z\xf7F\x9f\xaeM\xfe\xd2\x14x_*1\xa9\x89\x90 &\x93K\x08\xc2\x94\x8e\x9c\x03q\x08\xbe\x15\xa2\xd1\x08\x88\x9b\xaa\xd1\x81\xa4!\xd6)\x1f\xb0\xc2\xb8\xdf\xfco\xf1\x85\x9f\x01+\x94{\xab\x01\x00\x8c\xea>cp\x8d\xbdg%\xd9\xcf\xe4\xf0\xdb:\x93\xe0$\xc5\xe3Z\x10\xc0\x0b\x82`\xbcE\x94i\t(\x89\xbf\xe8\xfc\xdc\xd0o~\xd2\xd5\xf3\xf4\xf8;\x7f\xeb\x01\xc6*\xa7\xba\xbf\\\x99\xbe\xe1\xbe\xcd\xce\xbd\xa7y\xbbw\x87g[\xc4\xe3\x01\xa1\x1d\xc2aJ\x11\xcc\xed\x91\xf4\x86\xeb\xb2\x95\x1b~:i\xe5|`H%\x8aw\x11`\xb4\x02\x95W\x1d*\xc7\xab\xcb\xa9H\xd5UM%\xbc\x85\xfa7i\xf2\x03\xc6\xe0M<\x98\x00\x00\x00\x00IEND\xaeB`\x82'
+
+  --> Found interesting column names in moz_pages_w_icons (output limit 10)
+CREATE TABLE moz_pages_w_icons ( id INTEGER PRIMARY KEY, page_url TEXT NOT NULL, page_url_hash INTEGER NOT NULL )
+1, https://support.mozilla.org/products/firefox, 47358327123126
+
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/formhistory.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/key4.db (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/permissions.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/places.sqlite (limit 20)
+  --> Found interesting column names in moz_places (output limit 10)        
+CREATE TABLE moz_places (   id INTEGER PRIMARY KEY, url LONGVARCHAR, title LONGVARCHAR, rev_host LONGVARCHAR, visit_count INTEGER DEFAULT 0, hidden INTEGER DEFAULT 0 NOT NULL, typed INTEGER DEFAULT 0 NOT NULL, frecency INTEGER DEFAULT -1 NOT NULL, last_visit_date INTEGER , guid TEXT, foreign_count INTEGER DEFAULT 0 NOT NULL, url_hash INTEGER DEFAULT 0 NOT NULL , description TEXT, preview_image_url TEXT, site_name TEXT, origin_id INTEGER REFERENCES moz_origins(id))
+2, https://support.mozilla.org/products/firefox, None, gro.allizom.troppus., 0, 0, 0, -1, None, RzH6oQQzbqTG, 1, 47358327123126, None, None, None, 2
+
+  --> Found interesting column names in moz_previews_tombstones (output limit 10)                                                                       
+CREATE TABLE moz_previews_tombstones (   hash TEXT PRIMARY KEY ) WITHOUT ROWID
+
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/protections.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/default/moz-extension+++bb56fb70-1b92-4add-9da9-c11f9b09f647^userContextId=4294967295/idb/3647222921wleabcEoxlt-eengsairo.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/ls-archive.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/1451318868ntouromlalnodry--epcr.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/1657114595AmcateirvtiSty.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/2823318777ntouromlalnodry--naod.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/2918063365piupsah.sqlite (limit 20)                                                                        
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/3561288849sdhlie.sqlite (limit 20)                                                                         
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage/permanent/chrome/idb/3870112724rsegmnoittet-es.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/storage.sqlite (limit 20)
+ -> Extracting tables from /home/bean/snap/firefox/common/.mozilla/firefox/sf3ook3f.default/webappsstore.sqlite (limit 20)
+ -> Extracting tables from /var/lib/colord/mapping.db (limit 20)            
+ -> Extracting tables from /var/lib/colord/storage.db (limit 20)            
+ -> Extracting tables from /var/lib/command-not-found/commands.db (limit 20)
+ -> Extracting tables from /var/lib/PackageKit/transactions.db (limit 20)   
+                                                                            
+╔══════════╣ Web files?(output limit)
+/var/www/:                                                                  
+total 28K
+drwxr-xr-x  7 root      root     4.0K Oct  6 01:35 .
+drwxr-xr-x 15 root      root     4.0K Oct  6 01:35 ..
+drwxr-xr-x  6 root      root     4.0K Oct  6 01:35 hat-valley.htb
+drwxr-xr-x  2 root      root     4.0K Oct  6 01:35 html
+drw-rwx---  5 root      www-data 4.0K Nov 28 18:45 .pm2
+dr-xr-x---  2 christine www-data 4.0K Oct  6 01:35 private
+drwxr-xr-x  9 root      root     4.0K Oct  6 01:35 store
+
+
+╔══════════╣ All hidden files (not in /sys/ or the ones listed in the previous check) (limit 70)                                                        
+-rw-r--r-- 1 root root 10 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/has-bigints/.eslintignore
+-rw-r--r-- 1 root root 99 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/has-bigints/.eslintrc
+-rw-r--r-- 1 root root 216 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/has-bigints/.nycrc
+-rw-r--r-- 1 root root 337 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/loglevel/lib/.jshintrc
+-rw-r--r-- 1 root root 618 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/loglevel/test/.jshintrc
+-rw-r--r-- 1 root root 387 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/loglevel/.editorconfig
+-rw-r--r-- 1 root root 235 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/loglevel/.travis.yml
+-rw-r--r-- 1 root root 210 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/loglevel/.jshintrc
+-rw-r--r-- 1 root root 10 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/which-boxed-primitive/.eslintignore
+-rw-r--r-- 1 root root 89 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/which-boxed-primitive/.eslintrc
+-rw-r--r-- 1 root root 216 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/which-boxed-primitive/.nycrc
+-rw-r--r-- 1 root root 286 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/which-boxed-primitive/.editorconfig
+-rw-r--r-- 1 root root 198 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/ip/.travis.yml
+-rw-r--r-- 1 root root 6123 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/ip/.jshintrc
+-rw-r--r-- 1 root root 5023 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/hoopy/.eslintrc
+-rw-r--r-- 1 root root 60 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/select-hose/.travis.yml
+-rw-r--r-- 1 root root 6123 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/select-hose/.jshintrc
+-rw-r--r-- 1 root root 164 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/@hapi/address/.travis.yml
+-rw-r--r-- 1 root root 10 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-arguments/.eslintignore
+-rw-r--r-- 1 root root 141 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-arguments/.eslintrc
+-rw-r--r-- 1 root root 139 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-arguments/.nycrc
+-rw-r--r-- 1 root root 286 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-arguments/.editorconfig
+-rw-r--r-- 1 root root 10 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/object.values/.eslintignore
+-rw-r--r-- 1 root root 303 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/object.values/.eslintrc
+-rw-r--r-- 1 root root 246 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/object.values/test/.eslintrc
+-rw-r--r-- 1 root root 139 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/object.values/.nycrc
+-rw-r--r-- 1 root root 286 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/object.values/.editorconfig
+-rw-r--r-- 1 root root 242 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/estraverse/.jshintrc
+-rw-r--r-- 1 root root 46 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/serve-index/node_modules/debug/.coveralls.yml
+-rw-r--r-- 1 root root 180 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/serve-index/node_modules/debug/.eslintrc
+-rw-r--r-- 1 root root 140 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/serve-index/node_modules/debug/.travis.yml
+-rw-r--r-- 1 root root 13 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/hash-sum/.jshintignore
+-rw-r--r-- 1 root root 207 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/hash-sum/.editorconfig
+-rw-r--r-- 1 root root 345 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/hash-sum/.jshintrc
+-rw-r--r-- 1 root root 69 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/thunky/.travis.yml
+-rw-r--r-- 1 root root 472 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/file-uri-to-path/.travis.yml
+-rw-r--r-- 1 root root 545 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/xtend/.jshintrc
+-rw-r--r-- 1 root root 60 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/cyclist/.travis.yml
+-rw-r--r-- 1 root root 48 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/json-stable-stringify-without-jsonify/.travis.yml
+-rw-r--r-- 1 root root 60 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/http-deceiver/.travis.yml
+-rw-r--r-- 1 root root 52 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/chardet/.travis.yml
+-rw-r--r-- 1 root root 132 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/supports-preserve-symlinks-flag/.eslintrc
+-rw-r--r-- 1 root root 139 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/supports-preserve-symlinks-flag/.nycrc
+-rw-r--r-- 1 root root 164 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/has-tostringtag/.eslintrc
+-rw-r--r-- 1 root root 242 Sep 15 22:13 /var/www/hat-valley.htb/node_modules/esrecurse/node_modules/estraverse/.jshintrc
+-rw-r--r-- 1 root root 30 Sep 15 22:13 /var/www/hat-valley.htb/node_modules/esrecurse/.babelrc
+-rw-r--r-- 1 root root 334 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/retry/.travis.yml
+-rw-r--r-- 1 root root 10 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/string.prototype.trimend/.eslintignore
+-rw-r--r-- 1 root root 162 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/string.prototype.trimend/.eslintrc
+-rw-r--r-- 1 root root 216 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/string.prototype.trimend/.nycrc
+-rw-r--r-- 1 root root 286 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/string.prototype.trimend/.editorconfig
+-rw-r--r-- 1 root root 9 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/randombytes/.zuul.yml
+-rw-r--r-- 1 root root 319 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/randombytes/.travis.yml
+-rw-r--r-- 1 root root 215 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/sha.js/.travis.yml
+-rw-r--r-- 1 root root 198 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/browserify-zlib/.travis.yml
+-rw-r--r-- 1 root root 65 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/stream-shift/.travis.yml
+-rw-r--r-- 1 root root 10 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-callable/.eslintignore
+-rw-r--r-- 1 root root 993 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-callable/.istanbul.yml
+-rw-r--r-- 1 root root 294 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-callable/.eslintrc
+-rw-r--r-- 1 root root 139 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-callable/.nycrc
+-rw-r--r-- 1 root root 385 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/is-callable/.editorconfig
+-rw-r--r-- 1 root root 283 Sep 15 22:19 /var/www/hat-valley.htb/node_modules/undefsafe/.travis.yml
+-rw-r--r-- 1 root root 240 Sep 15 22:19 /var/www/hat-valley.htb/node_modules/undefsafe/.jshintrc
+-rw-r--r-- 1 root root 69 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/duplexer/.travis.yml
+-rw-r--r-- 1 root root 10 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/get-intrinsic/.eslintignore
+-rw-r--r-- 1 root root 715 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/get-intrinsic/.eslintrc
+-rw-r--r-- 1 root root 216 Sep 15 22:12 /var/www/hat-valley.htb/node_modules/get-intrinsic/.nycrc
+-rw-r--r-- 1 root root 360 Sep 15 22:19 /var/www/hat-valley.htb/node_modules/nodemon/.eslintrc.json
+-rw-r--r-- 1 root root 27 Sep 15 22:19 /var/www/hat-valley.htb/node_modules/nodemon/.releaserc
+-rw-r--r-- 1 root root 345 Sep 15 22:19 /var/www/hat-valley.htb/node_modules/nodemon/.travis.yml
+
+╔══════════╣ Readable files inside /tmp, /var/tmp, /private/tmp, /private/var/at/tmp, /private/var/tmp, and backup folders (limit 70)                   
+-r--r--r-- 1 gdm gdm 11 Nov 28 18:46 /tmp/.X1025-lock                       
+-rw-rw-r-- 1 bean bean 3059 Nov 28 20:21 /tmp/passwd.bak
+-r--r--r-- 1 gdm gdm 11 Nov 28 18:46 /tmp/.X1024-lock
+-rw-rw-r-- 1 bean bean 31715 Sep 15 21:46 /home/bean/Documents/backup/bean_backup_final.tar.gz
+-rw-r--r-- 1 root root 11997 Sep 15 23:33 /var/backups/apt.extended_states.3.gz
+-rw-r--r-- 1 root root 106682 Oct 20 22:55 /var/backups/apt.extended_states.0
+-rw-r--r-- 1 root root 11761 Oct 18 03:34 /var/backups/apt.extended_states.1.gz
+-rw-r--r-- 1 root root 11767 Sep 23 20:15 /var/backups/apt.extended_states.2.gz
+
+╔══════════╣ Interesting writable files owned by me or writable by everyone (not in Home) (max 500)                                                     
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-files                                                                       
+/dev/mqueue                                                                 
+/dev/shm
+/home/bean
+/run/lock
+/run/user/1001
+/run/user/1001/dbus-1
+/run/user/1001/dbus-1/services
+/run/user/1001/dconf
+/run/user/1001/dconf/user
+/run/user/1001/doc
+/run/user/1001/doc/by-app
+/run/user/1001/doc/by-app/snap.snapd-desktop-integration
+/run/user/1001/gnupg
+/run/user/1001/gvfs
+/run/user/1001/gvfsd
+/run/user/1001/pipewire-0.lock
+/run/user/1001/pulse
+/run/user/1001/pulse/pid
+/run/user/1001/snap.snapd-desktop-integration
+/run/user/1001/snap.snapd-desktop-integration/dconf
+/run/user/1001/systemd
+/run/user/1001/systemd/generator.late
+/run/user/1001/systemd/generator.late/app-geocluex2ddemox2dagent@autostart.service                                                                      
+/run/user/1001/systemd/generator.late/app-gnomex2dinitialx2dsetupx2dfirstx2dlogin@autostart.service
+/run/user/1001/systemd/generator.late/app-gnomex2dshellx2doverridesx2dmigration@autostart.service
+/run/user/1001/systemd/generator.late/app-imx2dlaunch@autostart.service
+/run/user/1001/systemd/generator.late/app-nmx2dapplet@autostart.service
+#)You_can_write_even_more_files_inside_last_directory
+
+/run/user/1001/systemd/inaccessible
+/run/user/1001/systemd/inaccessible/dir
+/run/user/1001/systemd/inaccessible/reg
+/run/user/1001/systemd/units
+/snap/core20/1623/run/lock
+/snap/core20/1623/tmp
+/snap/core20/1623/var/tmp
+/tmp
+/tmp/.font-unix
+/tmp/.ICE-unix
+/tmp/passwd.bak
+/tmp/.Test-unix
+/tmp/tracker-extract-3-files.1001
+#)You_can_write_even_more_files_inside_last_directory
+
+/var/crash
+/var/lib/BrlAPI
+/var/lib/php/sessions
+/var/metrics
+/var/tmp
+/var/www/store/cart
+/var/www/store/product-details
+
+╔══════════╣ Interesting GROUP writable files (not in Home) (max 500)
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-files                                                                       
+  Group bean:                                                               
+/run/user/1001/snap.snapd-desktop-integration/dconf                         
+/run/user/1001/pipewire-0.lock
+/tmp/passwd.bak
+
+╔══════════╣ Searching passwords in history files
+                                                                            
+╔══════════╣ Searching *password* or *credential* files in home (limit 70)
+/etc/brlapi.key                                                             
+/etc/pam.d/common-password
+/etc/pam.d/gdm-password
+/etc/pam.d/gdm-smartcard-sssd-or-password
+
+╔══════════╣ Checking for TTY (sudo/su) passwords in audit logs
+                                                                            
+╔══════════╣ Searching passwords inside logs (limit 70)
+                                                                            
+
+
+                                ╔════════════════╗
+════════════════════════════════╣ API Keys Regex ╠════════════════════════════════                                                                      
+                                ╚════════════════╝                          
+Regexes to search for API keys aren't activated, use param '-r'

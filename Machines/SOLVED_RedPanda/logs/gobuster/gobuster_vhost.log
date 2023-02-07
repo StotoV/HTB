@@ -1,0 +1,34 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:             http://10.10.11.170:8080
+[+] Method:          GET
+[+] Threads:         100
+[+] Wordlist:        /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+[+] User Agent:      gobuster/3.3
+[+] Timeout:         10s
+[+] Append Domain:   false
+===============================================================
+2022/12/15 02:58:54 Starting gobuster in VHOST enumeration mode
+===============================================================
+[2KFound: gc._msdcs Status: 400 [Size: 435]
+[2KFound: _domainkey Status: 400 [Size: 435]
+[2KFound: mailing._domainkey.sunnynews Status: 400 [Size: 435]
+[2KFound: mailing._domainkey.info Status: 400 [Size: 435]
+[2KFound: hallam_ad Status: 400 [Size: 435]
+[2KFound: hallam_dev Status: 400 [Size: 435]
+[2KFound: wm_j_b__ruffin Status: 400 [Size: 435]
+[2KFound: 2609_n_www Status: 400 [Size: 435]
+[2KFound: 0907_n_hn.m Status: 400 [Size: 435]
+[2KFound: 0507_n_hn Status: 400 [Size: 435]
+[2KFound: faitspare_mbp.cit Status: 400 [Size: 435]
+[2KFound: sb_0601388345bc450b Status: 400 [Size: 435]
+[2KFound: sb_0601388345bc6cd8 Status: 400 [Size: 435]
+[2KFound: api_portal_dev Status: 400 [Size: 435]
+[2KFound: api_web_dev Status: 400 [Size: 435]
+[2KFound: api_webi_dev Status: 400 [Size: 435]
+[2KFound: sklep_test Status: 400 [Size: 435]
+===============================================================
+2022/12/15 03:05:34 Finished
+===============================================================

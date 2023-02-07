@@ -1,0 +1,10 @@
+# Nmap 7.92 scan initiated Wed Jan 11 05:25:52 2023 as: nmap -p25 --script smtp-open-relay -oN logs/smtp/open-relay -v 10.10.11.166
+Nmap scan report for 10.10.11.166
+Host is up (0.014s latency).
+
+PORT   STATE SERVICE
+25/tcp open  smtp
+|_smtp-open-relay: Server doesn't seem to be an open relay, all tests failed
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Wed Jan 11 05:26:22 2023 -- 1 IP address (1 host up) scanned in 29.50 seconds

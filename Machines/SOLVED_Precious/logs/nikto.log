@@ -1,0 +1,24 @@
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          10.129.100.34
++ Target Hostname:    precious.htb
++ Target Port:        80
++ Start Time:         2022-11-29 03:36:36 (GMT-5)
+---------------------------------------------------------------------------
++ Server: nginx/1.18.0 + Phusion Passenger(R) 6.0.15
++ Retrieved x-powered-by header: Phusion Passenger(R) 6.0.15
++ Uncommon header 'x-runtime' found, with contents: Ruby
++ Uncommon header 'x-cascade' found, with contents: pass
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ Server banner has changed from 'nginx/1.18.0 + Phusion Passenger(R) 6.0.15' to 'nginx/1.18.0' which may suggest a WAF, load balancer or proxy is in place
++ 7785 requests: 0 error(s) and 3 item(s) reported on remote host
++ End Time:           2022-11-29 03:40:12 (GMT-5) (216 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+      *********************************************************************
+      Portions of the server's headers (nginx/1.18.0) are not in
+      the Nikto 2.1.6 database or are newer than the known string. Would you like
+      to submit this information (*no server specific data*) to CIRT.net
+      for a Nikto update (or you may email to sullo@cirt.net) (y/n)? 

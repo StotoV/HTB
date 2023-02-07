@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/stats.css">
+  </head>
+  <body>
+    <div class="wrapper">
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <br/>
+    <div th:unless="${noAuthor}" class="results">
+	    <h3 class="result" th:text="${author}"></h3>
+    <table>
+        <tr>
+            <th class="table_uri">Panda URI</th>
+            <th>Panda views</th>
+        </tr>
+        <tr th:each="image: ${images}" class="result">
+	    <td class="table_uri" th:text='${image.getChildText("uri")}'></td>
+	<td class="table_views" th:text='${image.getChildText("views")}'></td>
+        </tr>
+    </table>
+      <h3 th:text="${'Total views: ' + totalviews}"></h3>
+      <a th:href="${'/export.xml?author=' + author}"><p>Export table</p></a>
+    </div>
+
+    <div class="footer">
+        <br/>
+        <h4>Please choose an author to view statistics for</h4>
+        <a href="/stats?author=woodenk"><p>woodenk</p></a>
+        <a href="/stats?author=damian"><p>damian</p></a>
+	<p>With every view an author gets for their red panda image, they are awarded with 1 creditpoint. These eventually lead up to a bigger payout bonus for their content</p>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+
+; <<>> DiG 9.18.4-2-Debian <<>> version.bind CHAOS TXT @10.10.11.166
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40732
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 804f30a65d1f25173657502e63be96776514e4e8cd3c6926 (good)
+;; QUESTION SECTION:
+;version.bind.			CH	TXT
+
+;; ANSWER SECTION:
+version.bind.		0	CH	TXT	"9.11.5-P4-5.1+deb10u7-Debian"
+
+;; AUTHORITY SECTION:
+version.bind.		0	CH	NS	version.bind.
+
+;; Query time: 15 msec
+;; SERVER: 10.10.11.166#53(10.10.11.166) (UDP)
+;; WHEN: Wed Jan 11 05:59:03 EST 2023
+;; MSG SIZE  rcvd: 124
+

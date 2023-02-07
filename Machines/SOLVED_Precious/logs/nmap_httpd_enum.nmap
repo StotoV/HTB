@@ -1,0 +1,10 @@
+# Nmap 7.92 scan initiated Tue Nov 29 03:33:16 2022 as: nmap -sV --script=/usr/share/nmap/scripts/httpd.enum -oA logs/nmap_httpd_enum 10.129.100.34
+NSE: failed to initialize the script engine:
+/usr/bin/../share/nmap/nse_main.lua:822: '/usr/share/nmap/scripts/httpd.enum' did not match a category, filename, or directory
+stack traceback:
+	[C]: in function 'error'
+	/usr/bin/../share/nmap/nse_main.lua:822: in local 'get_chosen_scripts'
+	/usr/bin/../share/nmap/nse_main.lua:1322: in main chunk
+	[C]: in ?
+
+QUITTING!

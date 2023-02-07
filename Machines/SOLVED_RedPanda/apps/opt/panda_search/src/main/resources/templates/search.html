@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div th:unless="${noAuthor} == true" class="results">
+    <h2 th:unless="${query} == Null" th:text="${'You searched for: '} + @{__${query}__}" class="searched"></h2>
+      <h2 th:text="${'There are ' + n + ' results for your search'}"></h2>
+       <div th:each="panda: ${pandas}" class="result">
+         <img th:src="${panda[2]}">
+        <h1 class="panda_name">Panda name:</h1><h2 th:text="${panda[0]}"></h2>
+        <h1 class="panda_bio">Panda bio:</h1><h2 th:text="${panda[1]}"></h2>
+	<a th:href="${'/stats?author=' + panda[3]}"><p class="author" th:text="${'Author: ' + panda[3]}"></p></a>
+      </div>
+    </div>
+    </div>
+    
+  </body>
+</html>

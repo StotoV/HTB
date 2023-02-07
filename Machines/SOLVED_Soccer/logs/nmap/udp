@@ -1,0 +1,9 @@
+# Nmap 7.92 scan initiated Mon Dec 19 04:42:57 2022 as: nmap -sU -sV -oN logs/nmap/udp 10.129.116.68
+Nmap scan report for 10.129.116.68
+Host is up (0.027s latency).
+Not shown: 999 closed udp ports (port-unreach)
+PORT   STATE         SERVICE VERSION
+68/udp open|filtered dhcpc
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Dec 19 05:01:26 2022 -- 1 IP address (1 host up) scanned in 1109.66 seconds
