@@ -1,0 +1,287 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
+using System.Text;
+using System.Threading;
+using Microsoft.CodeAnalysis;
+using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
+using WatsonWebsocket;
+
+[assembly: CompilationRelaxations(8)]
+[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.Default | DebuggableAttribute.DebuggingModes.DisableOptimizations | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints | DebuggableAttribute.DebuggingModes.EnableEditAndContinue)]
+[assembly: TargetFramework(".NETCoreApp,Version=v6.0", FrameworkDisplayName = "")]
+[assembly: AssemblyCompany("bagel")]
+[assembly: AssemblyConfiguration("Debug")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0.0")]
+[assembly: AssemblyProduct("bagel")]
+[assembly: AssemblyTitle("bagel")]
+[assembly: AssemblyVersion("1.0.0.0")]
+namespace Microsoft.CodeAnalysis
+{
+	[CompilerGenerated]
+	[Embedded]
+	internal sealed class EmbeddedAttribute : Attribute
+	{
+	}
+}
+namespace System.Runtime.CompilerServices
+{
+	[CompilerGenerated]
+	[Microsoft.CodeAnalysis.Embedded]
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Parameter | AttributeTargets.ReturnValue | AttributeTargets.GenericParameter, AllowMultiple = false, Inherited = false)]
+	internal sealed class NullableAttribute : Attribute
+	{
+		public readonly byte[] NullableFlags;
+
+		public NullableAttribute(byte P_0)
+		{
+			NullableFlags = new byte[1] { P_0 };
+		}
+
+		public NullableAttribute(byte[] P_0)
+		{
+			NullableFlags = P_0;
+		}
+	}
+	[CompilerGenerated]
+	[Microsoft.CodeAnalysis.Embedded]
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Interface | AttributeTargets.Delegate, AllowMultiple = false, Inherited = false)]
+	internal sealed class NullableContextAttribute : Attribute
+	{
+		public readonly byte Flag;
+
+		public NullableContextAttribute(byte P_0)
+		{
+			Flag = P_0;
+		}
+	}
+}
+namespace bagel_server
+{
+	public class Handler
+	{
+		public object Serialize(object obj)
+		{
+			//IL_0003: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0008: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0015: Expected O, but got Unknown
+			JsonSerializerSettings val = new JsonSerializerSettings();
+			val.set_TypeNameHandling((TypeNameHandling)4);
+			return JsonConvert.SerializeObject(obj, (Formatting)1, val);
+		}
+
+		public object Deserialize(string json)
+		{
+			//IL_0003: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0008: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0015: Expected O, but got Unknown
+			try
+			{
+				JsonSerializerSettings val = new JsonSerializerSettings();
+				val.set_TypeNameHandling((TypeNameHandling)4);
+				return JsonConvert.DeserializeObject<Base>(json, val);
+			}
+			catch
+			{
+				return "{\"Message\":\"unknown\"}";
+			}
+		}
+	}
+	public class Bagel
+	{
+		private static string _ServerIp = "*";
+
+		private static int _ServerPort = 5000;
+
+		private static bool _Ssl = false;
+
+		private static WatsonWsServer _Server = null;
+
+		private static void Main(string[] args)
+		{
+			InitializeServer();
+			StartServer();
+			while (true)
+			{
+				Thread.Sleep(1000);
+			}
+		}
+
+		private static void InitializeServer()
+		{
+			//IL_0010: Unknown result type (might be due to invalid IL or missing references)
+			//IL_001a: Expected O, but got Unknown
+			_Server = new WatsonWsServer(_ServerIp, _ServerPort, _Ssl);
+			_Server.set_AcceptInvalidCertificates(true);
+			_Server.add_MessageReceived((EventHandler<MessageReceivedEventArgs>)MessageReceived);
+		}
+
+		private static async void StartServer()
+		{
+			await _Server.StartAsync(default(CancellationToken));
+		}
+
+		private static void MessageReceived(object sender, MessageReceivedEventArgs args)
+		{
+			string json = "";
+			if (args.get_Data() != null && args.get_Data().Count > 0)
+			{
+				json = Encoding.UTF8.GetString(args.get_Data().Array, 0, args.get_Data().Count);
+			}
+			Handler handler = new Handler();
+			object obj = handler.Deserialize(json);
+			object obj2 = handler.Serialize(obj);
+			_Server.SendAsync(args.get_IpPort(), obj2.ToString(), default(CancellationToken));
+		}
+	}
+	public class Base : Orders
+	{
+		private int userid = 0;
+
+		private string session = "Unauthorized";
+
+		public int UserId
+		{
+			get
+			{
+				return userid;
+			}
+			set
+			{
+				userid = value;
+			}
+		}
+
+		public string Session
+		{
+			get
+			{
+				return session;
+			}
+			set
+			{
+				session = value;
+			}
+		}
+
+		public string Time => DateTime.Now.ToString("h:mm:ss");
+	}
+	public class Orders
+	{
+		private string order_filename;
+
+		private string order_info;
+
+		private File file = new File();
+
+		public object RemoveOrder { get; set; }
+
+		public string WriteOrder
+		{
+			get
+			{
+				return file.WriteFile;
+			}
+			set
+			{
+				order_info = value;
+				file.WriteFile = order_info;
+			}
+		}
+
+		public string ReadOrder
+		{
+			get
+			{
+				return file.ReadFile;
+			}
+			set
+			{
+				order_filename = value;
+				order_filename = order_filename.Replace("/", "");
+				order_filename = order_filename.Replace("..", "");
+				file.ReadFile = order_filename;
+			}
+		}
+	}
+	public class File
+	{
+		private string file_content;
+
+		private string IsSuccess = null;
+
+		private string directory = "/opt/bagel/orders/";
+
+		private string filename = "orders.txt";
+
+		public string ReadFile
+		{
+			get
+			{
+				return file_content;
+			}
+			set
+			{
+				filename = value;
+				ReadContent(directory + filename);
+			}
+		}
+
+		public string WriteFile
+		{
+			get
+			{
+				return IsSuccess;
+			}
+			set
+			{
+				WriteContent(directory + filename, value);
+			}
+		}
+
+		public void ReadContent(string path)
+		{
+			try
+			{
+				IEnumerable<string> values = System.IO.File.ReadLines(path, Encoding.UTF8);
+				file_content += string.Join("\n", values);
+			}
+			catch (Exception)
+			{
+				file_content = "Order not found!";
+			}
+		}
+
+		public void WriteContent(string filename, string line)
+		{
+			try
+			{
+				System.IO.File.WriteAllText(filename, line);
+				IsSuccess = "Operation successed";
+			}
+			catch (Exception)
+			{
+				IsSuccess = "Operation failed";
+			}
+		}
+	}
+	public class DB
+	{
+		[Obsolete("The production team has to decide where the database server will be hosted. This method is not fully implemented.")]
+		public void DB_connection()
+		{
+			//IL_0008: Unknown result type (might be due to invalid IL or missing references)
+			//IL_000e: Expected O, but got Unknown
+			string text = "Data Source=ip;Initial Catalog=Orders;User ID=dev;Password=k8wdAYYKyhnjg3K";
+			SqlConnection val = new SqlConnection(text);
+			string text2 = "INSERT INTO orders (Name,Address,Count,Type) VALUES ('Eliot','Street',4,'Baggel')";
+		}
+	}
+}

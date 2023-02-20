@@ -1,0 +1,18 @@
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://bagel.htb:8000
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Timeout:                 10s
+===============================================================
+2023/02/20 07:35:19 Starting gobuster in directory enumeration mode
+===============================================================
+[2K/orders               (Status: 200) [Size: 267]
+===============================================================
+2023/02/20 07:38:32 Finished
+===============================================================
